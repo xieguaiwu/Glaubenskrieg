@@ -26,12 +26,14 @@ import yfinance as yf
 # ──────────────────────────────────────────────
 # Config
 # ──────────────────────────────────────────────
-PROXY_URL = "http://127.0.0.1:7897"
-PROXIES = {"http": PROXY_URL, "https": PROXY_URL}
+# Proxy: set HTTP_PROXY/HTTPS_PROXY env vars if behind a firewall
+# e.g. export HTTP_PROXY=http://127.0.0.1:7897
+PROXY_URL = os.environ.get("HTTP_PROXY", "")
+PROXIES = {"http": PROXY_URL, "https": PROXY_URL} if PROXY_URL else {}
 
-# Ensure proxy env vars are set for yfinance (v1.3.0 uses HTTPS_PROXY/HTTP_PROXY)
-os.environ.setdefault("HTTP_PROXY", PROXY_URL)
-os.environ.setdefault("HTTPS_PROXY", PROXY_URL)
+if PROXY_URL:
+    os.environ.setdefault("HTTP_PROXY", PROXY_URL)
+    os.environ.setdefault("HTTPS_PROXY", PROXY_URL)
 
 WIKI_URL = "https://en.wikipedia.org/wiki/Nasdaq-100"
 WIKI_TABLE_INDEX = 5

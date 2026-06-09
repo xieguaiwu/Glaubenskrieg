@@ -42,12 +42,13 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = PROJECT_ROOT / "new_data" / "data" / "sp500"
 ALL_CSV = PROJECT_ROOT / "new_data" / "data" / "sp500_all.csv"
 
-# Proxy configuration
-PROXY_URL = "http://127.0.0.1:7897"
-os.environ["HTTP_PROXY"] = PROXY_URL
-os.environ["HTTPS_PROXY"] = PROXY_URL
-os.environ["http_proxy"] = PROXY_URL
-os.environ["https_proxy"] = PROXY_URL
+# Proxy: set HTTP_PROXY/HTTPS_PROXY env vars if behind a firewall
+PROXY_URL = os.environ.get("HTTP_PROXY", "")
+if PROXY_URL:
+    os.environ.setdefault("HTTP_PROXY", PROXY_URL)
+    os.environ.setdefault("HTTPS_PROXY", PROXY_URL)
+    os.environ.setdefault("http_proxy", PROXY_URL)
+    os.environ.setdefault("https_proxy", PROXY_URL)
 
 
 # ---------------------------------------------------------------------------
