@@ -1,0 +1,61 @@
+# CTM: Conv-Temporal-Mamba Stock Prediction — Default Configuration
+
+scale: small
+
+model:
+  input_dim: 9           # matches compute_all_features() output (9 features)
+  model_dim: 64          # reduced from 128 to prevent overfitting on small data
+  state_dim: 8           # reduced from 16 for smaller model footprint
+  conv_kernel: 3
+  n_layers: 2
+  output_dim: 1
+  dropout: 0.2           # increased from 0.1 for stronger regularization
+  use_decomp: false
+  bidirectional: false
+  seq_len: 63
+  parallel_scan: true    # enabled
+  return_hidden: false   # new option
+
+# Scaling options (see Phase 6 in architecture guide)
+scaling:
+  # Multi-asset: set n_assets > 1 for portfolio-level prediction
+  n_assets: 1
+  use_cross_attention: true
+  embedding_dim: null     # null = model_dim
+
+data:
+  csv_path: data/stock_prices.csv
+  target_column: forward_return
+  target_periods: 5  # v4: 5-day horizon for better signal-to-noise ratio
+  date_column: null
+  split:
+    train: 0.7
+    val: 0.15
+
+loss:
+  lambda_mse: 1.0
+  lambda_sharpe: 0.1
+  lambda_directional: 1.0
+  lambda_pinball: 0.1
+  lambda_reg: 0.01
+  pinball_tau: 0.05
+
+trainer:
+  n_epochs: 50  # v4: halved — sufficient for low-SNR data, faster iteration
+  batch_size: 8
+  lr: 0.0003
+  weight_decay: 0.05    # moderate regularization for small datasets
+  grad_clip: 1.0
+  patience: 10
+  step_size: 63  # v4: restored to 63 for larger window overlap (RCA: 21→too few steps)
+  train_window: 1000
+  val_window: 200
+  purge_period: 126
+  warmup_steps: 2000
+  ramp_steps: 3000
+  lr_warmup_epochs: 10
+
+device: cpu
+
+output:
+  metrics_path: results/metrics.json

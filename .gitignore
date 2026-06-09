@@ -1,0 +1,75 @@
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.so
+*.o
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Testing
+.pytest_cache/
+.ruff_cache/
+test_checkpoints/
+
+# AI agent sessions
+.omo/
+.sisyphus/
+.deepseek/
+
+# Data (local only)
+/data/
+/new_data/
+
+# Checkpoints (local only)
+checkpoints/
+server2_checkpoints/
+
+# Logs (local only)
+logs/
+*.log
+
+# Results (local only)
+results/
+
+# Dev notes (local only)
+daily/
+docs/
+notes/
+
+# Personal docs
+AGENTS.md
+design_time_gated_fusion.md
+feasibility_time_gate.md
+improvement-loop.md
+mambastock_analysis.md
+progress.md
+quant_books_synthesis.md
+xgb_papers_synthesis.md
+research.md
+research_*.md
+
+# Server scripts
+launch_*.sh
+run_seed456.sh
+auto_collect_*.sh
+
+# External files
+stock_prediction_guide.pdf
+
+# Unrelated projects (local only)
+smt_model/
+project_code/
+
+# Paper drafts (local only)
+paper/
+
+# Version docs
+VERSION2/
+
+# OS
+.DS_Store
+Thumbs.db

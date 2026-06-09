@@ -1,0 +1,64 @@
+# =============================================================================
+# Ignore files that should NOT be copied into the Docker image.
+# Data files are mounted at runtime via -v, not baked into the image.
+# =============================================================================
+
+# ── Git ──
+.git/
+.gitignore
+
+# ── Python cache & build artifacts ──
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+*.so
+.pytest_cache/
+pytest.ini
+.tox/
+.coverage
+htmlcov/
+
+# ── IDE & editor ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── OS junk ──
+.DS_Store
+Thumbs.db
+
+# ── Project workflow files ──
+.omo/
+.sisyphus/
+
+# ── Virtual environments ──
+.venv/
+env/
+venv/
+*.venv/
+
+# ── Data files (mounted at runtime) ──
+data/*.csv
+data/*.parquet
+data/*.feather
+
+# ── Runtime outputs ──
+results/
+checkpoints/
+
+# ── Node / frontend ──
+node_modules/
+
+# ── Documentation ──
+README.md
+README.zh.md
+docs/
+*.md
+
+# ── Build artifacts ──
+dist/
+build/
+*.egg

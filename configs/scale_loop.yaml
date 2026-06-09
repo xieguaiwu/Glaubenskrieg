@@ -1,0 +1,60 @@
+# CTM: Conv-Temporal-Mamba — Loop (Recurrent Refinement) Scale
+# RecurrentCTM: n_loop_iters=5, use_decomp=true, equivalent depth = n_layers * n_loop_iters = 10
+scale: loop
+
+model:
+  input_dim: 9           # matches compute_all_features() output (9 features)
+  model_dim: 128
+  state_dim: 16
+  conv_kernel: 3
+  n_layers: 2
+  output_dim: 1
+  dropout: 0.15          # increased from 0.1 for overfitting protection
+  use_decomp: true             # enabled — DMamba seasonal-trend decomposition
+  bidirectional: false         # NOT enabled — causal prediction would leak future info
+  seq_len: 63
+  parallel_scan: true          # GPU: use parallel associative scan; CPU: sequential is ~2x faster
+  return_hidden: false
+  n_loop_iters: 5              # recurrent refinement loops (5 = effective depth 15)
+  loop_dropout: 0.15           # increased from 0.1; deeper effective depth needs more regularization
+
+scaling:
+  n_assets: 1
+  use_cross_attention: true
+  embedding_dim: null
+
+data:
+  csv_path: data/stock_prices.csv
+  target_column: forward_return
+  date_column: null
+  split:
+    train: 0.7
+    val: 0.15
+
+loss:
+  lambda_mse: 1.0
+  lambda_sharpe: 0.1
+  lambda_directional: 1.0
+  lambda_pinball: 0.1
+  lambda_reg: 0.01
+  pinball_tau: 0.05
+
+trainer:
+  n_epochs: 80                 # fewer epochs due to deeper effective depth
+  batch_size: 32
+  lr: 0.0003
+  weight_decay: 0.05
+  grad_clip: 1.0
+  patience: 10
+  step_size: 63
+  train_window: 1000
+  val_window: 200
+  purge_period: 126
+  warmup_steps: 2000
+  ramp_steps: 3000
+  lr_warmup_epochs: 8
+
+device: cpu
+
+output:
+  metrics_path: results/metrics_loop.json

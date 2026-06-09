@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ctm-stock-prediction"
+version = "0.1.0"
+description = "Conv-Temporal-Mamba stock prediction system"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0",
+    "numpy",
+    "pandas",
+    "pyyaml",
+    "scipy",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+execution = ["alpaca-py>=0.13.0"]
+hoffnung = []  # Hoffnung C++ GBDT core — build from ../Hoffnung (see docs)
+
+[tool.pyright]
+include = ["src", "scripts"]
+pythonVersion = "3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"

@@ -1,0 +1,22 @@
+execution:
+  broker:
+    name: alpaca
+    paper: true
+    api_key: ""  # set via env var or config
+    secret_key: ""
+  account:
+    initial_capital: 10000.0  # USD
+    max_leverage: 1.0
+    max_position_concentration: 0.10  # 10% max per position
+    max_gross_exposure: 0.90  # 90% max total
+    fractional_shares: true
+  risk:
+    max_daily_loss: 0.03  # 3% of NAV
+    max_drawdown: 0.15  # 15% from peak
+    min_signal_confidence: 0.01  # skip signals below this
+    max_correlation: 0.90  # max sector correlation
+  rebalance:
+    method: threshold  # threshold | periodic
+    threshold: 0.05  # rebalance if drift > 5%
+    frequency: daily
+    order_type: market

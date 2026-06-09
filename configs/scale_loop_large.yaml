@@ -1,0 +1,62 @@
+# CTM: Conv-Temporal-Mamba — Loop Large (Reduced) Scale
+# RecurrentCTM: n_loop_iters=8, model_dim=256, state_dim=24, use_decomp=true
+# Equivalent depth: n_layers * n_loop_iters = 3 * 8 = 24
+# Intended for GPU training (A100/RTX 4090+)
+scale: loop_large
+
+model:
+  input_dim: 9           # matches compute_all_features() output (9 features)
+  model_dim: 256           # 2× (from 128)
+  state_dim: 24            # reduced from 64
+  conv_kernel: 3
+  n_layers: 3              # reduced from 6
+  output_dim: 1
+  dropout: 0.2             # increased from 0.1; large model needs stronger regularization
+  use_decomp: true
+  bidirectional: false     # Do NOT enable: causal prediction
+  seq_len: 63
+  parallel_scan: true      # GPU: parallel scan;  CPU: switch to false
+  return_hidden: false
+  n_loop_iters: 8          # 160% (from 5)
+  loop_dropout: 0.2        # increased from 0.15 for deeper effective depth regularization
+
+scaling:
+  n_assets: 1
+  use_cross_attention: true
+  embedding_dim: null
+
+data:
+  csv_path: data/stock_prices.csv
+  target_column: forward_return
+  date_column: null
+  split:
+    train: 0.7
+    val: 0.15
+
+loss:
+  lambda_mse: 1.0
+  lambda_sharpe: 0.1
+  lambda_directional: 1.0
+  lambda_pinball: 0.1
+  lambda_reg: 0.01
+  pinball_tau: 0.05
+
+trainer:
+  n_epochs: 60             # fewer epochs — deeper model converges faster
+  batch_size: 16           # reduced for memory
+  lr: 0.0002               # slightly lower LR for deeper model
+  weight_decay: 0.05       # moderate regularization
+  grad_clip: 1.0
+  patience: 10
+  step_size: 63
+  train_window: 1000
+  val_window: 200
+  purge_period: 126
+  warmup_steps: 3000
+  ramp_steps: 4000
+  lr_warmup_epochs: 6
+
+device: cpu                 # change to cuda on real training GPU
+
+output:
+  metrics_path: results/metrics_loop_large.json

@@ -1,0 +1,55 @@
+scale: portfolio
+model:
+  input_dim: 9           # matches compute_all_features() output (9 features)
+  model_dim: 64
+  state_dim: 8
+  conv_kernel: 3
+  n_layers: 2
+  output_dim: 1
+  dropout: 0.2           # increased from 0.1 for overfitting protection
+  use_decomp: false
+  bidirectional: false
+  seq_len: 63
+  parallel_scan: true
+  return_hidden: false
+
+scaling:
+  n_assets: 100
+  use_cross_attention: true
+  embedding_dim: 16
+
+data:
+  csv_path: data/stock_prices.csv
+  target_column: forward_return
+  date_column: null
+  split:
+    train: 0.7
+    val: 0.15
+
+loss:
+  lambda_mse: 1.0
+  lambda_sharpe: 0.1
+  lambda_directional: 1.0
+  lambda_pinball: 0.1
+  lambda_reg: 0.01
+  pinball_tau: 0.05
+
+trainer:
+  n_epochs: 100
+  batch_size: 16
+  lr: 0.0003
+  weight_decay: 0.05
+  grad_clip: 1.0
+  patience: 10
+  step_size: 63
+  train_window: 1000
+  val_window: 200
+  purge_period: 126
+  warmup_steps: 2000
+  ramp_steps: 3000
+  lr_warmup_epochs: 10
+
+device: cpu
+
+output:
+  metrics_path: results/metrics.json
