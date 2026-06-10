@@ -1,0 +1,61 @@
+2026-06-09 13:37:37,646 [INFO] Loaded 477 stocks
+2026-06-09 13:38:18,689 [INFO]   Features: 150/477
+2026-06-09 13:38:59,808 [INFO]   Features: 300/477
+2026-06-09 13:39:43,074 [INFO]   Features: 450/477
+2026-06-09 13:40:21,993 [WARNING] FRED VIX: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)
+2026-06-09 13:40:52,205 [WARNING] FRED FedFunds: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)
+2026-06-09 13:41:22,407 [WARNING] FRED YieldSpread: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)
+2026-06-09 13:43:16,076 [INFO] Features: 37 total (9 base + 28 enhanced)
+2026-06-09 13:43:16,089 [INFO] 
+============================================================
+Horizon: 5d
+============================================================
+2026-06-09 13:43:16,089 [INFO]   Seed 42...
+2026-06-09 13:44:26,765 [INFO]     Best: ridge IC=0.0645±0.0380
+2026-06-09 13:44:26,766 [INFO]   Seed 123...
+2026-06-09 13:45:38,061 [INFO]     Best: ridge IC=0.0645±0.0380
+2026-06-09 13:45:38,062 [INFO]   Seed 456...
+2026-06-09 13:46:50,553 [INFO]     Best: ridge IC=0.0645±0.0380
+2026-06-09 13:46:50,553 [INFO]   --- Cross-seed avg (5d) ---
+2026-06-09 13:46:50,553 [INFO]     lgb                      : IC=0.0420±0.0003 (3 seeds)
+2026-06-09 13:46:50,553 [INFO]     ridge                    : IC=0.0645±0.0000 (3 seeds)
+2026-06-09 13:46:50,554 [INFO]     cb                       : IC=0.0339±0.0003 (3 seeds)
+2026-06-09 13:46:50,554 [INFO]     ridge_lgb_avg            : IC=0.0580±0.0001 (3 seeds)
+2026-06-09 13:46:50,554 [INFO]     ridge_lgb_weighted       : IC=0.0616±0.0004 (3 seeds)
+2026-06-09 13:46:50,554 [INFO] 
+============================================================
+Horizon: 21d
+============================================================
+2026-06-09 13:46:50,554 [INFO]   Seed 42...
+2026-06-09 13:48:04,889 [INFO]     Best: ridge_lgb_weighted IC=0.0634±0.0596
+2026-06-09 13:48:04,889 [INFO]   Seed 123...
+2026-06-09 13:49:19,498 [INFO]     Best: ridge_lgb_weighted IC=0.0636±0.0598
+2026-06-09 13:49:19,499 [INFO]   Seed 456...
+2026-06-09 13:50:33,738 [INFO]     Best: ridge_lgb_weighted IC=0.0640±0.0598
+2026-06-09 13:50:33,739 [INFO]   --- Cross-seed avg (21d) ---
+2026-06-09 13:50:33,739 [INFO]     lgb                      : IC=0.0480±0.0006 (3 seeds)
+2026-06-09 13:50:33,739 [INFO]     ridge                    : IC=0.0589±0.0000 (3 seeds)
+2026-06-09 13:50:33,739 [INFO]     cb                       : IC=0.0541±0.0005 (3 seeds)
+2026-06-09 13:50:33,740 [INFO]     ridge_lgb_avg            : IC=0.0574±0.0003 (3 seeds)
+2026-06-09 13:50:33,740 [INFO]     ridge_lgb_weighted       : IC=0.0637±0.0002 (3 seeds)
+
+================================================================================
+  PIPELINE v3 — P3 Macro + P5 Ensemble + Multi-Seed
+================================================================================
+
+  5d:
+    lgb                       IC=0.0420±0.0003 (3 seeds)
+    ridge                     IC=0.0645±0.0000 (3 seeds)
+    cb                        IC=0.0339±0.0003 (3 seeds)
+    ridge_lgb_avg             IC=0.0580±0.0001 (3 seeds)
+    ridge_lgb_weighted        IC=0.0616±0.0004 (3 seeds)
+
+  21d:
+    lgb                       IC=0.0480±0.0006 (3 seeds)
+    ridge                     IC=0.0589±0.0000 (3 seeds)
+    cb                        IC=0.0541±0.0005 (3 seeds)
+    ridge_lgb_avg             IC=0.0574±0.0003 (3 seeds)
+    ridge_lgb_weighted        IC=0.0637±0.0002 (3 seeds)
+
+  Runtime: 778s  |  Output: /root/results/pipeline_v3.json
+================================================================================

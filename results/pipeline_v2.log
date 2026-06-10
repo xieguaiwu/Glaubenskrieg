@@ -1,0 +1,89 @@
+2026-06-09 13:05:06,099 [INFO] ============================================================
+2026-06-09 13:05:06,099 [INFO] STEP 1: Load & Filter Data
+2026-06-09 13:05:06,099 [INFO] ============================================================
+2026-06-09 13:05:09,317 [INFO] Loaded 477 stocks with ≥2500 rows (from 477 total)
+2026-06-09 13:05:09,317 [INFO] ============================================================
+2026-06-09 13:05:09,317 [INFO] STEP 2: Compute Base OHLCV Features
+2026-06-09 13:05:09,317 [INFO] ============================================================
+2026-06-09 13:05:40,692 [INFO]   Features: 100/477 stocks
+2026-06-09 13:06:11,934 [INFO]   Features: 200/477 stocks
+2026-06-09 13:06:43,094 [INFO]   Features: 300/477 stocks
+2026-06-09 13:07:14,766 [INFO]   Features: 400/477 stocks
+2026-06-09 13:07:39,275 [INFO] Base features: 9 cols: ['simple_return', 'log_return', 'sma_5', 'sma_20', 'rsi_14', 'bollinger_position', 'volume_ratio', 'realized_vol_21', 'bias']
+2026-06-09 13:07:40,145 [INFO] Data shape: 2648 days × 477 stocks × 9 features
+2026-06-09 13:07:40,146 [INFO] Date range: 2015-11-19 ~ 2026-06-04
+2026-06-09 13:07:40,146 [INFO] ============================================================
+2026-06-09 13:07:40,146 [INFO] STEP 3: P1 — Enhanced Features
+2026-06-09 13:07:40,146 [INFO] ============================================================
+2026-06-09 13:07:44,344 [INFO]   +21 cross-sectional features (total: 30)
+2026-06-09 13:07:45,933 [INFO]   +4 momentum rank features (total: 34)
+2026-06-09 13:07:47,801 [INFO]   +1 illiquidity feature (total: 35)
+2026-06-09 13:07:47,801 [INFO] ============================================================
+2026-06-09 13:07:47,801 [INFO] STEP 4: P0 — Multi-Horizon Targets
+2026-06-09 13:07:47,801 [INFO] ============================================================
+2026-06-09 13:07:48,110 [INFO]   Targets computed for horizons: [1, 5, 21] + vol_adj_5d
+2026-06-09 13:07:48,110 [INFO] ============================================================
+2026-06-09 13:07:48,110 [INFO] STEP 5: Walk-Forward Evaluation
+2026-06-09 13:07:48,110 [INFO] ============================================================
+2026-06-09 13:07:48,110 [INFO] 
+--- Horizon: 1d (1d forward) ---
+2026-06-09 13:07:48,110 [INFO]   WF: 11 windows | 2648 days × 477 stocks × 35 feats | model=lgb
+2026-06-09 13:08:12,156 [INFO]   lgb   : IC=0.0146±0.0211  Sharpe=0.24  DirAcc=0.515  (11 windows)
+2026-06-09 13:08:12,156 [INFO]   WF: 11 windows | 2648 days × 477 stocks × 35 feats | model=ridge
+2026-06-09 13:08:14,965 [INFO]   ridge : IC=0.0112±0.0328  Sharpe=0.23  DirAcc=0.507  (11 windows)
+2026-06-09 13:08:14,965 [INFO] 
+--- Horizon: 5d (5d forward) ---
+2026-06-09 13:08:14,965 [INFO]   WF: 11 windows | 2648 days × 477 stocks × 35 feats | model=lgb
+2026-06-09 13:08:39,631 [INFO]   lgb   : IC=0.0409±0.0337  Sharpe=0.75  DirAcc=0.534  (11 windows)
+2026-06-09 13:08:39,632 [INFO]   WF: 11 windows | 2648 days × 477 stocks × 35 feats | model=ridge
+2026-06-09 13:08:42,440 [INFO]   ridge : IC=0.0648±0.0382  Sharpe=1.20  DirAcc=0.531  (11 windows)
+2026-06-09 13:08:42,441 [INFO] 
+--- Horizon: 21d (21d forward) ---
+2026-06-09 13:08:42,441 [INFO]   WF: 11 windows | 2648 days × 477 stocks × 35 feats | model=lgb
+2026-06-09 13:09:09,195 [INFO]   lgb   : IC=0.0495±0.0538  Sharpe=1.25  DirAcc=0.544  (11 windows)
+2026-06-09 13:09:09,195 [INFO]   WF: 11 windows | 2648 days × 477 stocks × 35 feats | model=ridge
+2026-06-09 13:09:11,793 [INFO]   ridge : IC=0.0595±0.0613  Sharpe=1.46  DirAcc=0.546  (11 windows)
+2026-06-09 13:09:11,793 [INFO] 
+--- Horizon: vol_adj_5d ---
+2026-06-09 13:09:11,793 [INFO]   WF: 11 windows | 2648 days × 477 stocks × 35 feats | model=lgb
+2026-06-09 13:09:32,916 [INFO]   lgb   : IC=-0.0049±0.0167  Sharpe=-0.21  DirAcc=0.527  (11 windows)
+2026-06-09 13:09:32,917 [INFO]   WF: 11 windows | 2648 days × 477 stocks × 35 feats | model=ridge
+2026-06-09 13:09:35,570 [INFO]   ridge : IC=-0.0245±0.0440  Sharpe=-0.15  DirAcc=0.492  (11 windows)
+2026-06-09 13:09:35,570 [INFO] ============================================================
+2026-06-09 13:09:35,570 [INFO] STEP 6: P2 — Regime-Adaptive Backtest
+2026-06-09 13:09:35,570 [INFO] ============================================================
+2026-06-09 13:09:35,570 [INFO]   Training on days 0-1324, testing on 1324-2648
+2026-06-09 13:10:00,101 [INFO]   OOS predictions generated for 1512 days
+2026-06-09 13:10:00,225 [INFO]   Strategy Sharpe:  0.9273
+2026-06-09 13:10:00,225 [INFO]   Benchmark Sharpe: 0.9570
+2026-06-09 13:10:00,225 [INFO]   Δ Sharpe:         -0.0297
+2026-06-09 13:10:00,225 [INFO]   Regime counts:    {'low_vol_trending': 213, 'low_vol_mean_reverting': 262, 'high_vol': 29}
+2026-06-09 13:10:00,237 [INFO]   Equity placeholder saved to /root/results/pipeline_v2_equity.csv
+
+================================================================================
+  GLAUBENSKRIEG PIPELINE v2 — RESULTS
+================================================================================
+  Data: 477 stocks × 2648 days (2015-11-19 ~ 2026-06-04)
+  Features: 35 (9 base + 26 enhanced)
+  Walk-Forward: 1008/126/252/126 (train/purge/val/step)
+
+  Horizon        Model          IC        ±   Sharpe  DirAcc  Wins
+  -------------- -------- -------- -------- -------- ------- -----
+  1d             lgb        0.0146   0.0211     0.24   0.515    11
+  1d             ridge      0.0112   0.0328     0.23   0.507    11
+  5d             lgb        0.0409   0.0337     0.75   0.534    11
+  5d             ridge      0.0648   0.0382     1.20   0.531    11
+  21d            lgb        0.0495   0.0538     1.25   0.544    11
+  21d            ridge      0.0595   0.0613     1.46   0.546    11
+  vol_adj_5d     lgb       -0.0049   0.0167    -0.21   0.527    11
+  vol_adj_5d     ridge     -0.0245   0.0440    -0.15   0.492    11
+
+  BACKTEST (regime-adaptive, top 100, rebalance 5d):
+    Strategy Sharpe:  0.9273
+    Benchmark Sharpe: 0.9570
+    Δ Sharpe:         -0.0297
+    Regime counts:    {'low_vol_trending': 213, 'low_vol_mean_reverting': 262, 'high_vol': 29}
+
+  Runtime: 1780980540s
+  Output:  /root/results/pipeline_v2.json
+================================================================================
