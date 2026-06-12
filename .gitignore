@@ -1,9 +1,11 @@
 # Build artifacts
 build/
+build2/
 dist/
 *.egg-info/
 *.so
 *.o
+compile_commands.json
 
 # Python
 __pycache__/
@@ -19,9 +21,11 @@ test_checkpoints/
 .omo/
 .sisyphus/
 .deepseek/
+.cache/
+.clangd/
 
 # Data (local only)
-/data/
+#/data/
 /new_data/
 
 # Checkpoints (local only)
@@ -33,12 +37,15 @@ logs/
 *.log
 
 # Results (local only)
-results/
+#results/
 
 # Dev notes (local only)
 daily/
 docs/
 notes/
+Hoffnung/improvement-loop.md
+Hoffnung/revised_task_checklist.md
+Hoffnung/gbdt_plan.*
 
 # Personal docs
 AGENTS.md
