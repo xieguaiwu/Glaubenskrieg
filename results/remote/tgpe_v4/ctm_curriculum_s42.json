@@ -1,0 +1,120 @@
+{
+  "n_windows": 12,
+  "mean_sharpe": 0.0,
+  "std_sharpe": 0.0,
+  "max_sharpe": 0.0,
+  "min_sharpe": 0.0,
+  "model_params": {
+    "n_assets": 50,
+    "input_dim": 9,
+    "model_dim": 64,
+    "state_dim": 8,
+    "n_layers": 2,
+    "output_dim": 1,
+    "embedding_dim": null,
+    "use_cross_attention": true,
+    "dropout": 0.2,
+    "conv_kernel": 3,
+    "use_decomp": false,
+    "bidirectional": false,
+    "parallel_scan": true,
+    "return_hidden": false,
+    "use_time_gate": false
+  },
+  "results": [
+    {
+      "window_start": 0,
+      "window_end": 543,
+      "best_sharpe": 0.0,
+      "epochs_run": 25,
+      "ctm_ic": 0.14273655476625546
+    },
+    {
+      "window_start": 21,
+      "window_end": 564,
+      "best_sharpe": 0.0,
+      "epochs_run": 11,
+      "ctm_ic": 0.04835827646106286
+    },
+    {
+      "window_start": 42,
+      "window_end": 585,
+      "best_sharpe": 0.0,
+      "epochs_run": 25,
+      "ctm_ic": 0.09170405107915934
+    },
+    {
+      "window_start": 63,
+      "window_end": 606,
+      "best_sharpe": 0.0,
+      "epochs_run": 11,
+      "ctm_ic": 0.1341747609680817
+    },
+    {
+      "window_start": 84,
+      "window_end": 627,
+      "best_sharpe": 0.0,
+      "epochs_run": 12,
+      "ctm_ic": -0.07407723614128793
+    },
+    {
+      "window_start": 105,
+      "window_end": 648,
+      "best_sharpe": 0.0,
+      "epochs_run": 12,
+      "ctm_ic": -0.03395104349091075
+    },
+    {
+      "window_start": 126,
+      "window_end": 669,
+      "best_sharpe": 0.0,
+      "epochs_run": 12,
+      "ctm_ic": 0.21024668741002944
+    },
+    {
+      "window_start": 147,
+      "window_end": 690,
+      "best_sharpe": 0.0,
+      "epochs_run": 41,
+      "ctm_ic": 0.09830385722315158
+    },
+    {
+      "window_start": 168,
+      "window_end": 711,
+      "best_sharpe": 0.0,
+      "epochs_run": 47,
+      "ctm_ic": 0.1504031583350655
+    },
+    {
+      "window_start": 189,
+      "window_end": 732,
+      "best_sharpe": 0.0,
+      "epochs_run": 12,
+      "ctm_ic": 0.20139523014366081
+    },
+    {
+      "window_start": 210,
+      "window_end": 753,
+      "best_sharpe": 0.0,
+      "epochs_run": 26,
+      "ctm_ic": 0.11162857048331831
+    },
+    {
+      "window_start": 231,
+      "window_end": 774,
+      "best_sharpe": 0.0,
+      "epochs_run": 13,
+      "ctm_ic": 0.16398493168249162
+    }
+  ],
+  "mean_ctm_ic": 0.10374231657667317,
+  "std_ctm_ic": 0.08317436502051748,
+  "test_metrics": {
+    "test_loss": 7.478801995694281,
+    "test_sharpe": 0.0,
+    "test_directional_accuracy": 1.0
+  },
+  "saved_models": {
+    "ctm_state_dict": "/root/checkpoints/tgpe_v4_ctm_curriculum_s42/ctm_model.pt"
+  }
+}

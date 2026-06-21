@@ -1,0 +1,235 @@
+{
+  "n_windows": 28,
+  "mean_sharpe": 0.3228233490809623,
+  "std_sharpe": 0.8457088698242252,
+  "mean_ic": 0.01436916783787896,
+  "std_ic": 0.03757859216285986,
+  "mean_directional_accuracy": 0.4774196428571429,
+  "std_directional_accuracy": 0.025647512199340246,
+  "windows": [
+    {
+      "window": 0,
+      "window_start": 0,
+      "window_end": 543,
+      "sharpe": -0.04534543367762276,
+      "ic": -0.00038212802731124704,
+      "directional_accuracy": 0.44299999999999995
+    },
+    {
+      "window": 1,
+      "window_start": 21,
+      "window_end": 564,
+      "sharpe": -0.6929293295597299,
+      "ic": 0.036377872253455956,
+      "directional_accuracy": 0.42524999999999996
+    },
+    {
+      "window": 2,
+      "window_start": 42,
+      "window_end": 585,
+      "sharpe": -0.10479940208964005,
+      "ic": 0.029622026587089144,
+      "directional_accuracy": 0.44475000000000003
+    },
+    {
+      "window": 3,
+      "window_start": 63,
+      "window_end": 606,
+      "sharpe": 0.4420901360057035,
+      "ic": 0.03302947553006164,
+      "directional_accuracy": 0.479
+    },
+    {
+      "window": 4,
+      "window_start": 84,
+      "window_end": 627,
+      "sharpe": -0.24859558406219676,
+      "ic": 0.058457048203928344,
+      "directional_accuracy": 0.46324999999999994
+    },
+    {
+      "window": 5,
+      "window_start": 105,
+      "window_end": 648,
+      "sharpe": -0.029738313078336392,
+      "ic": 0.04438260705866445,
+      "directional_accuracy": 0.47700000000000004
+    },
+    {
+      "window": 6,
+      "window_start": 126,
+      "window_end": 669,
+      "sharpe": 0.060030771209100005,
+      "ic": -0.01325398167710144,
+      "directional_accuracy": 0.4784999999999999
+    },
+    {
+      "window": 7,
+      "window_start": 147,
+      "window_end": 690,
+      "sharpe": -1.049548569174609,
+      "ic": 0.014208085879588838,
+      "directional_accuracy": 0.45349999999999996
+    },
+    {
+      "window": 8,
+      "window_start": 168,
+      "window_end": 711,
+      "sharpe": -0.8881241622784808,
+      "ic": -0.01861035018078673,
+      "directional_accuracy": 0.44525000000000003
+    },
+    {
+      "window": 9,
+      "window_start": 189,
+      "window_end": 732,
+      "sharpe": -1.2197984999167029,
+      "ic": 0.02898125389574082,
+      "directional_accuracy": 0.4337499999999999
+    },
+    {
+      "window": 10,
+      "window_start": 210,
+      "window_end": 753,
+      "sharpe": 0.8112173293812481,
+      "ic": 0.041573293198947765,
+      "directional_accuracy": 0.47700000000000004
+    },
+    {
+      "window": 11,
+      "window_start": 231,
+      "window_end": 774,
+      "sharpe": 1.5660659868465663,
+      "ic": 0.017051983015784315,
+      "directional_accuracy": 0.505
+    },
+    {
+      "window": 12,
+      "window_start": 252,
+      "window_end": 795,
+      "sharpe": 2.057497591003774,
+      "ic": 0.08406518615423213,
+      "directional_accuracy": 0.53
+    },
+    {
+      "window": 13,
+      "window_start": 273,
+      "window_end": 816,
+      "sharpe": 2.0258252402458483,
+      "ic": 0.054508088424041,
+      "directional_accuracy": 0.5315
+    },
+    {
+      "window": 14,
+      "window_start": 294,
+      "window_end": 837,
+      "sharpe": -0.12942651059086038,
+      "ic": 0.05234681582937609,
+      "directional_accuracy": 0.48550000000000004
+    },
+    {
+      "window": 15,
+      "window_start": 315,
+      "window_end": 858,
+      "sharpe": 0.8284467428708189,
+      "ic": 0.03704955547236231,
+      "directional_accuracy": 0.49924999999999997
+    },
+    {
+      "window": 16,
+      "window_start": 336,
+      "window_end": 879,
+      "sharpe": 0.04712796428240305,
+      "ic": 0.08099633794964016,
+      "directional_accuracy": 0.4754999999999999
+    },
+    {
+      "window": 17,
+      "window_start": 357,
+      "window_end": 900,
+      "sharpe": -0.026681244389818982,
+      "ic": -0.0851830728310129,
+      "directional_accuracy": 0.4795
+    },
+    {
+      "window": 18,
+      "window_start": 378,
+      "window_end": 921,
+      "sharpe": 0.3795931667226469,
+      "ic": -0.009184932512032878,
+      "directional_accuracy": 0.49050000000000005
+    },
+    {
+      "window": 19,
+      "window_start": 399,
+      "window_end": 942,
+      "sharpe": 1.4627958212092584,
+      "ic": -0.009228763545737968,
+      "directional_accuracy": 0.50375
+    },
+    {
+      "window": 20,
+      "window_start": 420,
+      "window_end": 963,
+      "sharpe": 1.2240780430737739,
+      "ic": -0.03196944471462145,
+      "directional_accuracy": 0.4975
+    },
+    {
+      "window": 21,
+      "window_start": 441,
+      "window_end": 984,
+      "sharpe": 1.2002706567210961,
+      "ic": 0.024458707488654526,
+      "directional_accuracy": 0.50025
+    },
+    {
+      "window": 22,
+      "window_start": 462,
+      "window_end": 1005,
+      "sharpe": 1.1849703140435102,
+      "ic": -0.035669576536483,
+      "directional_accuracy": 0.5015000000000001
+    },
+    {
+      "window": 23,
+      "window_start": 483,
+      "window_end": 1026,
+      "sharpe": 0.009262827797204437,
+      "ic": -0.0004813057395985576,
+      "directional_accuracy": 0.46524999999999994
+    },
+    {
+      "window": 24,
+      "window_start": 504,
+      "window_end": 1047,
+      "sharpe": 0.08978490178576988,
+      "ic": -0.041190342321823795,
+      "directional_accuracy": 0.4745
+    },
+    {
+      "window": 25,
+      "window_start": 525,
+      "window_end": 1068,
+      "sharpe": -0.08507232078333817,
+      "ic": 0.007233903130845406,
+      "directional_accuracy": 0.46825000000000006
+    },
+    {
+      "window": 26,
+      "window_start": 546,
+      "window_end": 1089,
+      "sharpe": 0.09810724194493776,
+      "ic": -0.010169142245053126,
+      "directional_accuracy": 0.47100000000000003
+    },
+    {
+      "window": 27,
+      "window_start": 567,
+      "window_end": 1110,
+      "sharpe": 0.07194840872461895,
+      "ic": 0.013317499719760978,
+      "directional_accuracy": 0.46875
+    }
+  ]
+}

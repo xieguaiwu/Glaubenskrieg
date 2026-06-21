@@ -1,0 +1,235 @@
+{
+  "n_windows": 28,
+  "mean_sharpe": 0.17559836067582937,
+  "std_sharpe": 0.519692170955585,
+  "mean_ic": 0.05086949495062537,
+  "std_ic": 0.02683772556560552,
+  "mean_directional_accuracy": 0.4906785714285714,
+  "std_directional_accuracy": 0.013912330274740798,
+  "windows": [
+    {
+      "window": 0,
+      "window_start": 0,
+      "window_end": 543,
+      "sharpe": 0.3080267463886353,
+      "ic": 0.0607329686999751,
+      "directional_accuracy": 0.49024999999999996
+    },
+    {
+      "window": 1,
+      "window_start": 21,
+      "window_end": 564,
+      "sharpe": 0.26605540555006224,
+      "ic": 0.09704805475078818,
+      "directional_accuracy": 0.4825
+    },
+    {
+      "window": 2,
+      "window_start": 42,
+      "window_end": 585,
+      "sharpe": 0.849719010981471,
+      "ic": 0.08340549915193965,
+      "directional_accuracy": 0.498
+    },
+    {
+      "window": 3,
+      "window_start": 63,
+      "window_end": 606,
+      "sharpe": 0.24528291096897967,
+      "ic": 0.05327795849110302,
+      "directional_accuracy": 0.4979999999999999
+    },
+    {
+      "window": 4,
+      "window_start": 84,
+      "window_end": 627,
+      "sharpe": 0.5693223711013634,
+      "ic": 0.0831029099326535,
+      "directional_accuracy": 0.50875
+    },
+    {
+      "window": 5,
+      "window_start": 105,
+      "window_end": 648,
+      "sharpe": 0.45856903705793334,
+      "ic": 0.07593900813475984,
+      "directional_accuracy": 0.5065
+    },
+    {
+      "window": 6,
+      "window_start": 126,
+      "window_end": 669,
+      "sharpe": 0.3638992234177817,
+      "ic": 0.06371014866905837,
+      "directional_accuracy": 0.5005
+    },
+    {
+      "window": 7,
+      "window_start": 147,
+      "window_end": 690,
+      "sharpe": 0.40267669388370897,
+      "ic": 0.0805025097338455,
+      "directional_accuracy": 0.49674999999999997
+    },
+    {
+      "window": 8,
+      "window_start": 168,
+      "window_end": 711,
+      "sharpe": -0.1821007337713497,
+      "ic": 0.03345910468899381,
+      "directional_accuracy": 0.47574999999999995
+    },
+    {
+      "window": 9,
+      "window_start": 189,
+      "window_end": 732,
+      "sharpe": 0.7237675378115155,
+      "ic": 0.07960399654779388,
+      "directional_accuracy": 0.51
+    },
+    {
+      "window": 10,
+      "window_start": 210,
+      "window_end": 753,
+      "sharpe": 0.2784265868539866,
+      "ic": 0.024620945635293667,
+      "directional_accuracy": 0.48649999999999993
+    },
+    {
+      "window": 11,
+      "window_start": 231,
+      "window_end": 774,
+      "sharpe": -0.6161304276935928,
+      "ic": 0.020176035668521032,
+      "directional_accuracy": 0.47674999999999995
+    },
+    {
+      "window": 12,
+      "window_start": 252,
+      "window_end": 795,
+      "sharpe": -0.946252053531854,
+      "ic": 0.0181007610168859,
+      "directional_accuracy": 0.4684999999999999
+    },
+    {
+      "window": 13,
+      "window_start": 273,
+      "window_end": 816,
+      "sharpe": 0.03595098674160717,
+      "ic": 0.02375219134999743,
+      "directional_accuracy": 0.49224999999999997
+    },
+    {
+      "window": 14,
+      "window_start": 294,
+      "window_end": 837,
+      "sharpe": 0.32498813973334767,
+      "ic": 0.03386229363347926,
+      "directional_accuracy": 0.49825
+    },
+    {
+      "window": 15,
+      "window_start": 315,
+      "window_end": 858,
+      "sharpe": 0.5002271162359692,
+      "ic": 0.028778525610639667,
+      "directional_accuracy": 0.493
+    },
+    {
+      "window": 16,
+      "window_start": 336,
+      "window_end": 879,
+      "sharpe": 1.2207594820577312,
+      "ic": 0.10902245876662514,
+      "directional_accuracy": 0.5065
+    },
+    {
+      "window": 17,
+      "window_start": 357,
+      "window_end": 900,
+      "sharpe": 0.5070972736431959,
+      "ic": 0.052975902736387345,
+      "directional_accuracy": 0.5055
+    },
+    {
+      "window": 18,
+      "window_start": 378,
+      "window_end": 921,
+      "sharpe": -0.04185310351998242,
+      "ic": -0.0017539576514680024,
+      "directional_accuracy": 0.4640000000000001
+    },
+    {
+      "window": 19,
+      "window_start": 399,
+      "window_end": 942,
+      "sharpe": -0.9132344828400725,
+      "ic": 0.03181853325354043,
+      "directional_accuracy": 0.4595
+    },
+    {
+      "window": 20,
+      "window_start": 420,
+      "window_end": 963,
+      "sharpe": -0.4751886789484944,
+      "ic": 0.05171261526251736,
+      "directional_accuracy": 0.4809999999999999
+    },
+    {
+      "window": 21,
+      "window_start": 441,
+      "window_end": 984,
+      "sharpe": -0.3374095288037676,
+      "ic": 0.025941052167526582,
+      "directional_accuracy": 0.47675000000000006
+    },
+    {
+      "window": 22,
+      "window_start": 462,
+      "window_end": 1005,
+      "sharpe": -0.7094413742246377,
+      "ic": 0.01614319876912092,
+      "directional_accuracy": 0.47200000000000003
+    },
+    {
+      "window": 23,
+      "window_start": 483,
+      "window_end": 1026,
+      "sharpe": 0.6402980368412764,
+      "ic": 0.055031258432270566,
+      "directional_accuracy": 0.5042500000000001
+    },
+    {
+      "window": 24,
+      "window_start": 504,
+      "window_end": 1047,
+      "sharpe": 0.2699230324630152,
+      "ic": 0.04505072923635873,
+      "directional_accuracy": 0.49475
+    },
+    {
+      "window": 25,
+      "window_start": 525,
+      "window_end": 1068,
+      "sharpe": 0.45947218132895956,
+      "ic": 0.06792478435941857,
+      "directional_accuracy": 0.4925
+    },
+    {
+      "window": 26,
+      "window_start": 546,
+      "window_end": 1089,
+      "sharpe": 0.2968773633650587,
+      "ic": 0.04847795735889032,
+      "directional_accuracy": 0.5010000000000001
+    },
+    {
+      "window": 27,
+      "window_start": 567,
+      "window_end": 1110,
+      "sharpe": 0.4170253458313758,
+      "ic": 0.061928414210594786,
+      "directional_accuracy": 0.499
+    }
+  ]
+}

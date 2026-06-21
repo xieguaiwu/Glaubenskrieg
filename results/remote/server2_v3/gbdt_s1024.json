@@ -1,0 +1,91 @@
+{
+  "n_windows": 10,
+  "mean_sharpe": 0.43139678165389467,
+  "std_sharpe": 0.8647162795220948,
+  "mean_ic": 0.031762078742555114,
+  "std_ic": 0.032238541865774746,
+  "mean_directional_accuracy": 0.480825,
+  "std_directional_accuracy": 0.02774370424078226,
+  "windows": [
+    {
+      "window": 0,
+      "window_start": 0,
+      "window_end": 543,
+      "sharpe": -0.008226276799748904,
+      "ic": 0.007464032170799533,
+      "directional_accuracy": 0.4435
+    },
+    {
+      "window": 1,
+      "window_start": 63,
+      "window_end": 606,
+      "sharpe": 0.24870182445780886,
+      "ic": 0.07604208357834848,
+      "directional_accuracy": 0.4775
+    },
+    {
+      "window": 2,
+      "window_start": 126,
+      "window_end": 669,
+      "sharpe": 0.24298372152520925,
+      "ic": 0.05102954450319152,
+      "directional_accuracy": 0.48474999999999996
+    },
+    {
+      "window": 3,
+      "window_start": 189,
+      "window_end": 732,
+      "sharpe": -1.217419300145452,
+      "ic": 0.02362256467992312,
+      "directional_accuracy": 0.43199999999999994
+    },
+    {
+      "window": 4,
+      "window_start": 252,
+      "window_end": 795,
+      "sharpe": 2.2600694462039375,
+      "ic": 0.06987989901225584,
+      "directional_accuracy": 0.5329999999999999
+    },
+    {
+      "window": 5,
+      "window_start": 315,
+      "window_end": 858,
+      "sharpe": 0.7557249242056865,
+      "ic": 0.05016073519320821,
+      "directional_accuracy": 0.49825
+    },
+    {
+      "window": 6,
+      "window_start": 378,
+      "window_end": 921,
+      "sharpe": 0.6361280804006019,
+      "ic": 0.046975610535231034,
+      "directional_accuracy": 0.49575
+    },
+    {
+      "window": 7,
+      "window_start": 441,
+      "window_end": 984,
+      "sharpe": 1.2794438860747164,
+      "ic": 0.03165922654757871,
+      "directional_accuracy": 0.5015
+    },
+    {
+      "window": 8,
+      "window_start": 504,
+      "window_end": 1047,
+      "sharpe": 0.12089151560634606,
+      "ic": -0.012386977566190038,
+      "directional_accuracy": 0.47450000000000003
+    },
+    {
+      "window": 9,
+      "window_start": 567,
+      "window_end": 1110,
+      "sharpe": -0.0043300049901587815,
+      "ic": -0.026825931228795313,
+      "directional_accuracy": 0.4675
+    }
+  ]
+}

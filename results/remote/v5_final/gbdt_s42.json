@@ -1,0 +1,83 @@
+{
+  "n_windows": 9,
+  "mean_sharpe": -0.5313608291945096,
+  "std_sharpe": 0.823670866806659,
+  "mean_ic": 0.005299117760916544,
+  "std_ic": 0.018159123546159638,
+  "mean_directional_accuracy": 0.4683611111111111,
+  "std_directional_accuracy": 0.05242482860554707,
+  "windows": [
+    {
+      "window": 0,
+      "window_start": 0,
+      "window_end": 606,
+      "sharpe": -0.7546994999554967,
+      "ic": 0.025535981401961772,
+      "directional_accuracy": 0.44925
+    },
+    {
+      "window": 1,
+      "window_start": 63,
+      "window_end": 669,
+      "sharpe": 0.32034209734862806,
+      "ic": 0.04515866055593621,
+      "directional_accuracy": 0.4875
+    },
+    {
+      "window": 2,
+      "window_start": 126,
+      "window_end": 732,
+      "sharpe": -0.9159488130928146,
+      "ic": -0.02300258210964909,
+      "directional_accuracy": 0.46474999999999994
+    },
+    {
+      "window": 3,
+      "window_start": 189,
+      "window_end": 795,
+      "sharpe": -1.686635377042692,
+      "ic": 0.0,
+      "directional_accuracy": 0.41300000000000003
+    },
+    {
+      "window": 4,
+      "window_start": 252,
+      "window_end": 858,
+      "sharpe": 0.6551223971364968,
+      "ic": 0.0,
+      "directional_accuracy": 0.5535
+    },
+    {
+      "window": 5,
+      "window_start": 315,
+      "window_end": 921,
+      "sharpe": 0.6052000435686071,
+      "ic": 0.0,
+      "directional_accuracy": 0.55875
+    },
+    {
+      "window": 6,
+      "window_start": 378,
+      "window_end": 984,
+      "sharpe": -1.5637558919882324,
+      "ic": 0.0,
+      "directional_accuracy": 0.40549999999999997
+    },
+    {
+      "window": 7,
+      "window_start": 441,
+      "window_end": 1047,
+      "sharpe": -0.7945152728134552,
+      "ic": 0.0,
+      "directional_accuracy": 0.43400000000000005
+    },
+    {
+      "window": 8,
+      "window_start": 504,
+      "window_end": 1110,
+      "sharpe": -0.6473571459116269,
+      "ic": 0.0,
+      "directional_accuracy": 0.44900000000000007
+    }
+  ]
+}

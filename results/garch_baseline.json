@@ -1,0 +1,379 @@
+{
+  "config": {
+    "data_dir": "/home/xieguiawu/Desktop/ML/Glaubenskrieg/new_data/data/us_stocks",
+    "n_stocks": 47,
+    "seed": 42,
+    "train_days": 1000,
+    "purge_days": 126,
+    "val_days": 200,
+    "step_days": 126,
+    "target": "1-step-ahead squared percentage log returns",
+    "return_scale": 100.0,
+    "garch_spec": "GARCH(1,1) with normal innovations",
+    "lgb_spec": "LGBMRegressor on log(y+\u03b5) transform, num_leaves=31, max_depth=6, lr=0.05, 300 rounds",
+    "lgb_log_floor": 0.0001,
+    "features": [
+      "simple_return",
+      "log_return",
+      "sma_5",
+      "sma_20",
+      "rsi_14",
+      "bollinger_position",
+      "volume_ratio",
+      "realized_vol_21",
+      "bias",
+      "sq_return_lag1"
+    ]
+  },
+  "aggregate": {
+    "n_stocks_total": 47,
+    "n_stocks_valid": 47,
+    "per_predictor": {
+      "garch": {
+        "mean_qlike": 2.3148619655110267,
+        "median_qlike": 2.1556494575036935,
+        "std_qlike": 0.5578025331560158,
+        "n_valid": 47
+      },
+      "lgb": {
+        "mean_qlike": 12.747211942054799,
+        "median_qlike": 5.750501163636679,
+        "std_qlike": 47.003236600973246,
+        "n_valid": 47
+      },
+      "mean": {
+        "mean_qlike": 2.434320122948985,
+        "median_qlike": 2.2615639607905584,
+        "std_qlike": 0.5586709730385299,
+        "n_valid": 47
+      },
+      "persistence": {
+        "mean_qlike": 436.9020524668857,
+        "median_qlike": 291.82734302197827,
+        "std_qlike": 501.234216864929,
+        "n_valid": 47
+      }
+    },
+    "fraction_lgb_better_than_garch": 0.0,
+    "avg_ranks": {
+      "garch": 0.1276595744680851,
+      "lgb": 2.0,
+      "mean": 0.8723404255319149,
+      "persistence": 3.0
+    },
+    "paired_ttest_lgb_vs_garch": {
+      "t_statistic": -1.5032709486368367,
+      "p_value": 0.13960416481951105,
+      "mean_delta": -10.43234997654377,
+      "std_delta": 47.57664489860644,
+      "n_pairs": 47,
+      "interpretation": "No significant difference"
+    },
+    "diebold_mariano_lgb_vs_garch": {
+      "dm_statistic": -6.734954763326011,
+      "p_value": 1.6397994073713562e-11,
+      "mean_differential": -9.865571451900074,
+      "n": 70938,
+      "loss_type": "qlike"
+    },
+    "diebold_mariano_lgb_vs_persistence": {
+      "dm_statistic": -7.025458884237606,
+      "p_value": 2.133626608724626e-12,
+      "mean_differential": -424.42507825781956,
+      "n": 70938,
+      "loss_type": "qlike"
+    },
+    "diebold_mariano_garch_vs_persistence": {
+      "dm_statistic": -7.190119285642808,
+      "p_value": 6.472600233564663e-13,
+      "mean_differential": -434.2906497097197,
+      "n": 70938,
+      "loss_type": "qlike"
+    },
+    "per_stock": {
+      "A": {
+        "garch_qlike": 2.1556494575036935,
+        "lgb_qlike": 5.1153404546232455,
+        "mean_qlike": 2.1188773501699205,
+        "persistence_qlike": 505.92332550619216
+      },
+      "AAPL": {
+        "garch_qlike": 2.0988518319539784,
+        "lgb_qlike": 5.022165257744084,
+        "mean_qlike": 2.2615639607905584,
+        "persistence_qlike": 278.39847213430716
+      },
+      "ABBV": {
+        "garch_qlike": 1.8108743362072335,
+        "lgb_qlike": 3.94071014884576,
+        "mean_qlike": 1.8623372901953348,
+        "persistence_qlike": 237.11941959081418
+      },
+      "ABT": {
+        "garch_qlike": 1.7591113632691369,
+        "lgb_qlike": 4.620386312109418,
+        "mean_qlike": 1.8221507909897179,
+        "persistence_qlike": 147.8271216517262
+      },
+      "ACGL": {
+        "garch_qlike": 2.2022699959690923,
+        "lgb_qlike": 7.037516484596695,
+        "mean_qlike": 2.626775603527888,
+        "persistence_qlike": 190.3374091360999
+      },
+      "ACN": {
+        "garch_qlike": 2.1178108061760197,
+        "lgb_qlike": 5.90393930358615,
+        "mean_qlike": 2.1650571808779824,
+        "persistence_qlike": 300.26908347798724
+      },
+      "ADBE": {
+        "garch_qlike": 2.697772773955447,
+        "lgb_qlike": 5.802820742693464,
+        "mean_qlike": 2.6629786299281184,
+        "persistence_qlike": 295.33777179470593
+      },
+      "ADI": {
+        "garch_qlike": 2.3748080833402345,
+        "lgb_qlike": 5.461872476645245,
+        "mean_qlike": 2.4487684083518135,
+        "persistence_qlike": 418.7050013537506
+      },
+      "ADM": {
+        "garch_qlike": 2.436027863636697,
+        "lgb_qlike": 5.750501163636679,
+        "mean_qlike": 2.1931916868494414,
+        "persistence_qlike": 87.6461497514193
+      },
+      "ADP": {
+        "garch_qlike": 1.7419303025357507,
+        "lgb_qlike": 4.637703008826607,
+        "mean_qlike": 1.870377405992654,
+        "persistence_qlike": 135.7283514369305
+      },
+      "ADSK": {
+        "garch_qlike": 2.546859860605856,
+        "lgb_qlike": 4.894493728047377,
+        "mean_qlike": 2.6290523057027375,
+        "persistence_qlike": 181.8784130351042
+      },
+      "AEE": {
+        "garch_qlike": 1.427079557451249,
+        "lgb_qlike": 3.7201921045237034,
+        "mean_qlike": 1.5812827571611903,
+        "persistence_qlike": 291.82734302197827
+      },
+      "AEP": {
+        "garch_qlike": 1.4881557045413734,
+        "lgb_qlike": 3.7671423068593883,
+        "mean_qlike": 1.5844042847451907,
+        "persistence_qlike": 393.14526410280786
+      },
+      "AES": {
+        "garch_qlike": 2.7996006679112773,
+        "lgb_qlike": 6.6581685915781685,
+        "mean_qlike": 2.849113428096262,
+        "persistence_qlike": 2152.6436376828283
+      },
+      "AFL": {
+        "garch_qlike": 1.8087372852769843,
+        "lgb_qlike": 4.893381571695139,
+        "mean_qlike": 2.199912454835129,
+        "persistence_qlike": 172.68138947620247
+      },
+      "AIG": {
+        "garch_qlike": 2.2267665921353865,
+        "lgb_qlike": 11.84726595100034,
+        "mean_qlike": 2.948705254558066,
+        "persistence_qlike": 760.7281782851239
+      },
+      "AIZ": {
+        "garch_qlike": 2.0364630413292097,
+        "lgb_qlike": 6.037964881700086,
+        "mean_qlike": 2.0987079233734085,
+        "persistence_qlike": 282.83323858233206
+      },
+      "AJG": {
+        "garch_qlike": 1.7546085640435973,
+        "lgb_qlike": 5.047466446260529,
+        "mean_qlike": 1.8777695213864745,
+        "persistence_qlike": 387.9649300468204
+      },
+      "AKAM": {
+        "garch_qlike": 2.525093997238644,
+        "lgb_qlike": 6.810624839016343,
+        "mean_qlike": 2.592962875383652,
+        "persistence_qlike": 500.25055595765144
+      },
+      "ALB": {
+        "garch_qlike": 3.497030579426244,
+        "lgb_qlike": 8.678388675987877,
+        "mean_qlike": 3.633103779174165,
+        "persistence_qlike": 588.6861379650625
+      },
+      "ALGN": {
+        "garch_qlike": 3.442321571209716,
+        "lgb_qlike": 8.299811186004968,
+        "mean_qlike": 3.414469410279689,
+        "persistence_qlike": 273.09204625032896
+      },
+      "ALL": {
+        "garch_qlike": 1.9507507888074158,
+        "lgb_qlike": 6.576511403437901,
+        "mean_qlike": 2.047343823421935,
+        "persistence_qlike": 318.45541791040296
+      },
+      "ALLE": {
+        "garch_qlike": 2.08638782344547,
+        "lgb_qlike": 4.88303523136843,
+        "mean_qlike": 2.1844213240431927,
+        "persistence_qlike": 182.93262149106332
+      },
+      "ALNY": {
+        "garch_qlike": 3.2398024641875116,
+        "lgb_qlike": 5.091253671936086,
+        "mean_qlike": 3.1960087293314343,
+        "persistence_qlike": 1026.8513084004583
+      },
+      "AMAT": {
+        "garch_qlike": 3.0359357207801203,
+        "lgb_qlike": 6.536523893152289,
+        "mean_qlike": 3.1128667130728718,
+        "persistence_qlike": 289.8873224785882
+      },
+      "AMCR": {
+        "garch_qlike": 1.8348244314705022,
+        "lgb_qlike": 331.3634837824167,
+        "mean_qlike": 1.9059247409074709,
+        "persistence_qlike": 603.3744806346533
+      },
+      "AMD": {
+        "garch_qlike": 3.4252968880889174,
+        "lgb_qlike": 5.756716938021467,
+        "mean_qlike": 3.437066439519494,
+        "persistence_qlike": 655.5565859658641
+      },
+      "AME": {
+        "garch_qlike": 1.7023409388654294,
+        "lgb_qlike": 4.417469786849876,
+        "mean_qlike": 1.821610669124031,
+        "persistence_qlike": 167.80782914487722
+      },
+      "AMGN": {
+        "garch_qlike": 1.869178876117721,
+        "lgb_qlike": 4.5460875111002235,
+        "mean_qlike": 1.8685706150752428,
+        "persistence_qlike": 133.57997631943374
+      },
+      "AMP": {
+        "garch_qlike": 2.1693586525797564,
+        "lgb_qlike": 4.670709166513119,
+        "mean_qlike": 2.4927942399860616,
+        "persistence_qlike": 125.51427863600188
+      },
+      "AMT": {
+        "garch_qlike": 2.025492543955439,
+        "lgb_qlike": 5.135713238002416,
+        "mean_qlike": 2.043141014709753,
+        "persistence_qlike": 312.2222300613124
+      },
+      "AMZN": {
+        "garch_qlike": 2.499281272476519,
+        "lgb_qlike": 6.119908821859177,
+        "mean_qlike": 2.6353610578782587,
+        "persistence_qlike": 163.23619060927462
+      },
+      "ANET": {
+        "garch_qlike": 3.0690388670571194,
+        "lgb_qlike": 6.421179198499385,
+        "mean_qlike": 3.07985064361183,
+        "persistence_qlike": 3026.7621758909477
+      },
+      "AON": {
+        "garch_qlike": 1.8195621207032697,
+        "lgb_qlike": 4.890472792586438,
+        "mean_qlike": 1.9397776655405594,
+        "persistence_qlike": 521.1876646766073
+      },
+      "AOS": {
+        "garch_qlike": 2.134013999608656,
+        "lgb_qlike": 6.295994720457276,
+        "mean_qlike": 2.2045420446109145,
+        "persistence_qlike": 196.56525001277112
+      },
+      "APA": {
+        "garch_qlike": 3.4916834484370627,
+        "lgb_qlike": 5.79226568070602,
+        "mean_qlike": 3.967433181417947,
+        "persistence_qlike": 232.21096464305307
+      },
+      "APD": {
+        "garch_qlike": 2.1259944910548763,
+        "lgb_qlike": 6.1290041081009425,
+        "mean_qlike": 2.1283984039022212,
+        "persistence_qlike": 245.36648582567543
+      },
+      "APH": {
+        "garch_qlike": 2.095440918216964,
+        "lgb_qlike": 6.77735340248635,
+        "mean_qlike": 2.424463019455743,
+        "persistence_qlike": 176.9283731599454
+      },
+      "APO": {
+        "garch_qlike": 2.6480253208965525,
+        "lgb_qlike": 5.731543034497025,
+        "mean_qlike": 2.8096932433641277,
+        "persistence_qlike": 412.4240858600853
+      },
+      "APTV": {
+        "garch_qlike": 2.852521666524653,
+        "lgb_qlike": 10.64770935198338,
+        "mean_qlike": 2.9962450869898327,
+        "persistence_qlike": 586.534842067617
+      },
+      "ARE": {
+        "garch_qlike": 2.3338856233837264,
+        "lgb_qlike": 5.943404729052768,
+        "mean_qlike": 2.3593714233260834,
+        "persistence_qlike": 213.23213227145976
+      },
+      "ARES": {
+        "garch_qlike": 2.5132678358286507,
+        "lgb_qlike": 5.600876395409189,
+        "mean_qlike": 2.6573017425901133,
+        "persistence_qlike": 380.127589546963
+      },
+      "ASML": {
+        "garch_qlike": 2.915622155176046,
+        "lgb_qlike": 5.954237407211299,
+        "mean_qlike": 2.972405388475371,
+        "persistence_qlike": 732.1788964607896
+      },
+      "ATO": {
+        "garch_qlike": 1.4269980939593077,
+        "lgb_qlike": 3.6976854815443487,
+        "mean_qlike": 1.6282457084204962,
+        "persistence_qlike": 204.22726903881698
+      },
+      "AVB": {
+        "garch_qlike": 1.759687675794626,
+        "lgb_qlike": 4.570642571852397,
+        "mean_qlike": 2.0611223028595322,
+        "persistence_qlike": 234.23173836879425
+      },
+      "AVGO": {
+        "garch_qlike": 2.829722893586762,
+        "lgb_qlike": 6.749207089806477,
+        "mean_qlike": 2.878276499919004,
+        "persistence_qlike": 381.3115596410079
+      },
+      "AVY": {
+        "garch_qlike": 1.9965726322983657,
+        "lgb_qlike": 4.872116231743247,
+        "mean_qlike": 2.119247754679393,
+        "persistence_qlike": 428.6659565869933
+      }
+    }
+  },
+  "runtime_s": 115.8
+}

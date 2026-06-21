@@ -1,0 +1,116 @@
+{
+  "n_windows": 12,
+  "mean_sharpe": 0.0,
+  "std_sharpe": 0.0,
+  "max_sharpe": 0.0,
+  "min_sharpe": 0.0,
+  "model_params": {
+    "n_assets": 50,
+    "input_dim": 9,
+    "model_dim": 64,
+    "state_dim": 8,
+    "n_layers": 2,
+    "output_dim": 1,
+    "embedding_dim": null,
+    "use_cross_attention": true,
+    "dropout": 0.2,
+    "conv_kernel": 3,
+    "use_decomp": false,
+    "bidirectional": false,
+    "parallel_scan": true,
+    "return_hidden": false
+  },
+  "results": [
+    {
+      "window_start": 0,
+      "window_end": 543,
+      "best_sharpe": 0.0,
+      "epochs_run": 11,
+      "ctm_ic": 0.168521147006139
+    },
+    {
+      "window_start": 21,
+      "window_end": 564,
+      "best_sharpe": 0.0,
+      "epochs_run": 11,
+      "ctm_ic": 0.09438080121927342
+    },
+    {
+      "window_start": 42,
+      "window_end": 585,
+      "best_sharpe": 0.0,
+      "epochs_run": 14,
+      "ctm_ic": 0.18827484708163264
+    },
+    {
+      "window_start": 63,
+      "window_end": 606,
+      "best_sharpe": 0.0,
+      "epochs_run": 41,
+      "ctm_ic": -0.13280035657014214
+    },
+    {
+      "window_start": 84,
+      "window_end": 627,
+      "best_sharpe": 0.0,
+      "epochs_run": 11,
+      "ctm_ic": 0.21592651333623158
+    },
+    {
+      "window_start": 105,
+      "window_end": 648,
+      "best_sharpe": 0.0,
+      "epochs_run": 11,
+      "ctm_ic": 0.11281416559907535
+    },
+    {
+      "window_start": 126,
+      "window_end": 669,
+      "best_sharpe": 0.0,
+      "epochs_run": 11,
+      "ctm_ic": 0.15657292525259825
+    },
+    {
+      "window_start": 147,
+      "window_end": 690,
+      "best_sharpe": 0.0,
+      "epochs_run": 49,
+      "ctm_ic": 0.11568406373256077
+    },
+    {
+      "window_start": 168,
+      "window_end": 711,
+      "best_sharpe": 0.0,
+      "epochs_run": 27,
+      "ctm_ic": 0.17176343814548262
+    },
+    {
+      "window_start": 189,
+      "window_end": 732,
+      "best_sharpe": 0.0,
+      "epochs_run": 13,
+      "ctm_ic": 0.15195511845078036
+    },
+    {
+      "window_start": 210,
+      "window_end": 753,
+      "best_sharpe": 0.0,
+      "epochs_run": 11,
+      "ctm_ic": 0.16130263800968808
+    },
+    {
+      "window_start": 231,
+      "window_end": 774,
+      "best_sharpe": 0.0,
+      "epochs_run": 18,
+      "ctm_ic": 0.12665798783180848
+    }
+  ],
+  "mean_ctm_ic": 0.12758777409126068,
+  "std_ctm_ic": 0.08512235628185556,
+  "test_metrics": {
+    "test_loss": 7.157323591723413,
+    "test_sharpe": 0.0,
+    "test_directional_accuracy": 1.0
+  }
+}

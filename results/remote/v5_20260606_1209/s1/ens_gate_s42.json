@@ -1,0 +1,1191 @@
+{
+  "n_windows": 3,
+  "mean_sharpe": 0.24192650246208794,
+  "std_sharpe": 0.18186739113893918,
+  "max_sharpe": 0.4385024607181549,
+  "min_sharpe": -5.580228901180817e-08,
+  "model_params": {
+    "n_assets": 50,
+    "input_dim": 9,
+    "model_dim": 64,
+    "state_dim": 8,
+    "n_layers": 2,
+    "output_dim": 1,
+    "embedding_dim": null,
+    "use_cross_attention": true,
+    "dropout": 0.2,
+    "conv_kernel": 3,
+    "use_decomp": false,
+    "bidirectional": false,
+    "parallel_scan": true,
+    "return_hidden": false,
+    "use_time_gate": true
+  },
+  "results": [
+    {
+      "window_start": 0,
+      "window_end": 606,
+      "best_sharpe": 0.28727710247039795,
+      "epochs_run": 24,
+      "ctm_sharpe": 0.29706859588623047,
+      "ctm_ic": 0.010490093826632558,
+      "ctm_dir_acc": 0.5985,
+      "gbdt_sharpe": 0.05422752723097801,
+      "gbdt_ic": 0.031186532736972226,
+      "gbdt_dir_acc": 0.98875,
+      "ensemble_sharpe": 0.29365074634552,
+      "ensemble_ic": 0.043174163009098855,
+      "ensemble_dir_acc": 0.62575,
+      "ctm_weight": 0.4934160165196085
+    },
+    {
+      "window_start": 63,
+      "window_end": 669,
+      "best_sharpe": 0.4385024607181549,
+      "epochs_run": 14,
+      "ctm_sharpe": 0.4385024607181549,
+      "ctm_ic": 0.06626183935897637,
+      "ctm_dir_acc": 0.58975,
+      "gbdt_sharpe": 6.38162234167794e-08,
+      "gbdt_ic": 0.0,
+      "gbdt_dir_acc": 1.0,
+      "ensemble_sharpe": 0.4385024607181549,
+      "ensemble_ic": 0.054460194741878645,
+      "ensemble_dir_acc": 0.59025,
+      "ctm_weight": 0.968499669713419
+    },
+    {
+      "window_start": 126,
+      "window_end": 732,
+      "best_sharpe": -5.580228901180817e-08,
+      "epochs_run": 13,
+      "ctm_sharpe": 0.11540509015321732,
+      "ctm_ic": 0.020655189030732757,
+      "ctm_dir_acc": 0.62175,
+      "gbdt_sharpe": -0.43735307455062866,
+      "gbdt_ic": 0.003163288598641697,
+      "gbdt_dir_acc": 0.997,
+      "ensemble_sharpe": 0.1354934424161911,
+      "ensemble_ic": -0.000395145588178289,
+      "ensemble_dir_acc": 0.636,
+      "ctm_weight": 0.32569301820749014
+    }
+  ],
+  "mean_ctm_ic": 0.03246904073878056,
+  "std_ctm_ic": 0.024252796664384034,
+  "mean_ctm_sharpe": 0.2836587155858676,
+  "mean_ctm_dir_acc": 0.6033333333333334,
+  "mean_gbdt_sharpe": -0.1277084945011424,
+  "std_gbdt_sharpe": 0.22006813931540486,
+  "mean_gbdt_ic": 0.011449940445204641,
+  "mean_gbdt_dir_acc": 0.99525,
+  "mean_ensemble_sharpe": 0.289215549826622,
+  "mean_ensemble_ic": 0.03241307072093307,
+  "mean_ensemble_dir_acc": 0.6173333333333334,
+  "mean_ctm_weight": 0.5958695681468392,
+  "feature_importance": [
+    {
+      "feature_idx": 34,
+      "gain": 0.09997410078843434,
+      "frequency": 0.10588235408067703,
+      "coverage": 0.3078879415988922
+    },
+    {
+      "feature_idx": 24,
+      "gain": 0.08055011183023453,
+      "frequency": 0.052941177040338516,
+      "coverage": 0.0007961020649721225
+    },
+    {
+      "feature_idx": 103,
+      "gain": 0.04426948229471842,
+      "frequency": 0.03921568642059962,
+      "coverage": 0.0862971842288971
+    },
+    {
+      "feature_idx": 152,
+      "gain": 0.040035334726174675,
+      "frequency": 0.01960784321029981,
+      "coverage": 0.00708945778508981
+    },
+    {
+      "feature_idx": 114,
+      "gain": 0.03945993880430857,
+      "frequency": 0.033333333830038704,
+      "coverage": 0.12601423263549805
+    },
+    {
+      "feature_idx": 146,
+      "gain": 0.0390729953845342,
+      "frequency": 0.01960784321029981,
+      "coverage": 0.0006143205876772603
+    },
+    {
+      "feature_idx": 84,
+      "gain": 0.031348615884780884,
+      "frequency": 0.033333333830038704,
+      "coverage": 0.014332956324021021
+    },
+    {
+      "feature_idx": 68,
+      "gain": 0.030258648097515106,
+      "frequency": 0.01960784321029981,
+      "coverage": 0.0008719388861209154
+    },
+    {
+      "feature_idx": 98,
+      "gain": 0.029812564452489216,
+      "frequency": 0.033333333830038704,
+      "coverage": 0.014183836678663889
+    },
+    {
+      "feature_idx": 154,
+      "gain": 0.02922055870294571,
+      "frequency": 0.033333333830038704,
+      "coverage": 0.011850565671920776
+    },
+    {
+      "feature_idx": 100,
+      "gain": 0.027409178515275318,
+      "frequency": 0.033333333830038704,
+      "coverage": 0.0009210283557573954
+    },
+    {
+      "feature_idx": 157,
+      "gain": 0.023763748506704967,
+      "frequency": 0.033333333830038704,
+      "coverage": 0.011569871256748835
+    },
+    {
+      "feature_idx": 119,
+      "gain": 0.022291469077269237,
+      "frequency": 0.01960784321029981,
+      "coverage": 0.001942045831431945
+    },
+    {
+      "feature_idx": 51,
+      "gain": 0.02185145268837611,
+      "frequency": 0.033333333830038704,
+      "coverage": 0.0008333114286263784
+    },
+    {
+      "feature_idx": 15,
+      "gain": 0.02131640911102295,
+      "frequency": 0.01960784321029981,
+      "coverage": 0.00023780151968821883
+    },
+    {
+      "feature_idx": 171,
+      "gain": 0.020107317715883255,
+      "frequency": 0.01960784321029981,
+      "coverage": 0.07805835207303365
+    },
+    {
+      "feature_idx": 3,
+      "gain": 0.019221664716800053,
+      "frequency": 0.01960784321029981,
+      "coverage": 0.00037651908739159506
+    },
+    {
+      "feature_idx": 65,
+      "gain": 0.0184875229994456,
+      "frequency": 0.01960784321029981,
+      "coverage": 0.0006836794006327788
+    },
+    {
+      "feature_idx": 118,
+      "gain": 0.011089966942866644,
+      "frequency": 0.01960784321029981,
+      "coverage": 0.0010701068677008152
+    },
+    {
+      "feature_idx": 50,
+      "gain": 0.008292177071173986,
+      "frequency": 0.01960784321029981,
+      "coverage": 0.0006688168117155632
+    },
+    {
+      "feature_idx": 0,
+      "gain": 0.004598427874346574,
+      "frequency": 0.01960784321029981,
+      "coverage": 0.00021303053169200817
+    },
+    {
+      "feature_idx": 79,
+      "gain": 0.004235014319419861,
+      "frequency": 0.01960784321029981,
+      "coverage": 0.00015358014691931507
+    },
+    {
+      "feature_idx": 1,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 2,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 4,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 5,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 6,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 7,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 8,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 9,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 10,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 11,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 12,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 13,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 14,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 16,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 17,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 18,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 19,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 20,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 21,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 22,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 23,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 25,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 26,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 27,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 28,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 29,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 30,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 31,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 32,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 33,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 35,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 36,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 37,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 38,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 39,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 40,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 41,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 42,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 43,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 44,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 45,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 46,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 47,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 48,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 49,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 52,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 53,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 54,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 55,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 56,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 57,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 58,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 59,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 60,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 61,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 62,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 63,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 64,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 66,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 67,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 69,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 70,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 71,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 72,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 73,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 74,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 75,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 76,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 77,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 78,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 80,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 81,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 82,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 83,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 85,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 86,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 87,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 88,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 89,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 90,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 91,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 92,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 93,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 94,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 95,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 96,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 97,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 99,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 101,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 102,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 104,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 105,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 106,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 107,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 108,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 109,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 110,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 111,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 112,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 113,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 115,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 116,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 117,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 120,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 121,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 122,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 123,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 124,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 125,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 126,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 127,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 128,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 129,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 130,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 131,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 132,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 133,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 134,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 135,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 136,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 137,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 138,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 139,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 140,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 141,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 142,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 143,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 144,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 145,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 147,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 148,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 149,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 150,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 151,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 153,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 155,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 156,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 158,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 159,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 160,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 161,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 162,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 163,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 164,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 165,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 166,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 167,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 168,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 169,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 170,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 172,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 173,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 174,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 175,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 176,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 177,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 178,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 179,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 180,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "feature_idx": 181,
+      "gain": 0.0,
+      "frequency": 0.0,
+      "coverage": 0.0
+    }
+  ],
+  "test_metrics": {
+    "test_loss": 14.13037606770407,
+    "test_sharpe": -0.3337874412536621,
+    "test_directional_accuracy": 0.5779640674591064
+  },
+  "saved_models": {
+    "ctm_state_dict": "/root/checkpoints/v5_ens_gate_s42/ensemble_ctm.pt",
+    "config": "/root/checkpoints/v5_ens_gate_s42/ensemble_ctm_config.yaml",
+    "gbdt_json": "/root/checkpoints/v5_ens_gate_s42/ensemble_gbdt.json"
+  },
+  "saved_trainer_state": "/root/checkpoints/v5_ens_gate_s42/ensemble_trainer_state.pt"
+}

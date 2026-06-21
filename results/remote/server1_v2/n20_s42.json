@@ -1,0 +1,254 @@
+{
+  "n_windows": 32,
+  "mean_sharpe": 1.3611280433106003,
+  "std_sharpe": 1.9847120322474006,
+  "max_sharpe": 5.1294450759887695,
+  "min_sharpe": -3.014719009399414,
+  "model_params": {
+    "n_assets": 20,
+    "input_dim": 9,
+    "model_dim": 64,
+    "state_dim": 16,
+    "n_layers": 3,
+    "output_dim": 1,
+    "embedding_dim": null,
+    "use_cross_attention": true,
+    "dropout": 0.2
+  },
+  "results": [
+    {
+      "window_start": 0,
+      "window_end": 543,
+      "best_sharpe": 5.1294450759887695,
+      "epochs_run": 30,
+      "ctm_ic": 0.23635724331926866
+    },
+    {
+      "window_start": 21,
+      "window_end": 564,
+      "best_sharpe": 3.909679651260376,
+      "epochs_run": 28,
+      "ctm_ic": 0.17447257383966247
+    },
+    {
+      "window_start": 42,
+      "window_end": 585,
+      "best_sharpe": 3.0277841091156006,
+      "epochs_run": 28,
+      "ctm_ic": 0.22869198312236289
+    },
+    {
+      "window_start": 63,
+      "window_end": 606,
+      "best_sharpe": 2.3065316677093506,
+      "epochs_run": 39,
+      "ctm_ic": 0.03708391936240038
+    },
+    {
+      "window_start": 84,
+      "window_end": 627,
+      "best_sharpe": 4.2203450202941895,
+      "epochs_run": 28,
+      "ctm_ic": 0.03729488982653539
+    },
+    {
+      "window_start": 105,
+      "window_end": 648,
+      "best_sharpe": -0.25732311606407166,
+      "epochs_run": 11,
+      "ctm_ic": -0.10996249413970934
+    },
+    {
+      "window_start": 126,
+      "window_end": 669,
+      "best_sharpe": 4.365811347961426,
+      "epochs_run": 28,
+      "ctm_ic": 0.3047819971870605
+    },
+    {
+      "window_start": 147,
+      "window_end": 690,
+      "best_sharpe": -0.24276478588581085,
+      "epochs_run": 21,
+      "ctm_ic": 0.09896858884200657
+    },
+    {
+      "window_start": 168,
+      "window_end": 711,
+      "best_sharpe": 0.8161119818687439,
+      "epochs_run": 23,
+      "ctm_ic": 0.07726207219878106
+    },
+    {
+      "window_start": 189,
+      "window_end": 732,
+      "best_sharpe": 1.4049016237258911,
+      "epochs_run": 22,
+      "ctm_ic": 0.1214955461790905
+    },
+    {
+      "window_start": 210,
+      "window_end": 753,
+      "best_sharpe": 1.1198889017105103,
+      "epochs_run": 11,
+      "ctm_ic": 0.13727144866385374
+    },
+    {
+      "window_start": 231,
+      "window_end": 774,
+      "best_sharpe": 4.142300128936768,
+      "epochs_run": 26,
+      "ctm_ic": 0.1556962025316456
+    },
+    {
+      "window_start": 252,
+      "window_end": 795,
+      "best_sharpe": 4.6646342277526855,
+      "epochs_run": 36,
+      "ctm_ic": 0.3276136896390061
+    },
+    {
+      "window_start": 273,
+      "window_end": 816,
+      "best_sharpe": -0.6796639561653137,
+      "epochs_run": 11,
+      "ctm_ic": 0.044374120956399435
+    },
+    {
+      "window_start": 294,
+      "window_end": 837,
+      "best_sharpe": -0.5904362201690674,
+      "epochs_run": 11,
+      "ctm_ic": -0.01022034692920769
+    },
+    {
+      "window_start": 315,
+      "window_end": 858,
+      "best_sharpe": -2.8009164333343506,
+      "epochs_run": 19,
+      "ctm_ic": 0.09362400375058604
+    },
+    {
+      "window_start": 336,
+      "window_end": 879,
+      "best_sharpe": 0.8474964499473572,
+      "epochs_run": 11,
+      "ctm_ic": -0.056774496015002354
+    },
+    {
+      "window_start": 357,
+      "window_end": 900,
+      "best_sharpe": 2.0109024047851562,
+      "epochs_run": 18,
+      "ctm_ic": -0.07252695733708392
+    },
+    {
+      "window_start": 378,
+      "window_end": 921,
+      "best_sharpe": 0.3869115114212036,
+      "epochs_run": 11,
+      "ctm_ic": -0.12423816221284575
+    },
+    {
+      "window_start": 399,
+      "window_end": 942,
+      "best_sharpe": 0.8616273999214172,
+      "epochs_run": 11,
+      "ctm_ic": 0.005063291139240506
+    },
+    {
+      "window_start": 420,
+      "window_end": 963,
+      "best_sharpe": 2.3686304092407227,
+      "epochs_run": 11,
+      "ctm_ic": -0.07869198312236288
+    },
+    {
+      "window_start": 441,
+      "window_end": 984,
+      "best_sharpe": -3.014719009399414,
+      "epochs_run": 11,
+      "ctm_ic": 0.07714486638537271
+    },
+    {
+      "window_start": 462,
+      "window_end": 1005,
+      "best_sharpe": -0.025406494736671448,
+      "epochs_run": 11,
+      "ctm_ic": 0.18736521331458042
+    },
+    {
+      "window_start": 483,
+      "window_end": 1026,
+      "best_sharpe": 0.19703267514705658,
+      "epochs_run": 20,
+      "ctm_ic": -0.08239568682606657
+    },
+    {
+      "window_start": 504,
+      "window_end": 1047,
+      "best_sharpe": 1.2704105377197266,
+      "epochs_run": 13,
+      "ctm_ic": 0.04556962025316456
+    },
+    {
+      "window_start": 525,
+      "window_end": 1068,
+      "best_sharpe": -0.5288368463516235,
+      "epochs_run": 11,
+      "ctm_ic": 0.1278481012658228
+    },
+    {
+      "window_start": 546,
+      "window_end": 1089,
+      "best_sharpe": 1.2413841485977173,
+      "epochs_run": 11,
+      "ctm_ic": -0.11284575714955464
+    },
+    {
+      "window_start": 567,
+      "window_end": 1110,
+      "best_sharpe": 1.406585454940796,
+      "epochs_run": 18,
+      "ctm_ic": 0.04627285513361463
+    },
+    {
+      "window_start": 588,
+      "window_end": 1131,
+      "best_sharpe": 0.0015847808681428432,
+      "epochs_run": 11,
+      "ctm_ic": 0.02257383966244726
+    },
+    {
+      "window_start": 609,
+      "window_end": 1152,
+      "best_sharpe": 2.2114663124084473,
+      "epochs_run": 18,
+      "ctm_ic": 0.08797468354430381
+    },
+    {
+      "window_start": 630,
+      "window_end": 1173,
+      "best_sharpe": 0.6820515990257263,
+      "epochs_run": 11,
+      "ctm_ic": 0.056235349273323965
+    },
+    {
+      "window_start": 651,
+      "window_end": 1194,
+      "best_sharpe": 3.102646827697754,
+      "epochs_run": 28,
+      "ctm_ic": 0.10841537740271918
+    }
+  ],
+  "mean_ctm_ic": 0.06849361228316925,
+  "std_ctm_ic": 0.11489893966870342,
+  "test_metrics": {
+    "test_loss": -5.009470609518198,
+    "test_sharpe": -0.9014610648155212,
+    "test_directional_accuracy": 0.642307698726654
+  },
+  "saved_models": {
+    "ctm_state_dict": "checkpoints/ctm_n20_s42/ctm_model.pt"
+  }
+}

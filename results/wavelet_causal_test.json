@@ -1,0 +1,225 @@
+{
+  "experiment": "causal_wavelet_denoising_test",
+  "description": "Compares raw OHLCV features vs wavelet-denoised (causal) training features. Wavelet denoising applied ONLY to training-period close prices + warmup buffer. Both pipelines use identical GBDT architecture and evaluate on the SAME raw validation features. Causality: no future data used for training feature computation.",
+  "settings": {
+    "n_assets": 50,
+    "asset_names": [
+      "A",
+      "AAPL",
+      "ABBV",
+      "ABT",
+      "ACGL",
+      "ACN",
+      "ADBE",
+      "ADI",
+      "ADM",
+      "ADP",
+      "ADSK",
+      "AEE",
+      "AEP",
+      "AES",
+      "AFL",
+      "AIG",
+      "AIZ",
+      "AJG",
+      "AKAM",
+      "ALB",
+      "ALGN",
+      "ALL",
+      "ALLE",
+      "ALNY",
+      "AMAT",
+      "AMCR",
+      "AMD",
+      "AME",
+      "AMGN",
+      "AMP",
+      "AMT",
+      "AMZN",
+      "ANET",
+      "AON",
+      "AOS",
+      "APA",
+      "APD",
+      "APH",
+      "APO",
+      "APTV",
+      "ARE",
+      "ARES",
+      "ASML",
+      "ATO",
+      "AVB",
+      "AVGO",
+      "AVY",
+      "AWK",
+      "AXON",
+      "AXP"
+    ],
+    "n_windows": 3,
+    "train_window_days": 1008,
+    "val_window_days": 252,
+    "purge_period_days": 126,
+    "step_size_days": 504,
+    "target_periods": 5,
+    "warmup_bars": 126,
+    "gbdt_trees": 100,
+    "gbdt_depth": 4,
+    "gbdt_lr": 0.1,
+    "gbdt_loss": "mse",
+    "seed": 42
+  },
+  "results": {
+    "raw": {
+      "mean_sharpe": -1.357297337014898,
+      "std_sharpe": 0.678554625547253,
+      "mean_ic": 0.017833213741513337,
+      "std_ic": 0.025704930698085823,
+      "per_window": [
+        {
+          "sharpe": -1.0247487923969691,
+          "ic": 0.028209869596839927
+        },
+        {
+          "sharpe": -0.9091654090329268,
+          "ic": -0.011438038056363106
+        },
+        {
+          "sharpe": -2.1379778096147986,
+          "ic": 0.036727809684063195
+        }
+      ],
+      "mean_directional_accuracy": 0.455
+    },
+    "wavelet": {
+      "mean_sharpe": -0.2507389655051857,
+      "std_sharpe": 0.14164087482431456,
+      "mean_ic": -0.02775101517938709,
+      "std_ic": 0.015591458762936768,
+      "per_window": [
+        {
+          "sharpe": -0.4079728204706201,
+          "ic": -0.04547845355908817
+        },
+        {
+          "sharpe": -0.21111272358362157,
+          "ic": -0.016167547338138116
+        },
+        {
+          "sharpe": -0.13313135246131552,
+          "ic": -0.021607044640934974
+        }
+      ],
+      "mean_directional_accuracy": 0.4989
+    },
+    "delta": {
+      "mean_sharpe": 1.1065583715097125,
+      "std_sharpe": 0.7790010203121919,
+      "mean_ic": -0.04558422892090042,
+      "std_ic": 0.03620446573116691,
+      "mean_directional_accuracy": 0.0439
+    }
+  },
+  "finding": "NEGATIVE \u2014 \u0394IC = -0.0456: wavelet denoising DEGRADES predictive power (IC reduced from +0.0178 to -0.0278)",
+  "recommendation": "Do NOT invest in full CNN-LightGBM reproduction. Report as negative finding: causal wavelet denoising reduces rank IC. However, note the Sharpe improvement (less negative: -1.3573 \u2192 -0.2507) and directional accuracy gain (+-0.0pp) may warrant investigation of wavelet as a variance-reduction regularizer, not an alpha source.",
+  "windows": [
+    {
+      "window": 0,
+      "train_start": 0,
+      "train_end": 1008,
+      "val_start": 1134,
+      "val_end": 1386,
+      "train_start_date": "2015-01-07",
+      "train_end_date": "2019-04-17",
+      "val_start_date": "2019-10-17",
+      "val_end_date": "2020-10-15",
+      "raw": {
+        "sharpe": -1.0247487923969691,
+        "ic": 0.028209869596839927,
+        "directional_accuracy": 0.4572222222222222
+      },
+      "wavelet": {
+        "sharpe": -0.4079728204706201,
+        "ic": -0.04547845355908817,
+        "directional_accuracy": 0.4915079365079365
+      },
+      "delta": {
+        "sharpe": 0.616775971926349,
+        "ic": -0.07368832315592809,
+        "directional_accuracy": 0.03428571428571431
+      },
+      "n_assets": 50,
+      "train_samples": 50400,
+      "val_samples": 12600,
+      "gbdt_trees": 100,
+      "wavelet_feature_time_s": 5.04,
+      "train_time_raw_s": 0.46,
+      "train_time_wav_s": 0.44
+    },
+    {
+      "window": 1,
+      "train_start": 504,
+      "train_end": 1512,
+      "val_start": 1638,
+      "val_end": 1890,
+      "train_start_date": "2017-03-23",
+      "train_end_date": "2021-04-19",
+      "val_start_date": "2021-10-18",
+      "val_end_date": "2022-10-17",
+      "raw": {
+        "sharpe": -0.9091654090329268,
+        "ic": -0.011438038056363106,
+        "directional_accuracy": 0.479047619047619
+      },
+      "wavelet": {
+        "sharpe": -0.21111272358362157,
+        "ic": -0.016167547338138116,
+        "directional_accuracy": 0.5011904761904762
+      },
+      "delta": {
+        "sharpe": 0.6980526854493052,
+        "ic": -0.004729509281775009,
+        "directional_accuracy": 0.022142857142857186
+      },
+      "n_assets": 50,
+      "train_samples": 50400,
+      "val_samples": 12600,
+      "gbdt_trees": 100,
+      "wavelet_feature_time_s": 5.11,
+      "train_time_raw_s": 0.42,
+      "train_time_wav_s": 0.43
+    },
+    {
+      "window": 2,
+      "train_start": 1008,
+      "train_end": 2016,
+      "val_start": 2142,
+      "val_end": 2394,
+      "train_start_date": "2019-04-18",
+      "train_end_date": "2023-04-19",
+      "val_start_date": "2023-10-19",
+      "val_end_date": "2024-10-18",
+      "raw": {
+        "sharpe": -2.1379778096147986,
+        "ic": 0.036727809684063195,
+        "directional_accuracy": 0.42873015873015874
+      },
+      "wavelet": {
+        "sharpe": -0.13313135246131552,
+        "ic": -0.021607044640934974,
+        "directional_accuracy": 0.5038888888888888
+      },
+      "delta": {
+        "sharpe": 2.004846457153483,
+        "ic": -0.05833485432499817,
+        "directional_accuracy": 0.07515873015873009
+      },
+      "n_assets": 50,
+      "train_samples": 50400,
+      "val_samples": 12600,
+      "gbdt_trees": 100,
+      "wavelet_feature_time_s": 5.15,
+      "train_time_raw_s": 0.43,
+      "train_time_wav_s": 0.44
+    }
+  ]
+}

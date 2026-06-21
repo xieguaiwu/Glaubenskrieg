@@ -1,0 +1,57 @@
+{
+  "n_windows": 3,
+  "mean_sharpe": 0.22504934795286147,
+  "std_sharpe": 0.2383163568668383,
+  "max_sharpe": 0.554844856262207,
+  "min_sharpe": -5.580228901180817e-08,
+  "model_params": {
+    "n_assets": 50,
+    "input_dim": 9,
+    "model_dim": 64,
+    "state_dim": 8,
+    "n_layers": 2,
+    "output_dim": 1,
+    "embedding_dim": null,
+    "use_cross_attention": true,
+    "dropout": 0.2,
+    "conv_kernel": 3,
+    "use_decomp": false,
+    "bidirectional": false,
+    "parallel_scan": true,
+    "return_hidden": false,
+    "use_time_gate": false
+  },
+  "results": [
+    {
+      "window_start": 0,
+      "window_end": 606,
+      "best_sharpe": 0.12030324339866638,
+      "epochs_run": 24,
+      "ctm_ic": 0.021008674343570375
+    },
+    {
+      "window_start": 63,
+      "window_end": 669,
+      "best_sharpe": 0.554844856262207,
+      "epochs_run": 16,
+      "ctm_ic": 0.08774555016426816
+    },
+    {
+      "window_start": 126,
+      "window_end": 732,
+      "best_sharpe": -5.580228901180817e-08,
+      "epochs_run": 11,
+      "ctm_ic": -0.0074245180460217365
+    }
+  ],
+  "mean_ctm_ic": 0.0337765688206056,
+  "std_ctm_ic": 0.03988817550620182,
+  "test_metrics": {
+    "test_loss": 6.258770928411427,
+    "test_sharpe": -0.13032208383083344,
+    "test_directional_accuracy": 0.5679041743278503
+  },
+  "saved_models": {
+    "ctm_state_dict": "/root/checkpoints/v5_ctm_s789/ctm_model.pt"
+  }
+}

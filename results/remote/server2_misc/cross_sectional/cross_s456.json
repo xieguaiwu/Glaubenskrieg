@@ -1,0 +1,88 @@
+{
+  "config": {
+    "data_dir": "/root/data/tencent_clean",
+    "n_assets": 50,
+    "target_periods": 5,
+    "train_days": 400,
+    "val_days": 80,
+    "seed": 456,
+    "n_features_cs": 13
+  },
+  "data_summary": {
+    "n_days": 1173,
+    "n_assets": 50,
+    "date_start": "2020-11-09",
+    "date_end": "2026-04-27"
+  },
+  "walk_forward": {
+    "n_windows": 10,
+    "mean_rank_ic": -0.024087554475349594,
+    "std_rank_ic": 0.02895312031240185,
+    "per_window": [
+      {
+        "window": 0,
+        "rank_ic": -0.03500283414709834,
+        "rank_ic_std": 0.15161928086356097,
+        "n_days": 80
+      },
+      {
+        "window": 1,
+        "rank_ic": 0.015945238183038835,
+        "rank_ic_std": 0.15696994393633318,
+        "n_days": 80
+      },
+      {
+        "window": 2,
+        "rank_ic": -0.04989494722889546,
+        "rank_ic_std": 0.17721240848914166,
+        "n_days": 80
+      },
+      {
+        "window": 3,
+        "rank_ic": -0.055318135351071204,
+        "rank_ic_std": 0.1649032398250148,
+        "n_days": 80
+      },
+      {
+        "window": 4,
+        "rank_ic": -0.07728808203377216,
+        "rank_ic_std": 0.16877831504674734,
+        "n_days": 80
+      },
+      {
+        "window": 5,
+        "rank_ic": -0.02346687060563083,
+        "rank_ic_std": 0.1887517919058413,
+        "n_days": 80
+      },
+      {
+        "window": 6,
+        "rank_ic": -0.015129263338660121,
+        "rank_ic_std": 0.18741705787712465,
+        "n_days": 80
+      },
+      {
+        "window": 7,
+        "rank_ic": -0.014269652239164387,
+        "rank_ic_std": 0.15374615300314798,
+        "n_days": 80
+      },
+      {
+        "window": 8,
+        "rank_ic": -0.0005547805146553619,
+        "rank_ic_std": 0.15359514496921647,
+        "n_days": 80
+      },
+      {
+        "window": 9,
+        "rank_ic": 0.014103782522413132,
+        "rank_ic_std": 0.15630733027516297,
+        "n_days": 80
+      }
+    ]
+  },
+  "test_rank_ic": -0.03218004949710647,
+  "test_rank_ic_std": 0.14574826625501666,
+  "test_n_days": 235,
+  "runtime_s": 171.4923598766327
+}

@@ -1,0 +1,107 @@
+{
+  "n_windows": 11,
+  "mean_sharpe": 1.6478062759746204,
+  "std_sharpe": 1.7579058364714317,
+  "max_sharpe": 3.848147392272949,
+  "min_sharpe": -3.014719009399414,
+  "model_params": {
+    "n_assets": 20,
+    "input_dim": 9,
+    "model_dim": 64,
+    "state_dim": 8,
+    "n_layers": 2,
+    "output_dim": 1,
+    "embedding_dim": null,
+    "use_cross_attention": true,
+    "dropout": 0.2
+  },
+  "results": [
+    {
+      "window_start": 0,
+      "window_end": 543,
+      "best_sharpe": 1.7215763330459595,
+      "epochs_run": 11,
+      "ctm_ic": 0.10246132208157525
+    },
+    {
+      "window_start": 63,
+      "window_end": 606,
+      "best_sharpe": 1.5042904615402222,
+      "epochs_run": 19,
+      "ctm_ic": 0.008415377402719176
+    },
+    {
+      "window_start": 126,
+      "window_end": 669,
+      "best_sharpe": 2.3442976474761963,
+      "epochs_run": 15,
+      "ctm_ic": 0.2638302859821847
+    },
+    {
+      "window_start": 189,
+      "window_end": 732,
+      "best_sharpe": 2.855464220046997,
+      "epochs_run": 21,
+      "ctm_ic": 0.1338959212376934
+    },
+    {
+      "window_start": 252,
+      "window_end": 795,
+      "best_sharpe": 3.848147392272949,
+      "epochs_run": 16,
+      "ctm_ic": 0.28614627285513367
+    },
+    {
+      "window_start": 315,
+      "window_end": 858,
+      "best_sharpe": 3.577153444290161,
+      "epochs_run": 11,
+      "ctm_ic": -0.12808251289263947
+    },
+    {
+      "window_start": 378,
+      "window_end": 921,
+      "best_sharpe": 0.3869115114212036,
+      "epochs_run": 11,
+      "ctm_ic": -0.08872480075011721
+    },
+    {
+      "window_start": 441,
+      "window_end": 984,
+      "best_sharpe": -3.014719009399414,
+      "epochs_run": 11,
+      "ctm_ic": 0.08124706985466479
+    },
+    {
+      "window_start": 504,
+      "window_end": 1047,
+      "best_sharpe": 1.9095938205718994,
+      "epochs_run": 21,
+      "ctm_ic": 0.19278012189404597
+    },
+    {
+      "window_start": 567,
+      "window_end": 1110,
+      "best_sharpe": 1.4076025485992432,
+      "epochs_run": 16,
+      "ctm_ic": 0.047609001406469766
+    },
+    {
+      "window_start": 630,
+      "window_end": 1173,
+      "best_sharpe": 1.5855506658554077,
+      "epochs_run": 21,
+      "ctm_ic": -0.014158462259728083
+    }
+  ],
+  "mean_ctm_ic": 0.0804926906192729,
+  "std_ctm_ic": 0.12764408031087343,
+  "test_metrics": {
+    "test_loss": -4.3492690673241245,
+    "test_sharpe": 0.09418100863695145,
+    "test_directional_accuracy": 0.6615384817123413
+  },
+  "saved_models": {
+    "ctm_state_dict": "/root/checkpoints/ctm_v3_n20_s456/ctm_model.pt"
+  }
+}

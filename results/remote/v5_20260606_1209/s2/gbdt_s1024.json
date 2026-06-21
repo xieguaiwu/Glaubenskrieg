@@ -1,0 +1,83 @@
+{
+  "n_windows": 9,
+  "mean_sharpe": 0.4323444247521861,
+  "std_sharpe": 0.8731595906329314,
+  "mean_ic": 0.0152902145160106,
+  "std_ic": 0.026351679853575536,
+  "mean_directional_accuracy": 0.522361111111111,
+  "std_directional_accuracy": 0.05266470343270076,
+  "windows": [
+    {
+      "window": 0,
+      "window_start": 0,
+      "window_end": 606,
+      "sharpe": -0.7936076695742039,
+      "ic": 0.03540527084673677,
+      "directional_accuracy": 0.449
+    },
+    {
+      "window": 1,
+      "window_start": 63,
+      "window_end": 669,
+      "sharpe": -0.609007580067852,
+      "ic": 0.025155562298561494,
+      "directional_accuracy": 0.495
+    },
+    {
+      "window": 2,
+      "window_start": 126,
+      "window_end": 732,
+      "sharpe": 0.8721963178557748,
+      "ic": -0.02545703815664203,
+      "directional_accuracy": 0.5367500000000001
+    },
+    {
+      "window": 3,
+      "window_start": 189,
+      "window_end": 795,
+      "sharpe": 1.686635377042692,
+      "ic": 0.0,
+      "directional_accuracy": 0.5870000000000001
+    },
+    {
+      "window": 4,
+      "window_start": 252,
+      "window_end": 858,
+      "sharpe": 0.6551223971364968,
+      "ic": 0.0,
+      "directional_accuracy": 0.5535
+    },
+    {
+      "window": 5,
+      "window_start": 315,
+      "window_end": 921,
+      "sharpe": 0.4980525727695824,
+      "ic": 0.06806864441598602,
+      "directional_accuracy": 0.4935
+    },
+    {
+      "window": 6,
+      "window_start": 378,
+      "window_end": 984,
+      "sharpe": 1.5637558919882324,
+      "ic": 0.0,
+      "directional_accuracy": 0.5945
+    },
+    {
+      "window": 7,
+      "window_start": 441,
+      "window_end": 1047,
+      "sharpe": -0.6294046302926746,
+      "ic": 0.034439491239453154,
+      "directional_accuracy": 0.44099999999999995
+    },
+    {
+      "window": 8,
+      "window_start": 504,
+      "window_end": 1110,
+      "sharpe": 0.6473571459116269,
+      "ic": 0.0,
+      "directional_accuracy": 0.5509999999999999
+    }
+  ]
+}

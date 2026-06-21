@@ -1,0 +1,148 @@
+{
+  "config": {
+    "data_dir": "/root/data/tencent_clean",
+    "n_assets": 50,
+    "target_periods": 5,
+    "train_days": 400,
+    "val_days": 80,
+    "purge_days": 126,
+    "step_days": 63,
+    "seed": 123
+  },
+  "data_summary": {
+    "n_days": 1173,
+    "n_assets": 50,
+    "date_start": "2020-11-09",
+    "date_end": "2026-04-27"
+  },
+  "walk_forward": {
+    "n_windows": 10,
+    "per_window": [
+      {
+        "window": 0,
+        "n_signals": 1600,
+        "n_traded": 738,
+        "precision": 0.502710027100271,
+        "f1": 0.49367930805056554,
+        "primary_hit_rate": 0.4781250059604645,
+        "meta_hit_rate": 0.5027100443840027,
+        "primary_sharpe": 7.509718131411258,
+        "meta_sharpe": 3.3500188480117434
+      },
+      {
+        "window": 1,
+        "n_signals": 1600,
+        "n_traded": 858,
+        "precision": 0.5163170163170163,
+        "f1": 0.53437876960193,
+        "primary_hit_rate": 0.5,
+        "meta_hit_rate": 0.5163170099258423,
+        "primary_sharpe": -7.1367669215996825,
+        "meta_sharpe": -6.3196266480346495
+      },
+      {
+        "window": 2,
+        "n_signals": 1600,
+        "n_traded": 738,
+        "precision": 0.4905149051490515,
+        "f1": 0.4823451032644903,
+        "primary_hit_rate": 0.4768750071525574,
+        "meta_hit_rate": 0.4905149042606354,
+        "primary_sharpe": 3.5663210070806732,
+        "meta_sharpe": -1.2143081101799484
+      },
+      {
+        "window": 3,
+        "n_signals": 1600,
+        "n_traded": 674,
+        "precision": 0.5281899109792285,
+        "f1": 0.48934707903780067,
+        "primary_hit_rate": 0.4881249964237213,
+        "meta_hit_rate": 0.5281898975372314,
+        "primary_sharpe": 7.634125499692075,
+        "meta_sharpe": 3.7895977920943555
+      },
+      {
+        "window": 4,
+        "n_signals": 1600,
+        "n_traded": 639,
+        "precision": 0.4538341158059468,
+        "f1": 0.4286770140428677,
+        "primary_hit_rate": 0.44624999165534973,
+        "meta_hit_rate": 0.4538341164588928,
+        "primary_sharpe": 13.616994464159724,
+        "meta_sharpe": 10.140464632626673
+      },
+      {
+        "window": 5,
+        "n_signals": 1600,
+        "n_traded": 707,
+        "precision": 0.5233380480905233,
+        "f1": 0.4966442953020134,
+        "primary_hit_rate": 0.4893749952316284,
+        "meta_hit_rate": 0.5233380198478699,
+        "primary_sharpe": 13.860781605952962,
+        "meta_sharpe": 3.4293878573311467
+      },
+      {
+        "window": 6,
+        "n_signals": 1600,
+        "n_traded": 785,
+        "precision": 0.5095541401273885,
+        "f1": 0.5194805194805194,
+        "primary_hit_rate": 0.47187501192092896,
+        "meta_hit_rate": 0.5095541477203369,
+        "primary_sharpe": 15.92577788502061,
+        "meta_sharpe": 6.420642426354353
+      },
+      {
+        "window": 7,
+        "n_signals": 1600,
+        "n_traded": 727,
+        "precision": 0.46354883081155435,
+        "f1": 0.46196024674434544,
+        "primary_hit_rate": 0.45750001072883606,
+        "meta_hit_rate": 0.46354883909225464,
+        "primary_sharpe": 13.255205125036893,
+        "meta_sharpe": 8.009349935454
+      },
+      {
+        "window": 8,
+        "n_signals": 1600,
+        "n_traded": 728,
+        "precision": 0.489010989010989,
+        "f1": 0.4671916010498688,
+        "primary_hit_rate": 0.4975000023841858,
+        "meta_hit_rate": 0.4890109896659851,
+        "primary_sharpe": -2.2918899147371232,
+        "meta_sharpe": -1.924261853828102
+      },
+      {
+        "window": 9,
+        "n_signals": 1600,
+        "n_traded": 718,
+        "precision": 0.532033426183844,
+        "f1": 0.4980443285528031,
+        "primary_hit_rate": 0.5099999904632568,
+        "meta_hit_rate": 0.5320334434509277,
+        "primary_sharpe": -3.906167483831203,
+        "meta_sharpe": -1.3026168108467961
+      }
+    ],
+    "mean_precision": 0.5009051409575813,
+    "mean_f1": 0.4871748265127205,
+    "mean_primary_sharpe": 6.203409939818618,
+    "mean_meta_sharpe": 2.4378648068982773,
+    "mean_delta_sharpe": -3.7655451329203418
+  },
+  "holdout_test": {
+    "test_rank_ic": -0.0122380855279549,
+    "test_n_days": 235,
+    "meta_precision": 0.483325719506624,
+    "meta_f1": 0.4802541988197912,
+    "primary_sharpe": 12.812021947480604,
+    "meta_sharpe": 7.46131874257315,
+    "delta_sharpe": -5.350703204907454
+  },
+  "runtime_s": 177.94
+}

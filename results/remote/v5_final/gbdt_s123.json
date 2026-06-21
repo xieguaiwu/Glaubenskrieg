@@ -1,0 +1,83 @@
+{
+  "n_windows": 9,
+  "mean_sharpe": -0.1082121105104831,
+  "std_sharpe": 0.9465473989102623,
+  "mean_ic": 0.009488094696374821,
+  "std_ic": 0.014924023053740744,
+  "mean_directional_accuracy": 0.49447222222222226,
+  "std_directional_accuracy": 0.05875365762189294,
+  "windows": [
+    {
+      "window": 0,
+      "window_start": 0,
+      "window_end": 606,
+      "sharpe": -0.7893025513957039,
+      "ic": 0.029353170228058733,
+      "directional_accuracy": 0.44925000000000004
+    },
+    {
+      "window": 1,
+      "window_start": 63,
+      "window_end": 669,
+      "sharpe": 0.03126763585713015,
+      "ic": 0.006694953621158374,
+      "directional_accuracy": 0.4987500000000001
+    },
+    {
+      "window": 2,
+      "window_start": 126,
+      "window_end": 732,
+      "sharpe": -0.9794315629311242,
+      "ic": -0.0008249259363996498,
+      "directional_accuracy": 0.4639999999999999
+    },
+    {
+      "window": 3,
+      "window_start": 189,
+      "window_end": 795,
+      "sharpe": -1.686635377042692,
+      "ic": 0.0,
+      "directional_accuracy": 0.41300000000000003
+    },
+    {
+      "window": 4,
+      "window_start": 252,
+      "window_end": 858,
+      "sharpe": -0.06436035253204492,
+      "ic": 0.04310072331691593,
+      "directional_accuracy": 0.469
+    },
+    {
+      "window": 5,
+      "window_start": 315,
+      "window_end": 921,
+      "sharpe": -0.49107509726322746,
+      "ic": 0.007068931037639995,
+      "directional_accuracy": 0.4447499999999999
+    },
+    {
+      "window": 6,
+      "window_start": 378,
+      "window_end": 984,
+      "sharpe": 1.5637558919882324,
+      "ic": 0.0,
+      "directional_accuracy": 0.5945
+    },
+    {
+      "window": 7,
+      "window_start": 441,
+      "window_end": 1047,
+      "sharpe": 0.7945152728134552,
+      "ic": 0.0,
+      "directional_accuracy": 0.5660000000000001
+    },
+    {
+      "window": 8,
+      "window_start": 504,
+      "window_end": 1110,
+      "sharpe": 0.6473571459116269,
+      "ic": 0.0,
+      "directional_accuracy": 0.5509999999999999
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "config": {
+    "data_dir": "/root/data/tencent_clean",
+    "n_stocks_loaded": 3,
+    "seed": 42,
+    "protocol": "train=1000d purge=126d val=200d step=126d",
+    "target": "1-step-ahead squared daily log returns",
+    "return_scale": 100.0,
+    "garch_spec": "GARCH(1,1) with normal innovations, degenerate-fit fallback to training variance",
+    "lgb_spec": "LGBMRegressor, log(y+\u03b5) transform, num_leaves=31, max_depth=6, lr=0.05, 300 rounds, early_stopping=20",
+    "lgb_log_floor": 0.0001,
+    "n_features": 10,
+    "feature_names": [
+      "simple_return",
+      "log_return",
+      "sma_5",
+      "sma_20",
+      "rsi_14",
+      "bollinger_position",
+      "volume_ratio",
+      "realized_vol_21",
+      "bias",
+      "sq_return_lag1"
+    ]
+  },
+  "aggregate": {
+    "n_stocks_total": 3,
+    "n_stocks_valid": 3,
+    "per_predictor": {
+      "garch": {
+        "mean_qlike": 2.7991612467372717,
+        "median_qlike": 2.654440340863769,
+        "std_qlike": 0.6977262399962364,
+        "n_valid": 3
+      },
+      "lgb": {
+        "mean_qlike": 5.504160458001485,
+        "median_qlike": 4.375430780163172,
+        "std_qlike": 2.85794792557225,
+        "n_valid": 3
+      },
+      "mean": {
+        "mean_qlike": 2.9749116001391496,
+        "median_qlike": 2.8068915716533485,
+        "std_qlike": 0.7067450863342094,
+        "n_valid": 3
+      },
+      "persistence": {
+        "mean_qlike": 852.2828354360496,
+        "median_qlike": 570.9304223409777,
+        "std_qlike": 746.1095141848301,
+        "n_valid": 3
+      }
+    },
+    "garch_vs_lgb": {
+      "n_garch_wins": 3,
+      "n_lgb_wins": 0,
+      "fraction_garch_wins": 1.0,
+      "mean_qlike_difference_garch_minus_lgb": -2.7049992112642136,
+      "std_qlike_difference": 2.1732507684840283,
+      "ci_95_mean_qlike_difference": [
+        -8.103653402278871,
+        2.6936549797504443
+      ],
+      "interpretation": "GARCH achieves lower QLIKE on 100.0% of stocks (3 / 3)"
+    },
+    "qlike_ratio_distribution": {
+      "description": "LGB QLIKE / GARCH QLIKE: ratio > 1 means LGB has higher loss (worse)",
+      "percentiles": {
+        "error": "insufficient data",
+        "n": 3
+      }
+    },
+    "paired_ttest_garch_vs_lgb": {
+      "error": "insufficient samples",
+      "n_pairs": 3
+    },
+    "diebold_mariano_per_stock": {
+      "n_valid": 0,
+      "mean_dm_statistic": NaN,
+      "median_dm_statistic": NaN,
+      "mean_p_value": NaN,
+      "fraction_significant_05": 0.0,
+      "fraction_significant_01": 0.0,
+      "fisher_combined_statistic": NaN,
+      "fisher_combined_p_value": NaN
+    },
+    "diebold_mariano_pooled": {
+      "dm_statistic": -12.322363698689038,
+      "p_value": 0.0,
+      "mean_differential": -2.6447112534979516,
+      "n": 3150,
+      "loss_type": "qlike",
+      "n_stocks_contributing": 3
+    },
+    "average_ranks": {
+      "garch": 0.0,
+      "lgb": 2.0,
+      "mean": 1.0,
+      "persistence": 3.0
+    },
+    "per_stock": {
+      "000001": {
+        "garch_qlike": 2.1851443977972416,
+        "lgb_qlike": 3.382944664904914,
+        "mean_qlike": 2.3673179926605674,
+        "persistence_qlike": 570.9304223409777,
+        "qlike_ratio_lgb_over_garch": 1.5481561165088806,
+        "garch_beats_lgb": true,
+        "n_folds": 9,
+        "dm_p_value": null
+      },
+      "000002": {
+        "garch_qlike": 2.654440340863769,
+        "lgb_qlike": 4.375430780163172,
+        "mean_qlike": 2.8068915716533485,
+        "persistence_qlike": 1698.1611561971692,
+        "qlike_ratio_lgb_over_garch": 1.6483439890532192,
+        "garch_beats_lgb": true,
+        "n_folds": 8,
+        "dm_p_value": null
+      },
+      "000004": {
+        "garch_qlike": 3.5578990015508043,
+        "lgb_qlike": 8.754105928936369,
+        "mean_qlike": 3.7505252361035333,
+        "persistence_qlike": 287.756927770002,
+        "qlike_ratio_lgb_over_garch": 2.460470610638655,
+        "garch_beats_lgb": true,
+        "n_folds": 8,
+        "dm_p_value": null
+      }
+    }
+  },
+  "runtime_s": 2.38
+}

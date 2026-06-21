@@ -1,0 +1,168 @@
+{
+  "config": {
+    "data_dir": "/root/data/us_stocks_full",
+    "n_stocks_loaded": 5,
+    "seed": 42,
+    "protocol": "train=1000d purge=126d val=200d step=126d",
+    "target": "1-step-ahead squared daily log returns",
+    "return_scale": 100.0,
+    "garch_spec": "GARCH(1,1) with normal innovations, degenerate-fit fallback to training variance",
+    "lgb_spec": "LGBMRegressor, log(y+\u03b5) transform, num_leaves=31, max_depth=6, lr=0.05, 300 rounds, early_stopping=20",
+    "lgb_log_floor": 0.0001,
+    "n_features": 10,
+    "feature_names": [
+      "simple_return",
+      "log_return",
+      "sma_5",
+      "sma_20",
+      "rsi_14",
+      "bollinger_position",
+      "volume_ratio",
+      "realized_vol_21",
+      "bias",
+      "sq_return_lag1"
+    ]
+  },
+  "aggregate": {
+    "n_stocks_total": 5,
+    "n_stocks_valid": 5,
+    "per_predictor": {
+      "garch": {
+        "mean_qlike": 2.005351157386337,
+        "median_qlike": 2.0988518275633643,
+        "std_qlike": 0.20528307539697824,
+        "n_valid": 5
+      },
+      "lgb": {
+        "mean_qlike": 5.156793812464204,
+        "median_qlike": 5.073778928512582,
+        "std_qlike": 1.1349980546328882,
+        "n_valid": 5
+      },
+      "mean": {
+        "mean_qlike": 2.1383409991346842,
+        "median_qlike": 2.1188773501699205,
+        "std_qlike": 0.327980711991593,
+        "n_valid": 5
+      },
+      "persistence": {
+        "mean_qlike": 271.9211496038279,
+        "median_qlike": 237.11941959081418,
+        "std_qlike": 139.70090276031343,
+        "n_valid": 5
+      }
+    },
+    "garch_vs_lgb": {
+      "n_garch_wins": 5,
+      "n_lgb_wins": 0,
+      "fraction_garch_wins": 1.0,
+      "mean_qlike_difference_garch_minus_lgb": -3.151442655077867,
+      "std_qlike_difference": 0.9875414102994347,
+      "ci_95_mean_qlike_difference": [
+        -4.377637270982049,
+        -1.9252480391736848
+      ],
+      "interpretation": "GARCH achieves lower QLIKE on 100.0% of stocks (5 / 5)"
+    },
+    "qlike_ratio_distribution": {
+      "description": "LGB QLIKE / GARCH QLIKE: ratio > 1 means LGB has higher loss (worse)",
+      "percentiles": {
+        "min": 2.1761367458583916,
+        "p5": 2.215374984975071,
+        "p25": 2.372327941441788,
+        "p50": 2.4174069183354034,
+        "p75": 2.644532639030821,
+        "p95": 3.073026273608888,
+        "max": 3.180149682253405,
+        "mean": 2.558110785383962,
+        "std": 0.3855574328759126,
+        "n": 5
+      }
+    },
+    "paired_ttest_garch_vs_lgb": {
+      "t_statistic": -7.135741276722609,
+      "p_value": 0.002039718423313396,
+      "mean_delta": -3.151442655077867,
+      "std_delta": 0.9875414102994347,
+      "n_pairs": 5,
+      "interpretation": "GARCH significantly better"
+    },
+    "diebold_mariano_per_stock": {
+      "n_valid": 5,
+      "mean_dm_statistic": -5.002750930549398,
+      "median_dm_statistic": -4.446669757063946,
+      "mean_p_value": 0.0011136147594319468,
+      "fraction_significant_05": 1.0,
+      "fraction_significant_01": 1.0,
+      "fisher_combined_statistic": 82.13158967979817,
+      "fisher_combined_p_value": 1.8207657603852567e-14
+    },
+    "diebold_mariano_pooled": {
+      "dm_statistic": -17.90614046021998,
+      "p_value": 0.0,
+      "mean_differential": -3.1514426550778674,
+      "n": 7560,
+      "loss_type": "qlike",
+      "n_stocks_contributing": 5
+    },
+    "average_ranks": {
+      "garch": 0.2,
+      "lgb": 2.0,
+      "mean": 0.8,
+      "persistence": 3.0
+    },
+    "per_stock": {
+      "A": {
+        "garch_qlike": 2.1556492179940174,
+        "lgb_qlike": 5.113906871794347,
+        "mean_qlike": 2.1188773501699205,
+        "persistence_qlike": 505.92332550619216,
+        "qlike_ratio_lgb_over_garch": 2.372327941441788,
+        "garch_beats_lgb": true,
+        "n_folds": 12,
+        "dm_p_value": 0.0
+      },
+      "AAPL": {
+        "garch_qlike": 2.0988518275633643,
+        "lgb_qlike": 5.073778928512582,
+        "mean_qlike": 2.2615639607905584,
+        "persistence_qlike": 278.39847213430716,
+        "qlike_ratio_lgb_over_garch": 2.4174069183354034,
+        "garch_beats_lgb": true,
+        "n_folds": 12,
+        "dm_p_value": 8.72117531391936e-06
+      },
+      "ABBV": {
+        "garch_qlike": 1.8108743195232064,
+        "lgb_qlike": 3.94071014884576,
+        "mean_qlike": 1.8623372901953348,
+        "persistence_qlike": 237.11941959081418,
+        "qlike_ratio_lgb_over_garch": 2.1761367458583916,
+        "garch_beats_lgb": true,
+        "n_folds": 12,
+        "dm_p_value": 1.2025412376992506e-07
+      },
+      "ABT": {
+        "garch_qlike": 1.7591105223191055,
+        "lgb_qlike": 4.65202519193543,
+        "mean_qlike": 1.8221507909897179,
+        "persistence_qlike": 147.8271216517262,
+        "qlike_ratio_lgb_over_garch": 2.644532639030821,
+        "garch_beats_lgb": true,
+        "n_folds": 12,
+        "dm_p_value": 0.00026348101337592134
+      },
+      "ACGL": {
+        "garch_qlike": 2.2022698995319914,
+        "lgb_qlike": 7.003547921232901,
+        "mean_qlike": 2.626775603527889,
+        "persistence_qlike": 190.3374091360999,
+        "qlike_ratio_lgb_over_garch": 3.180149682253405,
+        "garch_beats_lgb": true,
+        "n_folds": 12,
+        "dm_p_value": 0.005295751354346123
+      }
+    }
+  },
+  "runtime_s": 5.25
+}

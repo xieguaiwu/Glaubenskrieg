@@ -1,0 +1,393 @@
+{
+  "grinold_kahn": {
+    "expected_5d_gross_pct": 0.235,
+    "expected_annual_gross_pct": 11.75,
+    "expected_annual_net_pct": -3.25,
+    "annual_cost_pct": 15.0,
+    "portfolio_annual_sigma_pct": 17.56,
+    "sharpe_gross": 0.498,
+    "sharpe_net": -0.356,
+    "ic_breakeven": 0.1151,
+    "implied_transfer_coefficient": 0.0468,
+    "sensitivity": [
+      {
+        "ic": 0.03,
+        "gross_annual_pct": 4.69,
+        "net_annual_pct": -10.31,
+        "monthly_expected_10k_cny": -85.9,
+        "monthly_expected_50k_cny": -429.4
+      },
+      {
+        "ic": 0.044,
+        "gross_annual_pct": 6.88,
+        "net_annual_pct": -8.12,
+        "monthly_expected_10k_cny": -67.6,
+        "monthly_expected_50k_cny": -338.2
+      },
+      {
+        "ic": 0.05,
+        "gross_annual_pct": 7.82,
+        "net_annual_pct": -7.18,
+        "monthly_expected_10k_cny": -59.8,
+        "monthly_expected_50k_cny": -299.1
+      },
+      {
+        "ic": 0.057,
+        "gross_annual_pct": 8.92,
+        "net_annual_pct": -6.08,
+        "monthly_expected_10k_cny": -50.7,
+        "monthly_expected_50k_cny": -253.4
+      },
+      {
+        "ic": 0.065,
+        "gross_annual_pct": 10.17,
+        "net_annual_pct": -4.83,
+        "monthly_expected_10k_cny": -40.3,
+        "monthly_expected_50k_cny": -201.3
+      },
+      {
+        "ic": 0.0751,
+        "gross_annual_pct": 11.75,
+        "net_annual_pct": -3.25,
+        "monthly_expected_10k_cny": -27.1,
+        "monthly_expected_50k_cny": -135.4
+      },
+      {
+        "ic": 0.097,
+        "gross_annual_pct": 15.18,
+        "net_annual_pct": 0.18,
+        "monthly_expected_10k_cny": 1.5,
+        "monthly_expected_50k_cny": 7.3
+      },
+      {
+        "ic": 0.1,
+        "gross_annual_pct": 15.64,
+        "net_annual_pct": 0.64,
+        "monthly_expected_10k_cny": 5.4,
+        "monthly_expected_50k_cny": 26.9
+      }
+    ]
+  },
+  "signal_analysis": {
+    "ic_mean": 0.0751,
+    "ic_std_window": 0.0444,
+    "decay_per_window": -0.008,
+    "decay_r_squared": 0.3216,
+    "first3_mean": 0.1317,
+    "last3_mean": 0.0527,
+    "p_ic_below_breakeven_pct": 81.6,
+    "p_high_to_low": 0.25,
+    "p_low_to_high": 0.33
+  },
+  "kelly": {
+    "f_kelly_full": 2.837,
+    "f_kelly_net": -2.026,
+    "f_half_kelly": 1.418,
+    "f_quarter_kelly": 0.709,
+    "f_robust": 1.914,
+    "f_empirical_net": 1.25
+  },
+  "monte_carlo_survival": {
+    "Optimistic (IC=0.097, MetaGate fused)": {
+      "No stop loss": {
+        "survival_rate": 100.0,
+        "mean_terminal_capital": 2004.1,
+        "mean_pnl": 4.1,
+        "mean_return_pct": 0.21,
+        "p_profitable": 52.58,
+        "p_ruin": 0.0,
+        "mean_months_survived": 12.0,
+        "median_terminal": 2003.6,
+        "p5_terminal": 1917.6,
+        "p95_terminal": 2092.6,
+        "p25_terminal": 1967.7,
+        "p75_terminal": 2040.2
+      },
+      "drawdown": {
+        "survival_rate": 100.0,
+        "mean_terminal_capital": 2003.7,
+        "mean_pnl": 3.7,
+        "mean_return_pct": 0.19,
+        "p_profitable": 52.26,
+        "p_ruin": 0.0,
+        "mean_months_survived": 12.0,
+        "median_terminal": 2003.0,
+        "p5_terminal": 1917.3,
+        "p95_terminal": 2092.7,
+        "p25_terminal": 1967.2,
+        "p75_terminal": 2039.3
+      },
+      "consecutive_losing": {
+        "survival_rate": 37.52,
+        "mean_terminal_capital": 2042.5,
+        "mean_pnl": 42.5,
+        "mean_return_pct": 2.12,
+        "p_profitable": 45.54,
+        "p_ruin": 0.0,
+        "mean_months_survived": 8.2,
+        "median_terminal": 1994.5,
+        "p5_terminal": 1950.1,
+        "p95_terminal": 2090.7,
+        "p25_terminal": 1973.8,
+        "p75_terminal": 2032.6
+      },
+      "absolute": {
+        "survival_rate": 100.0,
+        "mean_terminal_capital": 2003.9,
+        "mean_pnl": 3.9,
+        "mean_return_pct": 0.19,
+        "p_profitable": 52.24,
+        "p_ruin": 0.0,
+        "mean_months_survived": 12.0,
+        "median_terminal": 2002.9,
+        "p5_terminal": 1917.3,
+        "p95_terminal": 2092.7,
+        "p25_terminal": 1967.6,
+        "p75_terminal": 2039.7
+      }
+    },
+    "Baseline (IC=0.075, LSTM mean)": {
+      "No stop loss": {
+        "survival_rate": 100.0,
+        "mean_terminal_capital": 1936.7,
+        "mean_pnl": -63.3,
+        "mean_return_pct": -3.17,
+        "p_profitable": 11.0,
+        "p_ruin": 0.0,
+        "mean_months_survived": 12.0,
+        "median_terminal": 1936.2,
+        "p5_terminal": 1852.9,
+        "p95_terminal": 2022.1,
+        "p25_terminal": 1902.0,
+        "p75_terminal": 1971.0
+      },
+      "drawdown": {
+        "survival_rate": 100.0,
+        "mean_terminal_capital": 1936.1,
+        "mean_pnl": -63.9,
+        "mean_return_pct": -3.2,
+        "p_profitable": 11.02,
+        "p_ruin": 0.0,
+        "mean_months_survived": 12.0,
+        "median_terminal": 1935.2,
+        "p5_terminal": 1852.0,
+        "p95_terminal": 2021.6,
+        "p25_terminal": 1901.3,
+        "p75_terminal": 1970.3
+      },
+      "consecutive_losing": {
+        "survival_rate": 11.04,
+        "mean_terminal_capital": 1999.7,
+        "mean_pnl": -0.3,
+        "mean_return_pct": -0.02,
+        "p_profitable": 10.89,
+        "p_ruin": 0.0,
+        "mean_months_survived": 5.8,
+        "median_terminal": 1969.3,
+        "p5_terminal": 1932.4,
+        "p95_terminal": 2018.1,
+        "p25_terminal": 1955.1,
+        "p75_terminal": 1983.8
+      },
+      "absolute": {
+        "survival_rate": 99.84,
+        "mean_terminal_capital": 1936.2,
+        "mean_pnl": -63.8,
+        "mean_return_pct": -3.19,
+        "p_profitable": 10.58,
+        "p_ruin": 0.0,
+        "mean_months_survived": 12.0,
+        "median_terminal": 1935.4,
+        "p5_terminal": 1852.3,
+        "p95_terminal": 2021.4,
+        "p25_terminal": 1901.0,
+        "p75_terminal": 1970.5
+      }
+    },
+    "Recent (IC=0.057, last 3 windows)": {
+      "No stop loss": {
+        "survival_rate": 100.0,
+        "mean_terminal_capital": 1881.7,
+        "mean_pnl": -118.3,
+        "mean_return_pct": -5.92,
+        "p_profitable": 1.16,
+        "p_ruin": 0.0,
+        "mean_months_survived": 12.0,
+        "median_terminal": 1881.6,
+        "p5_terminal": 1799.7,
+        "p95_terminal": 1965.8,
+        "p25_terminal": 1847.5,
+        "p75_terminal": 1915.0
+      },
+      "drawdown": {
+        "survival_rate": 100.0,
+        "mean_terminal_capital": 1882.1,
+        "mean_pnl": -117.9,
+        "mean_return_pct": -5.9,
+        "p_profitable": 1.0,
+        "p_ruin": 0.0,
+        "mean_months_survived": 12.0,
+        "median_terminal": 1881.8,
+        "p5_terminal": 1801.0,
+        "p95_terminal": 1964.5,
+        "p25_terminal": 1848.2,
+        "p75_terminal": 1915.2
+      },
+      "consecutive_losing": {
+        "survival_rate": 2.72,
+        "mean_terminal_capital": 1968.2,
+        "mean_pnl": -31.8,
+        "mean_return_pct": -1.59,
+        "p_profitable": 1.89,
+        "p_ruin": 0.0,
+        "mean_months_survived": 4.5,
+        "median_terminal": 1958.1,
+        "p5_terminal": 1920.7,
+        "p95_terminal": 1988.6,
+        "p25_terminal": 1943.7,
+        "p75_terminal": 1970.9
+      },
+      "absolute": {
+        "survival_rate": 97.08,
+        "mean_terminal_capital": 1884.9,
+        "mean_pnl": -115.1,
+        "mean_return_pct": -5.76,
+        "p_profitable": 1.12,
+        "p_ruin": 0.0,
+        "mean_months_survived": 12.0,
+        "median_terminal": 1881.0,
+        "p5_terminal": 1799.8,
+        "p95_terminal": 1965.1,
+        "p25_terminal": 1847.4,
+        "p75_terminal": 1914.9
+      }
+    },
+    "Held-out (IC=0.044, Ridge held-out)": {
+      "No stop loss": {
+        "survival_rate": 100.0,
+        "mean_terminal_capital": 1844.3,
+        "mean_pnl": -155.7,
+        "mean_return_pct": -7.78,
+        "p_profitable": 0.08,
+        "p_ruin": 0.0,
+        "mean_months_survived": 12.0,
+        "median_terminal": 1843.7,
+        "p5_terminal": 1764.2,
+        "p95_terminal": 1927.4,
+        "p25_terminal": 1810.8,
+        "p75_terminal": 1877.2
+      },
+      "drawdown": {
+        "survival_rate": 100.0,
+        "mean_terminal_capital": 1843.5,
+        "mean_pnl": -156.5,
+        "mean_return_pct": -7.83,
+        "p_profitable": 0.04,
+        "p_ruin": 0.0,
+        "mean_months_survived": 12.0,
+        "median_terminal": 1842.9,
+        "p5_terminal": 1764.0,
+        "p95_terminal": 1926.0,
+        "p25_terminal": 1809.5,
+        "p75_terminal": 1876.8
+      },
+      "consecutive_losing": {
+        "survival_rate": 0.55,
+        "mean_terminal_capital": 1945.1,
+        "mean_pnl": -54.9,
+        "mean_return_pct": -2.74,
+        "p_profitable": 0.36,
+        "p_ruin": 0.0,
+        "mean_months_survived": 3.8,
+        "median_terminal": 1951.1,
+        "p5_terminal": 1913.0,
+        "p95_terminal": 1980.9,
+        "p25_terminal": 1936.2,
+        "p75_terminal": 1964.2
+      },
+      "absolute": {
+        "survival_rate": 88.34,
+        "mean_terminal_capital": 1854.8,
+        "mean_pnl": -145.2,
+        "mean_return_pct": -7.26,
+        "p_profitable": 0.12,
+        "p_ruin": 0.0,
+        "mean_months_survived": 11.8,
+        "median_terminal": 1843.7,
+        "p5_terminal": 1786.4,
+        "p95_terminal": 1926.3,
+        "p25_terminal": 1810.7,
+        "p75_terminal": 1877.2
+      }
+    },
+    "Decaying (IC starts 0.075, decays -0.0079/month)": {
+      "No stop loss": {
+        "survival_rate": 100.0,
+        "mean_terminal_capital": 1907.4,
+        "mean_pnl": -92.6,
+        "mean_return_pct": -4.63,
+        "p_profitable": 3.82,
+        "p_ruin": 0.0,
+        "mean_months_survived": 12.0,
+        "median_terminal": 1906.9,
+        "p5_terminal": 1823.9,
+        "p95_terminal": 1992.6,
+        "p25_terminal": 1873.0,
+        "p75_terminal": 1941.4
+      },
+      "drawdown": {
+        "survival_rate": 100.0,
+        "mean_terminal_capital": 1907.2,
+        "mean_pnl": -92.8,
+        "mean_return_pct": -4.64,
+        "p_profitable": 3.82,
+        "p_ruin": 0.0,
+        "mean_months_survived": 12.0,
+        "median_terminal": 1906.3,
+        "p5_terminal": 1824.4,
+        "p95_terminal": 1993.0,
+        "p25_terminal": 1872.4,
+        "p75_terminal": 1941.6
+      },
+      "consecutive_losing": {
+        "survival_rate": 5.61,
+        "mean_terminal_capital": 1982.9,
+        "mean_pnl": -17.1,
+        "mean_return_pct": -0.86,
+        "p_profitable": 6.16,
+        "p_ruin": 0.0,
+        "mean_months_survived": 5.4,
+        "median_terminal": 1966.0,
+        "p5_terminal": 1927.9,
+        "p95_terminal": 2003.9,
+        "p25_terminal": 1951.7,
+        "p75_terminal": 1979.6
+      },
+      "absolute": {
+        "survival_rate": 99.26,
+        "mean_terminal_capital": 1907.3,
+        "mean_pnl": -92.7,
+        "mean_return_pct": -4.64,
+        "p_profitable": 3.33,
+        "p_ruin": 0.0,
+        "mean_months_survived": 12.0,
+        "median_terminal": 1906.1,
+        "p5_terminal": 1823.9,
+        "p95_terminal": 1990.0,
+        "p25_terminal": 1871.9,
+        "p75_terminal": 1939.9
+      }
+    }
+  },
+  "drawdown": {
+    "expected_mdd_analytic_pct": 11.01,
+    "mdd_mean_mc_pct": 20.03,
+    "mdd_median_mc_pct": 18.94,
+    "mdd_p95_mc_pct": 34.0
+  },
+  "capital_requirements": {
+    "baseline_ic_0075": {
+      "min_capital_95pct_survival": 0.0
+    }
+  }
+}
