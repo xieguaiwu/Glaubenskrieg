@@ -175,3 +175,15 @@ MIT License。
 <p align="center">
   <a href="README.md">🇬🇧 English</a>
 </p>
+
+---
+
+## 数据来源说明（2026-08-16）
+
+多资产实验载入的是 `tencent_clean` —— 200 只深市 A 股（2015–2026，腾讯财经 API；
+下载器仅抓取 `sh`/`sz` 代码）。50 只"multi-asset pipeline"使用该股票池按文件名排序的
+前 50 只，共同交易区间为 2020-11-09 至 2026-04-27（1,110 个可用交易日）。
+
+部分早期结果文件与文档曾将这批数据标为 "HK" / "old_hk"（历史误标）。元数据键已更名为
+`a_share_multiasset_baselines`，测量数值本身未做任何改动。
+

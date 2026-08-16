@@ -6,7 +6,7 @@
     "sources": [
       "us_stocks"
     ],
-    "old_hk_baselines": {
+    "a_share_multiasset_baselines": {
       "vol_qlike_mean": -6.42,
       "vol_qlike_std": 0.24,
       "ret_ic_mean": 0.053,

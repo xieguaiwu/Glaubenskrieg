@@ -176,3 +176,17 @@ MIT License.
 <p align="center">
   <a href="README.zh-CN.md">🇨🇳 中文版</a>
 </p>
+
+---
+
+## Data provenance note (2026-08-16)
+
+The multi-asset experiments load `tencent_clean` — 200 Shenzhen-listed A-share stocks
+(2015–2026, Tencent Finance API; the downloader fetches `sh`/`sz` codes only).
+The 50-stock "multi-asset pipeline" uses the first 50 tickers (sorted order) of this
+universe, with a common trading window of 2020-11-09 to 2026-04-27 (1,110 usable days).
+
+Some earlier result files and documents refer to this data as "HK" / "old_hk"
+(a historical mislabel). The metadata keys have been renamed to
+`a_share_multiasset_baselines`; the measurements themselves are unchanged.
+
