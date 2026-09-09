@@ -1,0 +1,94 @@
+2026-06-06 00:11:31,172 [INFO] Random seed set to 456
+2026-06-06 00:11:31,177 [INFO] Loading multi-asset data from /root/data/tencent_clean
+2026-06-06 00:11:42,617 [INFO] Loaded 50 assets from /root/data/tencent_clean
+2026-06-06 00:11:42,647 [INFO] Common date range: 2020-11-09 00:00:00 ~ 2026-04-27 00:00:00 (1173 trading days)
+2026-06-06 00:11:42,792 [INFO] Multi-asset data: (1110, 50, 63, 9), targets: (1110, 63, 50)
+2026-06-06 00:11:42,805 [INFO] Targets cross-sectionally demeaned (shape: (1110, 63, 50))
+2026-06-06 00:11:42,807 [INFO] Loaded 50 assets, data: (1110, 50, 63, 9), targets: (1110, 63, 50)
+2026-06-06 00:11:42,845 [INFO] Class weights: [5.9100e-01 8.1585e+11 7.6400e-01]
+2026-06-06 00:11:42,846 [INFO] Multi-asset — input_dim=9, n_assets=50
+2026-06-06 00:11:42,983 [INFO] Model: MultiAssetCTM, params=99540, n_train=777, param/seq ratio=128.1:1
+2026-06-06 00:11:42,984 [INFO] Starting walk-forward training...
+2026-06-06 00:11:45,340 [INFO]     Epoch 1/50: train_loss=20.2564 val_loss=20.2966 val_sharpe=-0.0002 val_ic=0.0078 lr=3.27e-05
+2026-06-06 00:11:54,623 [INFO]     Epoch 6/50: train_loss=17.8648 val_loss=17.7984 val_sharpe=0.0499 val_ic=0.0136 lr=1.81e-04
+/home/vipuser/miniconda3/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:152: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+2026-06-06 00:12:03,983 [INFO]     Epoch 11/50: train_loss=16.2673 val_loss=16.5211 val_sharpe=-0.2489 val_ic=0.0121 lr=3.00e-04
+2026-06-06 00:12:13,373 [INFO]     Epoch 16/50: train_loss=15.0716 val_loss=15.4030 val_sharpe=0.1033 val_ic=0.0117 lr=2.84e-04
+2026-06-06 00:12:22,668 [INFO]     Epoch 21/50: train_loss=14.4607 val_loss=14.8788 val_sharpe=0.0127 val_ic=0.0152 lr=2.47e-04
+2026-06-06 00:12:32,001 [INFO]     Epoch 26/50: train_loss=14.0125 val_loss=14.6251 val_sharpe=-0.1921 val_ic=0.0180 lr=1.96e-04
+2026-06-06 00:12:41,352 [INFO]     Epoch 31/50: train_loss=13.7099 val_loss=14.2439 val_sharpe=-0.0909 val_ic=0.0159 lr=1.38e-04
+2026-06-06 00:12:46,972 [INFO]     Epoch 1/50: train_loss=22.0377 val_loss=21.5126 val_sharpe=-0.0000 val_ic=-0.0229 lr=3.27e-05
+2026-06-06 00:12:56,326 [INFO]     Epoch 6/50: train_loss=17.0323 val_loss=16.8343 val_sharpe=0.0804 val_ic=0.0494 lr=1.81e-04
+2026-06-06 00:13:05,582 [INFO]     Epoch 11/50: train_loss=15.7346 val_loss=15.6452 val_sharpe=0.8757 val_ic=0.0616 lr=3.00e-04
+2026-06-06 00:13:14,886 [INFO]     Epoch 16/50: train_loss=14.8853 val_loss=14.9467 val_sharpe=0.3475 val_ic=0.0615 lr=2.84e-04
+2026-06-06 00:13:24,347 [INFO]     Epoch 21/50: train_loss=14.0274 val_loss=14.2203 val_sharpe=0.4163 val_ic=0.0502 lr=2.47e-04
+2026-06-06 00:13:28,143 [INFO]     Epoch 1/50: train_loss=19.8605 val_loss=19.8367 val_sharpe=0.0000 val_ic=-0.0626 lr=3.27e-05
+2026-06-06 00:13:37,576 [INFO]     Epoch 6/50: train_loss=18.1522 val_loss=18.0906 val_sharpe=-0.4225 val_ic=-0.0593 lr=1.81e-04
+2026-06-06 00:13:47,006 [INFO]     Epoch 11/50: train_loss=16.7375 val_loss=16.9424 val_sharpe=0.2086 val_ic=-0.0121 lr=3.00e-04
+2026-06-06 00:13:56,327 [INFO]     Epoch 16/50: train_loss=15.8205 val_loss=16.1765 val_sharpe=0.2658 val_ic=-0.0137 lr=2.84e-04
+2026-06-06 00:14:05,736 [INFO]     Epoch 21/50: train_loss=15.3709 val_loss=15.7903 val_sharpe=0.3124 val_ic=-0.0153 lr=2.47e-04
+2026-06-06 00:14:11,471 [INFO]     Epoch 1/50: train_loss=22.6031 val_loss=21.9503 val_sharpe=-0.0000 val_ic=0.0046 lr=3.27e-05
+2026-06-06 00:14:20,794 [INFO]     Epoch 6/50: train_loss=17.4243 val_loss=17.2267 val_sharpe=-0.0943 val_ic=0.0044 lr=1.81e-04
+2026-06-06 00:14:30,078 [INFO]     Epoch 11/50: train_loss=16.0387 val_loss=15.9477 val_sharpe=0.3377 val_ic=0.0218 lr=3.00e-04
+2026-06-06 00:14:39,311 [INFO]     Epoch 16/50: train_loss=14.9186 val_loss=14.9259 val_sharpe=-0.2118 val_ic=-0.0081 lr=2.84e-04
+2026-06-06 00:14:48,620 [INFO]     Epoch 21/50: train_loss=14.2101 val_loss=14.2027 val_sharpe=-0.3571 val_ic=-0.0114 lr=2.47e-04
+2026-06-06 00:14:50,502 [INFO]     Epoch 1/50: train_loss=19.8564 val_loss=19.6525 val_sharpe=-0.0067 val_ic=0.0146 lr=3.27e-05
+2026-06-06 00:14:59,858 [INFO]     Epoch 6/50: train_loss=18.0730 val_loss=17.9297 val_sharpe=0.2094 val_ic=0.0224 lr=1.81e-04
+2026-06-06 00:15:09,148 [INFO]     Epoch 11/50: train_loss=16.8642 val_loss=16.9136 val_sharpe=0.5339 val_ic=0.0361 lr=3.00e-04
+2026-06-06 00:15:18,462 [INFO]     Epoch 16/50: train_loss=15.8363 val_loss=16.1091 val_sharpe=0.2683 val_ic=0.0299 lr=2.84e-04
+2026-06-06 00:15:27,750 [INFO]     Epoch 21/50: train_loss=15.1779 val_loss=15.4144 val_sharpe=0.5290 val_ic=0.0062 lr=2.47e-04
+2026-06-06 00:15:35,199 [INFO]     Epoch 1/50: train_loss=19.4525 val_loss=19.3469 val_sharpe=0.0535 val_ic=0.0097 lr=3.27e-05
+2026-06-06 00:15:44,603 [INFO]     Epoch 6/50: train_loss=18.0317 val_loss=17.8448 val_sharpe=0.2617 val_ic=0.0145 lr=1.81e-04
+2026-06-06 00:15:53,965 [INFO]     Epoch 11/50: train_loss=16.6470 val_loss=16.6938 val_sharpe=0.5200 val_ic=0.0206 lr=3.00e-04
+2026-06-06 00:16:03,377 [INFO]     Epoch 16/50: train_loss=15.4721 val_loss=15.6457 val_sharpe=-0.7084 val_ic=-0.0238 lr=2.84e-04
+2026-06-06 00:16:10,901 [INFO]     Epoch 1/50: train_loss=20.3489 val_loss=20.2771 val_sharpe=0.0000 val_ic=0.0862 lr=3.27e-05
+2026-06-06 00:16:20,365 [INFO]     Epoch 6/50: train_loss=17.3589 val_loss=17.2248 val_sharpe=0.6212 val_ic=0.0975 lr=1.81e-04
+2026-06-06 00:16:29,611 [INFO]     Epoch 11/50: train_loss=15.9228 val_loss=15.9873 val_sharpe=0.1526 val_ic=0.0474 lr=3.00e-04
+2026-06-06 00:16:39,044 [INFO]     Epoch 1/50: train_loss=25.2859 val_loss=24.2561 val_sharpe=-0.0000 val_ic=-0.0097 lr=3.27e-05
+2026-06-06 00:16:48,368 [INFO]     Epoch 6/50: train_loss=17.7781 val_loss=17.5380 val_sharpe=-0.2227 val_ic=0.0055 lr=1.81e-04
+2026-06-06 00:16:57,733 [INFO]     Epoch 11/50: train_loss=16.0463 val_loss=16.3139 val_sharpe=-0.4750 val_ic=-0.0156 lr=3.00e-04
+2026-06-06 00:17:03,331 [INFO]     Epoch 1/50: train_loss=19.1980 val_loss=19.3814 val_sharpe=-0.0755 val_ic=-0.0106 lr=3.27e-05
+2026-06-06 00:17:12,657 [INFO]     Epoch 6/50: train_loss=17.5626 val_loss=17.6327 val_sharpe=0.2910 val_ic=0.0534 lr=1.81e-04
+2026-06-06 00:17:22,014 [INFO]     Epoch 11/50: train_loss=16.3076 val_loss=16.7368 val_sharpe=-0.1817 val_ic=0.0237 lr=3.00e-04
+2026-06-06 00:17:31,340 [INFO]     Epoch 1/50: train_loss=18.7280 val_loss=18.7990 val_sharpe=-0.0038 val_ic=0.0145 lr=3.27e-05
+2026-06-06 00:17:40,632 [INFO]     Epoch 6/50: train_loss=17.5501 val_loss=17.5955 val_sharpe=-0.2131 val_ic=0.0006 lr=1.81e-04
+2026-06-06 00:17:49,931 [INFO]     Epoch 11/50: train_loss=16.2505 val_loss=16.6797 val_sharpe=-0.4853 val_ic=0.0209 lr=3.00e-04
+2026-06-06 00:17:59,264 [INFO]     Epoch 16/50: train_loss=15.5700 val_loss=16.0666 val_sharpe=-0.4482 val_ic=0.0391 lr=2.84e-04
+2026-06-06 00:18:08,542 [INFO]     Epoch 21/50: train_loss=14.8325 val_loss=14.9796 val_sharpe=-0.2445 val_ic=0.0547 lr=2.47e-04
+2026-06-06 00:18:17,945 [INFO]     Epoch 26/50: train_loss=14.2680 val_loss=14.7110 val_sharpe=-0.4631 val_ic=0.0601 lr=1.96e-04
+2026-06-06 00:18:27,263 [INFO]     Epoch 31/50: train_loss=13.8258 val_loss=13.8665 val_sharpe=-0.2380 val_ic=0.0556 lr=1.38e-04
+2026-06-06 00:18:34,692 [INFO]     Epoch 1/50: train_loss=21.5955 val_loss=21.2987 val_sharpe=-0.0000 val_ic=-0.0478 lr=3.27e-05
+2026-06-06 00:18:43,977 [INFO]     Epoch 6/50: train_loss=17.7458 val_loss=17.6786 val_sharpe=-0.4987 val_ic=0.0171 lr=1.81e-04
+2026-06-06 00:18:53,218 [INFO]     Epoch 11/50: train_loss=16.0571 val_loss=16.3920 val_sharpe=-0.2585 val_ic=0.0076 lr=3.00e-04
+2026-06-06 00:19:02,503 [INFO]     Epoch 16/50: train_loss=14.8486 val_loss=14.8144 val_sharpe=-0.1431 val_ic=-0.0071 lr=2.84e-04
+2026-06-06 00:19:06,218 [INFO]     Epoch 1/50: train_loss=19.4683 val_loss=19.1771 val_sharpe=-0.1137 val_ic=0.0267 lr=3.27e-05
+2026-06-06 00:19:15,532 [INFO]     Epoch 6/50: train_loss=17.6808 val_loss=17.3477 val_sharpe=-0.0731 val_ic=0.0554 lr=1.81e-04
+2026-06-06 00:19:24,835 [INFO]     Epoch 11/50: train_loss=16.2753 val_loss=16.5215 val_sharpe=-0.3583 val_ic=0.0687 lr=3.00e-04
+2026-06-06 00:19:34,013 [INFO]     Epoch 16/50: train_loss=15.3523 val_loss=15.5190 val_sharpe=-0.3384 val_ic=0.0595 lr=2.84e-04
+2026-06-06 00:19:43,298 [INFO]     Epoch 21/50: train_loss=14.5723 val_loss=14.8815 val_sharpe=0.3238 val_ic=0.0348 lr=2.47e-04
+2026-06-06 00:19:43,302 [INFO] === WALK-FORWARD RESULTS ===
+2026-06-06 00:19:43,302 [INFO]   Window 0: start=0, best_sharpe=0.0600, epochs=33
+2026-06-06 00:19:43,302 [INFO]   Window 1: start=21, best_sharpe=0.6221, epochs=22
+2026-06-06 00:19:43,302 [INFO]   Window 2: start=42, best_sharpe=0.5119, epochs=23
+2026-06-06 00:19:43,302 [INFO]   Window 3: start=63, best_sharpe=0.3377, epochs=21
+2026-06-06 00:19:43,303 [INFO]   Window 4: start=84, best_sharpe=0.4988, epochs=24
+2026-06-06 00:19:43,303 [INFO]   Window 5: start=105, best_sharpe=0.2024, epochs=19
+2026-06-06 00:19:43,303 [INFO]   Window 6: start=126, best_sharpe=0.5100, epochs=15
+2026-06-06 00:19:43,303 [INFO]   Window 7: start=147, best_sharpe=0.0000, epochs=13
+2026-06-06 00:19:43,303 [INFO]   Window 8: start=168, best_sharpe=0.0296, epochs=15
+2026-06-06 00:19:43,303 [INFO]   Window 9: start=189, best_sharpe=-0.1707, epochs=34
+2026-06-06 00:19:43,303 [INFO]   Window 10: start=210, best_sharpe=-0.3059, epochs=17
+2026-06-06 00:19:43,303 [INFO]   Window 11: start=231, best_sharpe=-0.3583, epochs=21
+2026-06-06 00:19:43,303 [INFO] Running final evaluation on held-out test set...
+2026-06-06 00:19:46,984 [INFO]   Test-prep epoch 1/50 — train_loss=18.778294, val_loss=17.459151
+2026-06-06 00:20:19,142 [INFO]   Test-prep epoch 10/50 — train_loss=13.947399, val_loss=14.520729
+2026-06-06 00:20:54,763 [INFO]   Test-prep epoch 20/50 — train_loss=12.081955, val_loss=12.362389
+2026-06-06 00:21:30,615 [INFO]   Test-prep epoch 30/50 — train_loss=10.479704, val_loss=11.207210
+2026-06-06 00:22:06,393 [INFO]   Test-prep epoch 40/50 — train_loss=8.829793, val_loss=9.110145
+2026-06-06 00:22:42,212 [INFO]   Test-prep epoch 50/50 — train_loss=7.417842, val_loss=7.621246
+2026-06-06 00:22:42,474 [INFO] Test set — loss=6.863367, sharpe=-0.1910, dir_acc=0.5469
+2026-06-06 00:22:42,497 [INFO] Full checkpoint saved to /root/checkpoints/tgpe_v4_ctm_curriculum_s456/ctm_model_full.pt (resumable)
+2026-06-06 00:22:42,497 [INFO] Models saved to /root/checkpoints/tgpe_v4_ctm_curriculum_s456
+2026-06-06 00:22:42,498 [INFO] Results saved to /root/results/tgpe_v4/ctm_curriculum_s456.json
+2026-06-06 00:22:42,498 [INFO] Mean Sharpe: 0.1615 ± 0.3235

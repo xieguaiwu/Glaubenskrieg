@@ -1,0 +1,30 @@
+═══════════════════════════════════════════════════════════
+  TGPE v4 — Phase 1: seeds 123  2026年 06月 05日 星期五 23:57:10 CST
+═══════════════════════════════════════════════════════════
+  [GPU0] Ensemble+TimeGate seed 123  PID=43162
+  [GPU1] CTM+Curriculum seed 123  PID=43163
+  Waiting for Phase 1 (seeds 123) to complete...
+  ✅ Phase 1 complete at 2026年 06月 06日 星期六 00:11:28 CST
+
+═══════════════════════════════════════════════════════════
+  TGPE v4 — Phase 2: seeds 456  2026年 06月 06日 星期六 00:11:28 CST
+═══════════════════════════════════════════════════════════
+  [GPU0] Ensemble+TimeGate seed 456  PID=43624
+  [GPU1] CTM+Curriculum seed 456  PID=43625
+  Waiting for Phase 2 (seeds 456) to complete...
+  ✅ Phase 2 complete at 2026年 06月 06日 星期六 00:24:59 CST
+
+═══════════════════════════════════════════════════════════
+  ALL TGPE v4 EXPERIMENTS DONE  2026年 06月 06日 星期六 00:24:59 CST
+═══════════════════════════════════════════════════════════
+  Outputs:
+    /root/results/tgpe_v4/ens_gate_s123.json
+    /root/results/tgpe_v4/ctm_curriculum_s123.json
+    /root/results/tgpe_v4/ens_gate_s456.json
+    /root/results/tgpe_v4/ctm_curriculum_s456.json
+  Logs:
+    /root/logs/tgpe_v4_gate_s123.log
+    /root/logs/tgpe_v4_curriculum_s123.log
+    /root/logs/tgpe_v4_gate_s456.log
+    /root/logs/tgpe_v4_curriculum_s456.log
+═══════════════════════════════════════════════════════════

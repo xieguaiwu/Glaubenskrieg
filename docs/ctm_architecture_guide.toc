@@ -1,0 +1,56 @@
+\contentsline {section}{\numberline {1}Executive Summary}{4}{section.1}%
+\contentsline {section}{\numberline {2}Motivation: Why Mamba for Stock Prediction?}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The Selective SSM Advantage}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Empirical Evidence}{5}{subsection.2.2}%
+\contentsline {section}{\numberline {3}CTM Architecture Overview}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Architecture Variants}{5}{subsection.3.1}%
+\contentsline {paragraph}{Pattern 1: Vanilla Mamba Stack (MambaStock baseline)}{5}{section*.5}%
+\contentsline {paragraph}{Pattern 2: Decomposition + Specialized Modules (DMamba)}{5}{section*.6}%
+\contentsline {paragraph}{Pattern 3: Bidirectional Mamba (S-Mamba, SAMBA)}{5}{section*.7}%
+\contentsline {paragraph}{Pattern 4: Graph + Mamba (SAMBA)}{6}{section*.8}%
+\contentsline {paragraph}{Pattern 5: Hybrid Mamba-Transformer (CrossMamba)}{6}{section*.9}%
+\contentsline {section}{\numberline {4}Mamba Core: Selective State Space Model}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Mathematical Formulation}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Selective Scan (S6)}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Matrix Implementation}{7}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Full Mamba Block Forward Pass}{8}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Parallel Scan for Training}{8}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Mamba-2: State Space Duality (SSD)}{9}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Mamba-3: Production Inference (March 2026)}{9}{subsection.4.7}%
+\contentsline {section}{\numberline {5}Conv-Temporal Enhancement}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Causal 1D Convolution}{9}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Multi-Scale Decomposition (DMamba Pattern)}{9}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Bidirectional Mamba (S-Mamba Pattern)}{10}{subsection.5.3}%
+\contentsline {paragraph}{Streaming inference limitation:}{10}{section*.10}%
+\contentsline {section}{\numberline {6}Quantitative Loss Functions}{10}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Mean Squared Error (MSE)}{10}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Directional Cross-Entropy}{10}{subsection.6.2}%
+\contentsline {paragraph}{Class imbalance:}{11}{section*.11}%
+\contentsline {subsection}{\numberline {6.3}Sharpe Ratio Loss}{11}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Pinball Loss (Quantile Regression)}{11}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Composite Loss}{11}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Learnable Loss Weights (Uncertainty Weighting)}{11}{subsection.6.6}%
+\contentsline {paragraph}{Loss warmup schedule:}{12}{section*.12}%
+\contentsline {section}{\numberline {7}Backpropagation Through the Selective Scan}{12}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Gradient Flow}{12}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Input-Dependent Parameter Gradients}{12}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Parameter Gradient Accumulation}{13}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Training Pipeline}{13}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Data Preparation}{13}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Walk-Forward Validation}{13}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Hyperparameter Selection}{13}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Monitoring}{13}{subsection.8.4}%
+\contentsline {section}{\numberline {9}Scaling Strategies}{14}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Multi-Asset CTM}{14}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Graph-Enhanced CTM (SAMBA Pattern)}{14}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Model Scaling Dimensions}{14}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Production Deployment}{15}{subsection.9.4}%
+\contentsline {section}{\numberline {10}Verification and Debugging}{15}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Numerical Gradient Checking}{15}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Common Issues}{15}{subsection.10.2}%
+\contentsline {section}{\numberline {11}Implementation Roadmap}{15}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Phase A: Single-Stock CTM (1--2 weeks)}{15}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Phase B: Multi-Asset with Walk-Forward (1--2 months)}{16}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Phase C: Production Quant System (3--6 months)}{16}{subsection.11.3}%
+\contentsline {section}{\numberline {12}Conclusion}{16}{section.12}%
+\contentsline {section}{\numberline {A}Notation Reference}{16}{appendix.A}%

@@ -1,0 +1,102 @@
+2026-06-06 00:11:31,172 [INFO] Random seed set to 456
+2026-06-06 00:11:31,178 [INFO] Loading multi-asset data from /root/data/tencent_clean
+2026-06-06 00:11:42,486 [INFO] Loaded 50 assets from /root/data/tencent_clean
+2026-06-06 00:11:42,517 [INFO] Common date range: 2020-11-09 00:00:00 ~ 2026-04-27 00:00:00 (1173 trading days)
+2026-06-06 00:11:42,677 [INFO] Multi-asset data: (1110, 50, 63, 9), targets: (1110, 63, 50)
+2026-06-06 00:11:42,692 [INFO] Targets cross-sectionally demeaned (shape: (1110, 63, 50))
+2026-06-06 00:11:42,694 [INFO] Loaded 50 assets, data: (1110, 50, 63, 9), targets: (1110, 63, 50)
+2026-06-06 00:11:42,736 [INFO] Class weights: [5.9100e-01 8.1585e+11 7.6400e-01]
+2026-06-06 00:11:42,736 [INFO] Multi-asset — input_dim=9, n_assets=50
+2026-06-06 00:11:42,883 [INFO] Model: MultiAssetCTM, params=99543, n_train=777, param/seq ratio=128.1:1
+2026-06-06 00:11:42,883 [INFO] Starting walk-forward training...
+2026-06-06 00:11:45,284 [INFO]     Epoch 1/50: train_loss=20.2564 val_loss=20.2966 val_sharpe=-0.0002 val_ic=0.0078 lr=3.27e-05
+2026-06-06 00:11:54,492 [INFO]     Epoch 6/50: train_loss=17.8648 val_loss=17.7984 val_sharpe=0.0499 val_ic=0.0136 lr=1.81e-04
+/home/vipuser/miniconda3/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:152: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+2026-06-06 00:12:03,825 [INFO]     Epoch 11/50: train_loss=16.2672 val_loss=16.5211 val_sharpe=-0.2489 val_ic=0.0121 lr=3.00e-04
+2026-06-06 00:12:13,100 [INFO]     Epoch 16/50: train_loss=15.0307 val_loss=15.3906 val_sharpe=0.2028 val_ic=0.0168 lr=2.84e-04
+2026-06-06 00:12:22,263 [INFO]     Epoch 21/50: train_loss=14.4495 val_loss=14.9743 val_sharpe=-0.0213 val_ic=0.0178 lr=2.47e-04
+2026-06-06 00:12:31,594 [INFO]     Epoch 26/50: train_loss=13.9897 val_loss=14.5118 val_sharpe=-0.1662 val_ic=0.0148 lr=1.96e-04
+2026-06-06 00:12:49,133 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.576000, gate α=1.9880 β=4.0115 γ=-0.0112
+2026-06-06 00:12:54,666 [INFO]     Epoch 1/50: train_loss=24.6537 val_loss=24.3870 val_sharpe=0.0000 val_ic=0.0312 lr=3.27e-05
+2026-06-06 00:13:04,057 [INFO]     Epoch 6/50: train_loss=17.1268 val_loss=17.0676 val_sharpe=0.0825 val_ic=0.0276 lr=1.81e-04
+2026-06-06 00:13:13,405 [INFO]     Epoch 11/50: train_loss=15.5734 val_loss=15.6355 val_sharpe=0.3487 val_ic=0.0283 lr=3.00e-04
+2026-06-06 00:13:29,860 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=5.618116, gate α=1.9870 β=4.0130 γ=-0.0130
+2026-06-06 00:13:36,000 [INFO]     Epoch 1/50: train_loss=22.9486 val_loss=22.4856 val_sharpe=-0.0242 val_ic=0.0562 lr=3.27e-05
+2026-06-06 00:13:45,465 [INFO]     Epoch 6/50: train_loss=18.1398 val_loss=17.8384 val_sharpe=-0.1660 val_ic=-0.0456 lr=1.81e-04
+2026-06-06 00:13:54,836 [INFO]     Epoch 11/50: train_loss=16.6061 val_loss=16.7153 val_sharpe=0.0888 val_ic=-0.0141 lr=3.00e-04
+2026-06-06 00:14:09,953 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=3.691071, gate α=1.9870 β=4.0130 γ=-0.0130
+2026-06-06 00:14:15,629 [INFO]     Epoch 1/50: train_loss=18.5642 val_loss=18.5446 val_sharpe=0.0171 val_ic=0.0037 lr=3.27e-05
+2026-06-06 00:14:24,989 [INFO]     Epoch 6/50: train_loss=17.0600 val_loss=16.9899 val_sharpe=0.0414 val_ic=0.0058 lr=1.81e-04
+2026-06-06 00:14:34,345 [INFO]     Epoch 11/50: train_loss=15.6944 val_loss=15.6581 val_sharpe=0.2645 val_ic=0.0161 lr=3.00e-04
+2026-06-06 00:14:43,686 [INFO]     Epoch 16/50: train_loss=14.7582 val_loss=14.6476 val_sharpe=-0.2304 val_ic=0.0037 lr=2.84e-04
+2026-06-06 00:15:06,897 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.597096, gate α=1.9873 β=4.0122 γ=-0.0121
+2026-06-06 00:15:12,405 [INFO]     Epoch 1/50: train_loss=20.9250 val_loss=20.5472 val_sharpe=0.0000 val_ic=0.0049 lr=3.27e-05
+2026-06-06 00:15:21,774 [INFO]     Epoch 6/50: train_loss=18.4398 val_loss=18.2373 val_sharpe=0.3281 val_ic=0.0162 lr=1.81e-04
+2026-06-06 00:15:31,075 [INFO]     Epoch 11/50: train_loss=16.7134 val_loss=16.6447 val_sharpe=0.2787 val_ic=0.0286 lr=3.00e-04
+2026-06-06 00:15:40,394 [INFO]     Epoch 16/50: train_loss=15.5253 val_loss=15.7331 val_sharpe=-0.1774 val_ic=-0.0032 lr=2.84e-04
+2026-06-06 00:15:49,670 [INFO]     Epoch 21/50: train_loss=14.8843 val_loss=15.0217 val_sharpe=-0.4248 val_ic=-0.0152 lr=2.47e-04
+2026-06-06 00:16:04,734 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.573080, gate α=1.9875 β=4.0126 γ=-0.0126
+2026-06-06 00:16:10,459 [INFO]     Epoch 1/50: train_loss=18.7999 val_loss=18.6547 val_sharpe=0.0571 val_ic=0.0316 lr=3.27e-05
+2026-06-06 00:16:19,938 [INFO]     Epoch 6/50: train_loss=17.1478 val_loss=17.0941 val_sharpe=0.3878 val_ic=0.0308 lr=1.81e-04
+2026-06-06 00:16:29,256 [INFO]     Epoch 11/50: train_loss=15.8451 val_loss=15.9698 val_sharpe=0.2372 val_ic=-0.0079 lr=3.00e-04
+2026-06-06 00:16:48,199 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.734949, gate α=1.9871 β=4.0129 γ=-0.0130
+2026-06-06 00:16:53,787 [INFO]     Epoch 1/50: train_loss=19.0727 val_loss=19.2501 val_sharpe=0.0000 val_ic=0.0066 lr=3.27e-05
+2026-06-06 00:17:03,148 [INFO]     Epoch 6/50: train_loss=17.7206 val_loss=17.6250 val_sharpe=0.7476 val_ic=0.0621 lr=1.81e-04
+2026-06-06 00:17:12,465 [INFO]     Epoch 11/50: train_loss=16.4822 val_loss=16.6208 val_sharpe=0.4672 val_ic=0.0507 lr=3.00e-04
+2026-06-06 00:17:33,403 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.666546, gate α=1.9872 β=4.0128 γ=-0.0128
+2026-06-06 00:17:38,943 [INFO]     Epoch 1/50: train_loss=19.7246 val_loss=19.3366 val_sharpe=-0.0678 val_ic=0.0038 lr=3.27e-05
+2026-06-06 00:17:48,264 [INFO]     Epoch 6/50: train_loss=17.4393 val_loss=17.4714 val_sharpe=-0.1959 val_ic=0.0412 lr=1.81e-04
+2026-06-06 00:17:57,626 [INFO]     Epoch 11/50: train_loss=16.1124 val_loss=16.3400 val_sharpe=-0.2738 val_ic=0.0297 lr=3.00e-04
+2026-06-06 00:18:06,973 [INFO]     Epoch 16/50: train_loss=14.7357 val_loss=15.0432 val_sharpe=-0.0640 val_ic=-0.0020 lr=2.84e-04
+2026-06-06 00:18:22,102 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.699612, gate α=1.9872 β=4.0128 γ=-0.0128
+2026-06-06 00:18:26,097 [INFO]     Epoch 1/50: train_loss=22.3455 val_loss=22.4262 val_sharpe=-0.0000 val_ic=0.0491 lr=3.27e-05
+2026-06-06 00:18:35,451 [INFO]     Epoch 6/50: train_loss=18.2964 val_loss=18.3082 val_sharpe=0.1086 val_ic=0.0602 lr=1.81e-04
+2026-06-06 00:18:44,684 [INFO]     Epoch 11/50: train_loss=16.7599 val_loss=17.1659 val_sharpe=-0.7075 val_ic=0.0147 lr=3.00e-04
+2026-06-06 00:19:07,293 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.765325, gate α=1.9872 β=4.0128 γ=-0.0129
+2026-06-06 00:19:13,104 [INFO]     Epoch 1/50: train_loss=21.8240 val_loss=21.6101 val_sharpe=-0.0000 val_ic=-0.0110 lr=3.27e-05
+2026-06-06 00:19:22,288 [INFO]     Epoch 6/50: train_loss=17.4956 val_loss=17.5135 val_sharpe=-0.2022 val_ic=-0.0082 lr=1.81e-04
+2026-06-06 00:19:31,477 [INFO]     Epoch 11/50: train_loss=16.0178 val_loss=16.4394 val_sharpe=-0.6688 val_ic=0.0039 lr=3.00e-04
+2026-06-06 00:19:40,706 [INFO]     Epoch 16/50: train_loss=15.0923 val_loss=15.6973 val_sharpe=-0.4681 val_ic=0.0360 lr=2.84e-04
+2026-06-06 00:19:49,923 [INFO]     Epoch 21/50: train_loss=14.2870 val_loss=14.3045 val_sharpe=0.0875 val_ic=0.0632 lr=2.47e-04
+2026-06-06 00:19:59,109 [INFO]     Epoch 26/50: train_loss=13.9767 val_loss=14.4103 val_sharpe=-0.5838 val_ic=0.0573 lr=1.96e-04
+/root/Glaubenskrieg/src/train/ensemble_trainer.py:1127: UserWarning: GBDT predictions collapsed (validation pred std=2.27e-13). Model predicts near-constant value. Consider increasing num_trees, reducing learning_rate, or checking feature/target quality.
+  warnings.warn(
+2026-06-06 00:20:21,677 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.417521, gate α=2.0007 β=3.9891 γ=0.0107
+/root/Glaubenskrieg/src/train/ensemble_trainer.py:281: UserWarning: GBDT predictions are near-constant at window 189 (std=2.27e-13). GBDT signal is degenerate.
+  warnings.warn(
+2026-06-06 00:20:25,593 [INFO]     Epoch 1/50: train_loss=23.1293 val_loss=22.4246 val_sharpe=0.0000 val_ic=0.0479 lr=3.27e-05
+2026-06-06 00:20:34,867 [INFO]     Epoch 6/50: train_loss=17.2164 val_loss=17.0451 val_sharpe=-0.1359 val_ic=0.0437 lr=1.81e-04
+2026-06-06 00:20:44,146 [INFO]     Epoch 11/50: train_loss=15.8509 val_loss=15.9614 val_sharpe=-0.2377 val_ic=0.0125 lr=3.00e-04
+2026-06-06 00:21:03,598 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=1.405446, gate α=1.9871 β=4.0128 γ=-0.0128
+2026-06-06 00:21:07,904 [INFO]     Epoch 1/50: train_loss=20.8102 val_loss=20.8607 val_sharpe=0.0034 val_ic=-0.0354 lr=3.27e-05
+2026-06-06 00:21:17,247 [INFO]     Epoch 6/50: train_loss=17.7451 val_loss=17.3617 val_sharpe=-0.0024 val_ic=0.0673 lr=1.81e-04
+2026-06-06 00:21:26,502 [INFO]     Epoch 11/50: train_loss=16.4871 val_loss=16.5432 val_sharpe=0.0960 val_ic=0.0709 lr=3.00e-04
+2026-06-06 00:21:35,843 [INFO]     Epoch 16/50: train_loss=15.4862 val_loss=15.4804 val_sharpe=0.1952 val_ic=0.0698 lr=2.84e-04
+2026-06-06 00:21:56,613 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.553216, gate α=1.9879 β=4.0108 γ=-0.0114
+2026-06-06 00:22:00,263 [INFO] === WALK-FORWARD RESULTS ===
+2026-06-06 00:22:00,264 [INFO]   Window 0: start=0, ctm_sharpe=0.2608, gbdt_ic=0.0457, ensemble_sharpe=0.2505, ctm_weight=0.562, epochs=27
+2026-06-06 00:22:00,264 [INFO]   Window 1: start=21, ctm_sharpe=0.0000, gbdt_ic=0.0754, ensemble_sharpe=-0.0040, ctm_weight=0.416, epochs=11
+2026-06-06 00:22:00,264 [INFO]   Window 2: start=42, ctm_sharpe=-0.0142, gbdt_ic=-0.0005, ensemble_sharpe=-0.0142, ctm_weight=0.504, epochs=11
+2026-06-06 00:22:00,264 [INFO]   Window 3: start=63, ctm_sharpe=0.2971, gbdt_ic=-0.0637, ensemble_sharpe=0.2931, ctm_weight=0.507, epochs=20
+2026-06-06 00:22:00,264 [INFO]   Window 4: start=84, ctm_sharpe=0.2958, gbdt_ic=0.0485, ensemble_sharpe=0.3033, ctm_weight=0.501, epochs=21
+2026-06-06 00:22:00,264 [INFO]   Window 5: start=105, ctm_sharpe=0.0046, gbdt_ic=0.0449, ensemble_sharpe=0.0425, ctm_weight=0.396, epochs=13
+2026-06-06 00:22:00,264 [INFO]   Window 6: start=126, ctm_sharpe=0.7326, gbdt_ic=0.1002, ensemble_sharpe=0.7513, ctm_weight=0.346, epochs=14
+2026-06-06 00:22:00,264 [INFO]   Window 7: start=147, ctm_sharpe=-0.1377, gbdt_ic=-0.0219, ensemble_sharpe=-0.1377, ctm_weight=0.932, epochs=16
+2026-06-06 00:22:00,264 [INFO]   Window 8: start=168, ctm_sharpe=0.0976, gbdt_ic=0.0470, ensemble_sharpe=0.1078, ctm_weight=0.430, epochs=15
+2026-06-06 00:22:00,264 [INFO]   Window 9: start=189, ctm_sharpe=0.1169, gbdt_ic=0.0000, ensemble_sharpe=0.1169, ctm_weight=0.968, epochs=30
+2026-06-06 00:22:00,264 [INFO]   Window 10: start=210, ctm_sharpe=0.0049, gbdt_ic=-0.0053, ensemble_sharpe=0.0033, ctm_weight=0.832, epochs=13
+2026-06-06 00:22:00,264 [INFO]   Window 11: start=231, ctm_sharpe=0.2117, gbdt_ic=0.1068, ensemble_sharpe=0.2192, ctm_weight=0.503, epochs=19
+2026-06-06 00:22:00,266 [INFO] Top-5 features: [133, 119, 30, 123, 48]
+2026-06-06 00:22:00,267 [INFO] Running final evaluation on held-out test set...
+2026-06-06 00:22:03,790 [INFO]   Test-prep epoch 1/50 — train_loss=18.174770, val_loss=17.577133
+2026-06-06 00:22:35,592 [INFO]   Test-prep epoch 10/50 — train_loss=13.804179, val_loss=13.889527
+2026-06-06 00:23:11,258 [INFO]   Test-prep epoch 20/50 — train_loss=11.979580, val_loss=12.238785
+2026-06-06 00:23:46,526 [INFO]   Test-prep epoch 30/50 — train_loss=10.442832, val_loss=10.414811
+2026-06-06 00:24:22,013 [INFO]   Test-prep epoch 40/50 — train_loss=8.845806, val_loss=9.028333
+2026-06-06 00:24:57,366 [INFO]   Test-prep epoch 50/50 — train_loss=7.262708, val_loss=7.636407
+2026-06-06 00:24:57,626 [INFO] Test set — loss=6.903181, sharpe=-0.1941, dir_acc=0.5640
+2026-06-06 00:24:57,645 [INFO] Ensemble trainer state saved to /root/checkpoints/tgpe_v4_ens_gate_s456/ensemble_trainer_state.pt
+2026-06-06 00:24:57,645 [INFO] Models saved to /root/checkpoints/tgpe_v4_ens_gate_s456
+2026-06-06 00:24:57,648 [INFO] Results saved to /root/results/tgpe_v4/ens_gate_s456.json
+2026-06-06 00:24:57,648 [INFO] Mean Sharpe: 0.1054 ± 0.2246

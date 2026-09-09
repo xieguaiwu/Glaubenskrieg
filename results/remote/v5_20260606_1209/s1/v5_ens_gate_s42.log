@@ -1,0 +1,49 @@
+2026-06-06 11:57:34,632 [INFO] Random seed set to 42
+2026-06-06 11:57:34,637 [INFO] Loading multi-asset data from /root/data/tencent_clean
+2026-06-06 11:57:48,293 [INFO] Loaded 50 assets from /root/data/tencent_clean
+2026-06-06 11:57:48,319 [INFO] Common date range: 2020-11-09 00:00:00 ~ 2026-04-27 00:00:00 (1173 trading days)
+2026-06-06 11:57:48,433 [INFO] Multi-asset data: (1110, 50, 63, 9), targets: (1110, 63, 50)
+2026-06-06 11:57:48,443 [INFO] Targets cross-sectionally demeaned (shape: (1110, 63, 50))
+2026-06-06 11:57:48,445 [INFO] Loaded 50 assets, data: (1110, 50, 63, 9), targets: (1110, 63, 50)
+2026-06-06 11:57:48,472 [INFO] Class weights: [5.9100e-01 8.1585e+11 7.6400e-01]
+2026-06-06 11:57:48,472 [INFO] Multi-asset — input_dim=9, n_assets=50
+2026-06-06 11:57:51,041 [INFO] Model: MultiAssetCTM, params=99543, n_train=777, param/seq ratio=128.1:1
+2026-06-06 11:57:51,041 [INFO] Starting walk-forward training...
+/root/Glaubenskrieg/src/train/_walk_forward_utils.py:73: UserWarning: purge_period (126) >= val_window (80) — no valid windows may be produced
+  warnings.warn(f"purge_period ({purge_period}) >= val_window ({val_window}) — no valid windows may be produced")
+2026-06-06 11:57:55,345 [INFO]     Epoch 1/50: train_loss=19.4186 val_loss=19.2790 val_sharpe=0.0000 val_ic=0.0055 lr=3.27e-05
+2026-06-06 11:58:06,113 [INFO]     Epoch 6/50: train_loss=17.8285 val_loss=17.9740 val_sharpe=-0.3392 val_ic=0.0044 lr=1.81e-04
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:240: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+2026-06-06 11:58:16,761 [INFO]     Epoch 11/50: train_loss=16.5787 val_loss=16.9081 val_sharpe=0.0544 val_ic=0.0044 lr=3.00e-04
+2026-06-06 11:58:27,299 [INFO]     Epoch 16/50: train_loss=15.3004 val_loss=15.4556 val_sharpe=0.0099 val_ic=0.0058 lr=2.84e-04
+2026-06-06 11:58:37,830 [INFO]     Epoch 21/50: train_loss=14.4858 val_loss=15.0461 val_sharpe=0.1078 val_ic=0.0099 lr=2.47e-04
+2026-06-06 11:59:31,567 [INFO] TimeGate finetuned: 50 epochs, best_val_loss=0.558378, gate α=1.7140 β=3.9350 γ=0.1127
+2026-06-06 11:59:37,403 [INFO]     Epoch 1/50: train_loss=19.7503 val_loss=19.7582 val_sharpe=0.0000 val_ic=0.0097 lr=3.27e-05
+2026-06-06 11:59:47,775 [INFO]     Epoch 6/50: train_loss=18.0149 val_loss=17.9901 val_sharpe=0.5838 val_ic=0.0580 lr=1.81e-04
+2026-06-06 11:59:58,168 [INFO]     Epoch 11/50: train_loss=16.6935 val_loss=17.0197 val_sharpe=-0.2405 val_ic=0.0264 lr=3.00e-04
+/root/Glaubenskrieg/src/train/ensemble_trainer.py:1164: UserWarning: GBDT predictions collapsed (validation pred std=9.09e-13). Model predicts near-constant value. Consider increasing num_trees, reducing learning_rate, or checking feature/target quality.
+  warnings.warn(
+/root/Glaubenskrieg/src/train/ensemble_trainer.py:827: UserWarning: GBDT predictions collapsed (std=9.09e-13) — skipping TimeDecayGate finetuning to avoid degrading CTM
+  warnings.warn(
+/root/Glaubenskrieg/src/train/ensemble_trainer.py:297: UserWarning: GBDT predictions are near-constant at window 63 (std=9.09e-13). GBDT signal is degenerate.
+  warnings.warn(
+2026-06-06 12:00:14,046 [INFO]     Epoch 1/50: train_loss=22.3633 val_loss=21.6497 val_sharpe=0.0000 val_ic=0.0222 lr=3.27e-05
+2026-06-06 12:00:24,498 [INFO]     Epoch 6/50: train_loss=17.6842 val_loss=17.7868 val_sharpe=-0.0996 val_ic=0.0156 lr=1.81e-04
+2026-06-06 12:00:34,976 [INFO]     Epoch 11/50: train_loss=16.3212 val_loss=16.8016 val_sharpe=-0.0916 val_ic=0.0148 lr=3.00e-04
+2026-06-06 12:01:25,929 [INFO] TimeGate finetuned: 50 epochs, best_val_loss=1.036503, gate α=1.6741 β=4.2978 γ=-0.3179
+2026-06-06 12:01:29,458 [INFO] === WALK-FORWARD RESULTS ===
+2026-06-06 12:01:29,458 [INFO]   Window 0: start=0, ctm_sharpe=0.2971, gbdt_ic=0.0312, ensemble_sharpe=0.2937, ctm_weight=0.493, epochs=24
+2026-06-06 12:01:29,458 [INFO]   Window 1: start=63, ctm_sharpe=0.4385, gbdt_ic=0.0000, ensemble_sharpe=0.4385, ctm_weight=0.968, epochs=14
+2026-06-06 12:01:29,458 [INFO]   Window 2: start=126, ctm_sharpe=0.1154, gbdt_ic=0.0032, ensemble_sharpe=0.1355, ctm_weight=0.326, epochs=13
+2026-06-06 12:01:29,459 [INFO] Top-5 features: [34, 24, 103, 152, 114]
+2026-06-06 12:01:29,459 [INFO] Running final evaluation on held-out test set...
+2026-06-06 12:01:29,490 [INFO] Test-prep warm-start: loaded state dict from best walk-forward window 1 (IC=0.0545)
+2026-06-06 12:01:33,435 [INFO]   Test-prep epoch 1/50 — train_loss=18.118845, val_loss=17.864979
+2026-06-06 12:02:08,932 [INFO]   Test-prep epoch 10/50 — train_loss=13.959848, val_loss=14.827605
+2026-06-06 12:02:20,744 [INFO]   Early stopping at epoch 13 (best_val_loss=14.428708)
+2026-06-06 12:02:21,037 [INFO] Test set — loss=14.130376, sharpe=-0.3338, dir_acc=0.5780
+2026-06-06 12:02:21,064 [INFO] Ensemble trainer state saved to /root/checkpoints/v5_ens_gate_s42/ensemble_trainer_state.pt
+2026-06-06 12:02:21,064 [INFO] Models saved to /root/checkpoints/v5_ens_gate_s42
+2026-06-06 12:02:21,066 [INFO] Results saved to /root/results/v5/ens_gate_s42.json
+2026-06-06 12:02:21,066 [INFO] Mean Sharpe: 0.2419 ± 0.1819

@@ -1,0 +1,44 @@
+2026-06-06 11:57:34,053 [INFO] Random seed set to 42
+2026-06-06 11:57:34,061 [INFO] Loading multi-asset data from /root/data/tencent_clean
+2026-06-06 11:57:52,725 [INFO] Loaded 50 assets from /root/data/tencent_clean
+2026-06-06 11:57:52,766 [INFO] Common date range: 2020-11-09 00:00:00 ~ 2026-04-27 00:00:00 (1173 trading days)
+2026-06-06 11:57:52,924 [INFO] Multi-asset data: (1110, 50, 63, 9), targets: (1110, 63, 50)
+2026-06-06 11:57:52,935 [INFO] Targets cross-sectionally demeaned (shape: (1110, 63, 50))
+2026-06-06 11:57:52,937 [INFO] Loaded 50 assets, data: (1110, 50, 63, 9), targets: (1110, 63, 50)
+2026-06-06 11:57:52,973 [INFO] Class weights: [5.9100e-01 8.1585e+11 7.6400e-01]
+2026-06-06 11:57:52,974 [INFO] Multi-asset — input_dim=9, n_assets=50
+2026-06-06 11:57:55,040 [INFO] Model: MultiAssetCTM, params=99543, n_train=777, param/seq ratio=128.1:1
+2026-06-06 11:57:55,041 [INFO] Starting walk-forward training...
+/root/Glaubenskrieg/src/train/_walk_forward_utils.py:73: UserWarning: purge_period (126) >= val_window (80) — no valid windows may be produced
+  warnings.warn(f"purge_period ({purge_period}) >= val_window ({val_window}) — no valid windows may be produced")
+2026-06-06 11:58:00,317 [INFO]     Epoch 1/50: train_loss=19.4170 val_loss=19.2796 val_sharpe=0.0000 val_ic=0.0055 lr=3.27e-05
+2026-06-06 11:58:10,573 [INFO]     Epoch 6/50: train_loss=17.7802 val_loss=18.0302 val_sharpe=-0.3832 val_ic=0.0049 lr=1.81e-04
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:240: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+2026-06-06 11:58:20,735 [INFO]     Epoch 11/50: train_loss=16.6387 val_loss=16.7884 val_sharpe=0.1277 val_ic=0.0036 lr=3.00e-04
+2026-06-06 11:58:31,044 [INFO]     Epoch 16/50: train_loss=15.3193 val_loss=15.6328 val_sharpe=0.0396 val_ic=0.0028 lr=2.84e-04
+2026-06-06 11:59:24,908 [INFO] TimeGate finetuned: 50 epochs, best_val_loss=0.673469, gate α=1.7073 β=4.1554 γ=-0.1587
+2026-06-06 11:59:32,728 [INFO]     Epoch 1/50: train_loss=21.3337 val_loss=20.8142 val_sharpe=-0.0000 val_ic=-0.0416 lr=3.27e-05
+2026-06-06 11:59:42,683 [INFO]     Epoch 6/50: train_loss=17.6445 val_loss=17.5563 val_sharpe=0.7212 val_ic=0.0767 lr=1.81e-04
+2026-06-06 11:59:52,686 [INFO]     Epoch 11/50: train_loss=16.2853 val_loss=16.6520 val_sharpe=0.3045 val_ic=0.0616 lr=3.00e-04
+2026-06-06 12:00:44,390 [INFO] TimeGate finetuned: 50 epochs, best_val_loss=0.738921, gate α=1.6762 β=4.2967 γ=-0.3156
+2026-06-06 12:00:52,214 [INFO]     Epoch 1/50: train_loss=23.7127 val_loss=22.8483 val_sharpe=0.0000 val_ic=0.0112 lr=3.27e-05
+2026-06-06 12:01:02,155 [INFO]     Epoch 6/50: train_loss=17.7214 val_loss=17.5620 val_sharpe=-0.1283 val_ic=-0.0087 lr=1.81e-04
+2026-06-06 12:01:12,082 [INFO]     Epoch 11/50: train_loss=16.0939 val_loss=16.4554 val_sharpe=-0.4549 val_ic=-0.0204 lr=3.00e-04
+2026-06-06 12:01:59,747 [INFO] TimeGate finetuned: 50 epochs, best_val_loss=2.999829, gate α=1.6701 β=4.3051 γ=-0.3256
+2026-06-06 12:02:03,297 [INFO] === WALK-FORWARD RESULTS ===
+2026-06-06 12:02:03,297 [INFO]   Window 0: start=0, ctm_sharpe=-0.1479, gbdt_ic=-0.0014, ensemble_sharpe=-0.0899, ctm_weight=0.445, epochs=19
+2026-06-06 12:02:03,297 [INFO]   Window 1: start=63, ctm_sharpe=-0.0532, gbdt_ic=0.0540, ensemble_sharpe=-0.0323, ctm_weight=0.470, epochs=13
+2026-06-06 12:02:03,298 [INFO]   Window 2: start=126, ctm_sharpe=0.0000, gbdt_ic=-0.0048, ensemble_sharpe=0.0000, ctm_weight=0.945, epochs=11
+2026-06-06 12:02:03,299 [INFO] Top-5 features: [123, 90, 24, 179, 121]
+2026-06-06 12:02:03,299 [INFO] Running final evaluation on held-out test set...
+2026-06-06 12:02:03,333 [INFO] Test-prep warm-start: loaded state dict from best walk-forward window 1 (IC=0.0554)
+2026-06-06 12:02:07,152 [INFO]   Test-prep epoch 1/50 — train_loss=18.096609, val_loss=17.386820
+2026-06-06 12:02:41,515 [INFO]   Test-prep epoch 10/50 — train_loss=13.678542, val_loss=13.670738
+2026-06-06 12:03:19,512 [INFO]   Test-prep epoch 20/50 — train_loss=11.729674, val_loss=13.339780
+2026-06-06 12:03:27,135 [INFO]   Early stopping at epoch 22 (best_val_loss=12.251254)
+2026-06-06 12:03:27,418 [INFO] Test set — loss=11.887874, sharpe=-0.0978, dir_acc=0.5842
+2026-06-06 12:03:27,451 [INFO] Ensemble trainer state saved to /root/checkpoints/v5_ens_gate_s42/ensemble_trainer_state.pt
+2026-06-06 12:03:27,451 [INFO] Models saved to /root/checkpoints/v5_ens_gate_s42
+2026-06-06 12:03:27,454 [INFO] Results saved to /root/results/v5/ens_gate_s42.json
+2026-06-06 12:03:27,455 [INFO] Mean Sharpe: -0.0196 ± 0.0994

@@ -1,0 +1,90 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Executive Summary}{4}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Motivation: Why Mamba for Stock Prediction?}{4}{section.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Architecture comparison for financial time series\relax }}{4}{table.caption.2}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:comparison}{{1}{4}{Architecture comparison for financial time series\relax }{table.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}The Selective SSM Advantage}{4}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Empirical Evidence}{5}{subsection.2.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Financial Mamba empirical results\relax }}{5}{table.caption.3}\protected@file@percent }
+\newlabel{tab:results}{{2}{5}{Financial Mamba empirical results\relax }{table.caption.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}CTM Architecture Overview}{5}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Architecture Variants}{5}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Pattern 1: Vanilla Mamba Stack (MambaStock baseline)}{5}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Pattern 2: Decomposition + Specialized Modules (DMamba)}{5}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Pattern 3: Bidirectional Mamba (S-Mamba, SAMBA)}{5}{section*.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces CTM architecture overview\relax }}{6}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:arch}{{1}{6}{CTM architecture overview\relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Pattern 4: Graph + Mamba (SAMBA)}{6}{section*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Pattern 5: Hybrid Mamba-Transformer (CrossMamba)}{6}{section*.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Mamba Core: Selective State Space Model}{7}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Mathematical Formulation}{7}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Selective Scan (S6)}{7}{subsection.4.2}\protected@file@percent }
+\newlabel{eq:bbar}{{11}{7}{Selective Scan (S6)}{equation.4.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Matrix Implementation}{7}{subsection.4.3}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Mamba block forward pass (per time step $t$)\relax }}{8}{algorithm.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Full Mamba Block Forward Pass}{8}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Parallel Scan for Training}{8}{subsection.4.5}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Parallel associative scan (Blelloch, 1990)\relax }}{8}{algorithm.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Mamba-2: State Space Duality (SSD)}{9}{subsection.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.7}Mamba-3: Production Inference (March 2026)}{9}{subsection.4.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conv-Temporal Enhancement}{9}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Causal 1D Convolution}{9}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Multi-Scale Decomposition (DMamba Pattern)}{9}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Bidirectional Mamba (S-Mamba Pattern)}{10}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Streaming inference limitation:}{10}{section*.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Quantitative Loss Functions}{10}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Mean Squared Error (MSE)}{10}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Directional Cross-Entropy}{10}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Class imbalance:}{11}{section*.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Sharpe Ratio Loss}{11}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Pinball Loss (Quantile Regression)}{11}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Composite Loss}{11}{subsection.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6}Learnable Loss Weights (Uncertainty Weighting)}{11}{subsection.6.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Loss warmup schedule:}{12}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Backpropagation Through the Selective Scan}{12}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Gradient Flow}{12}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Input-Dependent Parameter Gradients}{12}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Parameter Gradient Accumulation}{13}{subsection.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Training Pipeline}{13}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Data Preparation}{13}{subsection.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Walk-Forward Validation}{13}{subsection.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Hyperparameter Selection}{13}{subsection.8.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Monitoring}{13}{subsection.8.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Recommended hyperparameters for CTM\relax }}{14}{table.caption.13}\protected@file@percent }
+\newlabel{tab:hparams}{{3}{14}{Recommended hyperparameters for CTM\relax }{table.caption.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Scaling Strategies}{14}{section.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Multi-Asset CTM}{14}{subsection.9.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Graph-Enhanced CTM (SAMBA Pattern)}{14}{subsection.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Model Scaling Dimensions}{14}{subsection.9.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Scaling dimensions from $\mu $P-SSM research\relax }}{14}{table.caption.14}\protected@file@percent }
+\newlabel{tab:scaling}{{4}{14}{Scaling dimensions from $\mu $P-SSM research\relax }{table.caption.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Production Deployment}{15}{subsection.9.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Verification and Debugging}{15}{section.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}Numerical Gradient Checking}{15}{subsection.10.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Common Issues}{15}{subsection.10.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Common debugging scenarios\relax }}{15}{table.caption.15}\protected@file@percent }
+\newlabel{tab:bugs}{{5}{15}{Common debugging scenarios\relax }{table.caption.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {11}Implementation Roadmap}{15}{section.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.1}Phase A: Single-Stock CTM (1--2 weeks)}{15}{subsection.11.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.2}Phase B: Multi-Asset with Walk-Forward (1--2 months)}{16}{subsection.11.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.3}Phase C: Production Quant System (3--6 months)}{16}{subsection.11.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {12}Conclusion}{16}{section.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Notation Reference}{16}{appendix.A}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Summary of mathematical notation\relax }}{17}{table.caption.16}\protected@file@percent }
+\newlabel{tab:notation}{{6}{17}{Summary of mathematical notation\relax }{table.caption.16}{}}
+\gdef \@abspage@last{17}

@@ -1,0 +1,41 @@
+2026-06-06 11:57:34,230 [INFO] Random seed: 456
+2026-06-06 11:57:34,239 [INFO] Loading data from /root/data/tencent_clean
+2026-06-06 11:57:52,469 [INFO] Loaded 50 assets from /root/data/tencent_clean
+2026-06-06 11:57:52,510 [INFO] Common date range: 2020-11-09 00:00:00 ~ 2026-04-27 00:00:00 (1173 trading days)
+2026-06-06 11:57:52,663 [INFO] Multi-asset data: (1110, 50, 63, 9), targets: (1110, 63, 50)
+2026-06-06 11:57:52,675 [INFO] Data loaded: B=1110 sequences, N=50 assets, T=63 steps, D=9 features
+2026-06-06 11:57:52,678 [INFO] GBDT C++ module loaded (from gbdt package)
+2026-06-06 11:57:52,686 [INFO] Walk-forward: train_window=400, val_window=80, step_size=63, purge_period=126
+/root/Glaubenskrieg/src/train/_walk_forward_utils.py:73: UserWarning: purge_period (126) >= val_window (80) — no valid windows may be produced
+  warnings.warn(f"purge_period ({purge_period}) >= val_window ({val_window}) — no valid windows may be produced")
+2026-06-06 11:57:52,687 [INFO] Window 0: pos=0, train=[0,400), val=[526,606)
+2026-06-06 11:57:53,618 [INFO]   Features: X_train=(20000, 54), X_val=(4000, 54) (raw=9 agg → 54 GBDT features)
+/root/Glaubenskrieg/scripts/train_gbdt_only.py:74: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  ic, _ = spearmanr(y_true[valid], y_pred[valid])
+2026-06-06 11:57:57,080 [INFO]   Metrics: sharpe=-0.2844, IC=-0.0215, dir_acc=0.5118
+2026-06-06 11:57:57,080 [INFO] Window 1: pos=63, train=[63,463), val=[589,669)
+2026-06-06 11:57:58,172 [INFO]   Features: X_train=(20000, 54), X_val=(4000, 54) (raw=9 agg → 54 GBDT features)
+2026-06-06 11:58:01,708 [INFO]   Metrics: sharpe=-0.6529, IC=0.0141, dir_acc=0.4897
+2026-06-06 11:58:01,708 [INFO] Window 2: pos=126, train=[126,526), val=[652,732)
+2026-06-06 11:58:02,701 [INFO]   Features: X_train=(20000, 54), X_val=(4000, 54) (raw=9 agg → 54 GBDT features)
+2026-06-06 11:58:05,965 [INFO]   Metrics: sharpe=-1.0806, IC=0.0175, dir_acc=0.4580
+2026-06-06 11:58:05,965 [INFO] Window 3: pos=189, train=[189,589), val=[715,795)
+2026-06-06 11:58:06,883 [INFO]   Features: X_train=(20000, 54), X_val=(4000, 54) (raw=9 agg → 54 GBDT features)
+2026-06-06 11:58:10,530 [INFO]   Metrics: sharpe=1.6866, IC=0.0000, dir_acc=0.5870
+2026-06-06 11:58:10,530 [INFO] Window 4: pos=252, train=[252,652), val=[778,858)
+2026-06-06 11:58:11,530 [INFO]   Features: X_train=(20000, 54), X_val=(4000, 54) (raw=9 agg → 54 GBDT features)
+2026-06-06 11:58:15,500 [INFO]   Metrics: sharpe=-0.1045, IC=0.0427, dir_acc=0.4660
+2026-06-06 11:58:15,501 [INFO] Window 5: pos=315, train=[315,715), val=[841,921)
+2026-06-06 11:58:16,540 [INFO]   Features: X_train=(20000, 54), X_val=(4000, 54) (raw=9 agg → 54 GBDT features)
+2026-06-06 11:58:20,200 [INFO]   Metrics: sharpe=-0.6052, IC=0.0000, dir_acc=0.4412
+2026-06-06 11:58:20,200 [INFO] Window 6: pos=378, train=[378,778), val=[904,984)
+2026-06-06 11:58:21,225 [INFO]   Features: X_train=(20000, 54), X_val=(4000, 54) (raw=9 agg → 54 GBDT features)
+2026-06-06 11:58:24,983 [INFO]   Metrics: sharpe=1.5638, IC=0.0000, dir_acc=0.5945
+2026-06-06 11:58:24,983 [INFO] Window 7: pos=441, train=[441,841), val=[967,1047)
+2026-06-06 11:58:25,962 [INFO]   Features: X_train=(20000, 54), X_val=(4000, 54) (raw=9 agg → 54 GBDT features)
+2026-06-06 11:58:29,557 [INFO]   Metrics: sharpe=0.7096, IC=-0.0171, dir_acc=0.5630
+2026-06-06 11:58:29,558 [INFO] Window 8: pos=504, train=[504,904), val=[1030,1110)
+2026-06-06 11:58:30,510 [INFO]   Features: X_train=(20000, 54), X_val=(4000, 54) (raw=9 agg → 54 GBDT features)
+2026-06-06 11:58:32,179 [INFO]   Metrics: sharpe=0.6474, IC=0.0000, dir_acc=0.5510
+2026-06-06 11:58:32,181 [INFO] Metrics saved to /root/results/v5/gbdt_s456.json
+2026-06-06 11:58:32,181 [INFO] Summary: sharpe=0.2089 ± 0.9352, IC=0.0040 ± 0.0181, dir_acc=0.5180 ± 0.0545

@@ -1,0 +1,118 @@
+2026-06-05 23:57:12,959 [INFO] Random seed set to 123
+2026-06-05 23:57:12,965 [INFO] Loading multi-asset data from /root/data/tencent_clean
+2026-06-05 23:57:23,940 [INFO] Loaded 50 assets from /root/data/tencent_clean
+2026-06-05 23:57:23,970 [INFO] Common date range: 2020-11-09 00:00:00 ~ 2026-04-27 00:00:00 (1173 trading days)
+2026-06-05 23:57:24,136 [INFO] Multi-asset data: (1110, 50, 63, 9), targets: (1110, 63, 50)
+2026-06-05 23:57:24,154 [INFO] Targets cross-sectionally demeaned (shape: (1110, 63, 50))
+2026-06-05 23:57:24,157 [INFO] Loaded 50 assets, data: (1110, 50, 63, 9), targets: (1110, 63, 50)
+2026-06-05 23:57:24,206 [INFO] Class weights: [5.9100e-01 8.1585e+11 7.6400e-01]
+2026-06-05 23:57:24,206 [INFO] Multi-asset — input_dim=9, n_assets=50
+2026-06-05 23:57:24,447 [INFO] Model: MultiAssetCTM, params=99543, n_train=777, param/seq ratio=128.1:1
+2026-06-05 23:57:24,447 [INFO] Starting walk-forward training...
+2026-06-05 23:57:26,900 [INFO]     Epoch 1/50: train_loss=19.8559 val_loss=19.9392 val_sharpe=0.0157 val_ic=0.0051 lr=3.27e-05
+2026-06-05 23:57:36,170 [INFO]     Epoch 6/50: train_loss=18.1156 val_loss=18.1833 val_sharpe=-0.0160 val_ic=0.0428 lr=1.81e-04
+/home/vipuser/miniconda3/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:152: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+2026-06-05 23:57:45,425 [INFO]     Epoch 11/50: train_loss=16.9236 val_loss=16.9549 val_sharpe=0.3371 val_ic=0.0598 lr=3.00e-04
+2026-06-05 23:57:54,690 [INFO]     Epoch 16/50: train_loss=15.7994 val_loss=16.0102 val_sharpe=0.1006 val_ic=0.0490 lr=2.84e-04
+2026-06-05 23:58:04,017 [INFO]     Epoch 21/50: train_loss=14.9981 val_loss=15.1220 val_sharpe=0.4428 val_ic=0.0277 lr=2.47e-04
+2026-06-05 23:58:21,193 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.616763, gate α=1.9903 β=4.0006 γ=-0.0007
+2026-06-05 23:58:26,613 [INFO]     Epoch 1/50: train_loss=20.9882 val_loss=20.6541 val_sharpe=0.0020 val_ic=-0.0325 lr=3.27e-05
+2026-06-05 23:58:35,757 [INFO]     Epoch 6/50: train_loss=17.8197 val_loss=17.6055 val_sharpe=0.3892 val_ic=0.0835 lr=1.81e-04
+2026-06-05 23:58:44,900 [INFO]     Epoch 11/50: train_loss=16.6197 val_loss=16.3741 val_sharpe=0.9433 val_ic=0.0747 lr=3.00e-04
+2026-06-05 23:58:54,073 [INFO]     Epoch 16/50: train_loss=15.5989 val_loss=15.8510 val_sharpe=0.5065 val_ic=0.0372 lr=2.84e-04
+2026-06-05 23:59:11,310 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.565782, gate α=1.9890 β=4.0101 γ=-0.0095
+2026-06-05 23:59:16,921 [INFO]     Epoch 1/50: train_loss=18.4608 val_loss=18.4481 val_sharpe=0.0728 val_ic=0.0010 lr=3.27e-05
+2026-06-05 23:59:26,203 [INFO]     Epoch 6/50: train_loss=17.1887 val_loss=16.9445 val_sharpe=0.0452 val_ic=-0.0229 lr=1.81e-04
+2026-06-05 23:59:35,468 [INFO]     Epoch 11/50: train_loss=15.8878 val_loss=15.7177 val_sharpe=0.1341 val_ic=0.0113 lr=3.00e-04
+2026-06-05 23:59:44,832 [INFO]     Epoch 16/50: train_loss=14.9138 val_loss=14.8608 val_sharpe=0.3548 val_ic=0.0291 lr=2.84e-04
+2026-06-05 23:59:54,097 [INFO]     Epoch 21/50: train_loss=14.4565 val_loss=14.6827 val_sharpe=0.3825 val_ic=0.0238 lr=2.47e-04
+2026-06-06 00:00:03,361 [INFO]     Epoch 26/50: train_loss=14.0339 val_loss=14.4484 val_sharpe=0.4749 val_ic=0.0308 lr=1.96e-04
+2026-06-06 00:00:12,711 [INFO]     Epoch 31/50: train_loss=13.7990 val_loss=13.7432 val_sharpe=0.1017 val_ic=0.0171 lr=1.38e-04
+2026-06-06 00:00:22,123 [INFO]     Epoch 36/50: train_loss=13.5087 val_loss=14.3128 val_sharpe=-0.0367 val_ic=0.0125 lr=8.19e-05
+2026-06-06 00:00:42,566 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.519793, gate α=1.9889 β=4.0031 γ=-0.0039
+2026-06-06 00:00:48,609 [INFO]     Epoch 1/50: train_loss=19.2187 val_loss=19.2160 val_sharpe=0.0000 val_ic=-0.0149 lr=3.27e-05
+2026-06-06 00:00:58,219 [INFO]     Epoch 6/50: train_loss=17.5910 val_loss=17.7154 val_sharpe=0.0212 val_ic=-0.0073 lr=1.81e-04
+2026-06-06 00:01:07,827 [INFO]     Epoch 11/50: train_loss=16.2009 val_loss=16.3562 val_sharpe=0.0086 val_ic=-0.0049 lr=3.00e-04
+2026-06-06 00:01:17,219 [INFO]     Epoch 16/50: train_loss=15.0752 val_loss=15.1752 val_sharpe=0.0087 val_ic=-0.0026 lr=2.84e-04
+2026-06-06 00:01:26,523 [INFO]     Epoch 21/50: train_loss=14.4872 val_loss=14.7174 val_sharpe=0.1693 val_ic=-0.0055 lr=2.47e-04
+2026-06-06 00:01:35,780 [INFO]     Epoch 26/50: train_loss=13.9795 val_loss=14.2229 val_sharpe=-0.0204 val_ic=-0.0128 lr=1.96e-04
+/root/Glaubenskrieg/src/train/ensemble_trainer.py:1127: UserWarning: GBDT predictions collapsed (validation pred std=0.00e+00). Model predicts near-constant value. Consider increasing num_trees, reducing learning_rate, or checking feature/target quality.
+  warnings.warn(
+2026-06-06 00:01:57,135 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.505449, gate α=1.9888 β=3.9910 γ=0.0100
+/root/Glaubenskrieg/src/train/ensemble_trainer.py:281: UserWarning: GBDT predictions are near-constant at window 63 (std=0.00e+00). GBDT signal is degenerate.
+  warnings.warn(
+2026-06-06 00:02:01,475 [INFO]     Epoch 1/50: train_loss=18.9717 val_loss=18.6466 val_sharpe=-0.0108 val_ic=0.0120 lr=3.27e-05
+2026-06-06 00:02:10,827 [INFO]     Epoch 6/50: train_loss=17.9940 val_loss=18.0138 val_sharpe=-0.0763 val_ic=0.0051 lr=1.81e-04
+2026-06-06 00:02:20,251 [INFO]     Epoch 11/50: train_loss=16.6492 val_loss=16.7714 val_sharpe=0.0160 val_ic=0.0069 lr=3.00e-04
+2026-06-06 00:02:37,697 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.792862, gate α=1.9871 β=4.0129 γ=-0.0129
+/root/Glaubenskrieg/src/train/ensemble_trainer.py:281: UserWarning: GBDT predictions are near-constant at window 84 (std=0.00e+00). GBDT signal is degenerate.
+  warnings.warn(
+2026-06-06 00:02:42,045 [INFO]     Epoch 1/50: train_loss=18.8609 val_loss=18.7784 val_sharpe=0.3411 val_ic=-0.0073 lr=3.27e-05
+2026-06-06 00:02:51,341 [INFO]     Epoch 6/50: train_loss=17.3169 val_loss=17.3036 val_sharpe=0.2248 val_ic=0.0108 lr=1.81e-04
+2026-06-06 00:03:00,673 [INFO]     Epoch 11/50: train_loss=16.0763 val_loss=16.1877 val_sharpe=0.1187 val_ic=-0.0005 lr=3.00e-04
+2026-06-06 00:03:20,402 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.761634, gate α=1.9871 β=4.0129 γ=-0.0130
+2026-06-06 00:03:25,916 [INFO]     Epoch 1/50: train_loss=18.3436 val_loss=18.3514 val_sharpe=0.0743 val_ic=0.0890 lr=3.27e-05
+2026-06-06 00:03:35,351 [INFO]     Epoch 6/50: train_loss=17.1308 val_loss=16.9070 val_sharpe=0.5914 val_ic=0.0889 lr=1.81e-04
+2026-06-06 00:03:44,841 [INFO]     Epoch 11/50: train_loss=15.8082 val_loss=15.9288 val_sharpe=0.1765 val_ic=0.0534 lr=3.00e-04
+2026-06-06 00:04:07,364 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.702770, gate α=1.9871 β=4.0129 γ=-0.0129
+2026-06-06 00:04:13,701 [INFO]     Epoch 1/50: train_loss=26.9970 val_loss=26.5797 val_sharpe=0.0000 val_ic=0.0229 lr=3.27e-05
+2026-06-06 00:04:23,219 [INFO]     Epoch 6/50: train_loss=18.0987 val_loss=17.9678 val_sharpe=0.1955 val_ic=0.0025 lr=1.81e-04
+2026-06-06 00:04:32,467 [INFO]     Epoch 11/50: train_loss=16.3069 val_loss=16.5579 val_sharpe=-0.7443 val_ic=-0.0299 lr=3.00e-04
+/root/Glaubenskrieg/src/train/ensemble_trainer.py:1127: UserWarning: GBDT predictions collapsed (validation pred std=2.84e-14). Model predicts near-constant value. Consider increasing num_trees, reducing learning_rate, or checking feature/target quality.
+  warnings.warn(
+2026-06-06 00:04:48,020 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=6.400731, gate α=1.9870 β=4.0130 γ=-0.0130
+/root/Glaubenskrieg/src/train/ensemble_trainer.py:281: UserWarning: GBDT predictions are near-constant at window 147 (std=2.84e-14). GBDT signal is degenerate.
+  warnings.warn(
+2026-06-06 00:04:52,102 [INFO]     Epoch 1/50: train_loss=20.2471 val_loss=19.7623 val_sharpe=0.0009 val_ic=0.0011 lr=3.27e-05
+2026-06-06 00:05:01,380 [INFO]     Epoch 6/50: train_loss=17.2942 val_loss=17.3880 val_sharpe=0.2526 val_ic=0.0375 lr=1.81e-04
+2026-06-06 00:05:10,548 [INFO]     Epoch 11/50: train_loss=15.9658 val_loss=16.4058 val_sharpe=-0.1428 val_ic=0.0001 lr=3.00e-04
+2026-06-06 00:05:31,075 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.789365, gate α=1.9872 β=4.0128 γ=-0.0129
+2026-06-06 00:05:36,598 [INFO]     Epoch 1/50: train_loss=20.4039 val_loss=19.9811 val_sharpe=0.0412 val_ic=0.0138 lr=3.27e-05
+2026-06-06 00:05:45,955 [INFO]     Epoch 6/50: train_loss=17.5517 val_loss=17.4987 val_sharpe=0.0046 val_ic=0.0070 lr=1.81e-04
+2026-06-06 00:05:55,351 [INFO]     Epoch 11/50: train_loss=16.0353 val_loss=16.2745 val_sharpe=-0.0330 val_ic=0.0284 lr=3.00e-04
+2026-06-06 00:06:04,756 [INFO]     Epoch 16/50: train_loss=15.2127 val_loss=15.7670 val_sharpe=-0.3753 val_ic=0.0621 lr=2.84e-04
+2026-06-06 00:06:13,983 [INFO]     Epoch 21/50: train_loss=14.3779 val_loss=14.8096 val_sharpe=-0.4263 val_ic=0.0825 lr=2.47e-04
+2026-06-06 00:06:23,267 [INFO]     Epoch 26/50: train_loss=13.8265 val_loss=13.8059 val_sharpe=-0.3694 val_ic=0.0750 lr=1.96e-04
+2026-06-06 00:06:32,558 [INFO]     Epoch 31/50: train_loss=13.6712 val_loss=14.1042 val_sharpe=-0.7367 val_ic=0.0703 lr=1.38e-04
+2026-06-06 00:06:48,108 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.514345, gate α=1.9922 β=4.0076 γ=-0.0096
+2026-06-06 00:06:52,946 [INFO]     Epoch 1/50: train_loss=27.0398 val_loss=25.5718 val_sharpe=0.0000 val_ic=0.0333 lr=3.27e-05
+2026-06-06 00:07:02,267 [INFO]     Epoch 6/50: train_loss=17.5895 val_loss=17.2653 val_sharpe=-0.0962 val_ic=0.0009 lr=1.81e-04
+2026-06-06 00:07:11,665 [INFO]     Epoch 11/50: train_loss=15.9634 val_loss=15.8546 val_sharpe=-0.1194 val_ic=0.0017 lr=3.00e-04
+2026-06-06 00:07:27,021 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=6.964804, gate α=1.9870 β=4.0130 γ=-0.0130
+2026-06-06 00:07:32,513 [INFO]     Epoch 1/50: train_loss=19.1306 val_loss=18.7325 val_sharpe=-0.0000 val_ic=0.0130 lr=3.27e-05
+2026-06-06 00:07:41,905 [INFO]     Epoch 6/50: train_loss=17.6865 val_loss=17.4097 val_sharpe=-0.0971 val_ic=0.0396 lr=1.81e-04
+2026-06-06 00:07:51,353 [INFO]     Epoch 11/50: train_loss=16.4434 val_loss=16.2888 val_sharpe=0.0090 val_ic=0.0530 lr=3.00e-04
+2026-06-06 00:08:00,728 [INFO]     Epoch 16/50: train_loss=15.4356 val_loss=15.5383 val_sharpe=-0.0308 val_ic=0.0478 lr=2.84e-04
+2026-06-06 00:08:10,094 [INFO]     Epoch 21/50: train_loss=14.8824 val_loss=15.0732 val_sharpe=-0.1489 val_ic=0.0379 lr=2.47e-04
+/root/Glaubenskrieg/src/train/ensemble_trainer.py:1127: UserWarning: GBDT predictions collapsed (validation pred std=1.82e-12). Model predicts near-constant value. Consider increasing num_trees, reducing learning_rate, or checking feature/target quality.
+  warnings.warn(
+2026-06-06 00:08:27,063 [INFO] TimeGate finetuned: 10 epochs, best_val_loss=0.515507, gate α=1.9879 β=4.0123 γ=-0.0127
+/root/Glaubenskrieg/src/train/ensemble_trainer.py:281: UserWarning: GBDT predictions are near-constant at window 231 (std=1.82e-12). GBDT signal is degenerate.
+  warnings.warn(
+2026-06-06 00:08:29,101 [INFO] === WALK-FORWARD RESULTS ===
+2026-06-06 00:08:29,101 [INFO]   Window 0: start=0, ctm_sharpe=0.7821, gbdt_ic=0.0449, ensemble_sharpe=0.7954, ctm_weight=0.494, epochs=22
+2026-06-06 00:08:29,101 [INFO]   Window 1: start=21, ctm_sharpe=0.7802, gbdt_ic=0.0681, ensemble_sharpe=0.7469, ctm_weight=0.474, epochs=17
+2026-06-06 00:08:29,101 [INFO]   Window 2: start=42, ctm_sharpe=0.3852, gbdt_ic=-0.0128, ensemble_sharpe=0.3861, ctm_weight=0.463, epochs=36
+2026-06-06 00:08:29,101 [INFO]   Window 3: start=63, ctm_sharpe=0.1286, gbdt_ic=0.0000, ensemble_sharpe=0.1286, ctm_weight=0.968, epochs=28
+2026-06-06 00:08:29,101 [INFO]   Window 4: start=84, ctm_sharpe=-0.2636, gbdt_ic=0.0000, ensemble_sharpe=-0.2636, ctm_weight=0.968, epochs=11
+2026-06-06 00:08:29,101 [INFO]   Window 5: start=105, ctm_sharpe=0.1252, gbdt_ic=0.0582, ensemble_sharpe=0.1252, ctm_weight=0.432, epochs=12
+2026-06-06 00:08:29,101 [INFO]   Window 6: start=126, ctm_sharpe=0.2767, gbdt_ic=-0.0298, ensemble_sharpe=0.2736, ctm_weight=0.502, epochs=14
+2026-06-06 00:08:29,101 [INFO]   Window 7: start=147, ctm_sharpe=0.0000, gbdt_ic=0.0000, ensemble_sharpe=0.0000, ctm_weight=0.968, epochs=11
+2026-06-06 00:08:29,101 [INFO]   Window 8: start=168, ctm_sharpe=0.2814, gbdt_ic=0.0580, ensemble_sharpe=0.3607, ctm_weight=0.395, epochs=14
+2026-06-06 00:08:29,102 [INFO]   Window 9: start=189, ctm_sharpe=-0.5684, gbdt_ic=-0.0242, ensemble_sharpe=-0.5604, ctm_weight=0.725, epochs=31
+2026-06-06 00:08:29,102 [INFO]   Window 10: start=210, ctm_sharpe=0.0000, gbdt_ic=0.0321, ensemble_sharpe=0.0000, ctm_weight=0.389, epochs=11
+2026-06-06 00:08:29,102 [INFO]   Window 11: start=231, ctm_sharpe=-0.0226, gbdt_ic=0.0000, ensemble_sharpe=-0.0226, ctm_weight=0.968, epochs=22
+2026-06-06 00:08:29,104 [INFO] Top-5 features: [16, 47, 160, 8, 3]
+2026-06-06 00:08:29,104 [INFO] Running final evaluation on held-out test set...
+2026-06-06 00:08:32,688 [INFO]   Test-prep epoch 1/50 — train_loss=18.255175, val_loss=17.194971
+2026-06-06 00:09:04,521 [INFO]   Test-prep epoch 10/50 — train_loss=13.822613, val_loss=14.649795
+2026-06-06 00:09:40,347 [INFO]   Test-prep epoch 20/50 — train_loss=11.880643, val_loss=12.390330
+2026-06-06 00:10:16,364 [INFO]   Test-prep epoch 30/50 — train_loss=10.207745, val_loss=10.331587
+2026-06-06 00:10:52,367 [INFO]   Test-prep epoch 40/50 — train_loss=8.556355, val_loss=9.363480
+2026-06-06 00:11:27,922 [INFO]   Test-prep epoch 50/50 — train_loss=7.336667, val_loss=7.497965
+2026-06-06 00:11:28,199 [INFO] Test set — loss=6.820153, sharpe=0.0381, dir_acc=0.5731
+2026-06-06 00:11:28,221 [INFO] Ensemble trainer state saved to /root/checkpoints/tgpe_v4_ens_gate_s123/ensemble_trainer_state.pt
+2026-06-06 00:11:28,222 [INFO] Models saved to /root/checkpoints/tgpe_v4_ens_gate_s123
+2026-06-06 00:11:28,224 [INFO] Results saved to /root/results/tgpe_v4/ens_gate_s123.json
+2026-06-06 00:11:28,224 [INFO] Mean Sharpe: 0.1599 ± 0.3513

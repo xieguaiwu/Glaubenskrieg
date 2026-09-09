@@ -1,0 +1,409 @@
+[02:10:00] ══════════ AUTO COLLECT STARTED ══════════
+[02:10:00] Local dir: /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210
+[02:10:00] Window: 02:10 ~ 02:20 CST
+[02:10:00] 
+[02:10:00] 
+[02:10:00] ╔══ CYCLE 1 ═══════════════════════════════════════
+[02:10:00] ║ Time: 02:10:00, 1780683600 deadline, now 1780683000
+[02:10:00] ── Server 2 (32:20248) ──
+[02:10:05]   GPU: 0, 0 MiB, 32768 MiB, 0 % 1, 0 MiB, 32768 MiB, 0 % 
+[02:10:05]   train.py: none running
+[02:10:06]   Results:
+[02:10:06]     -rw-r--r-- 1 root root  2903  6月  6 00:08 /root/results/tgpe_v4/ctm_curriculum_s123.json
+[02:10:06]     -rw-r--r-- 1 root root  2618  6月  5 23:23 /root/results/tgpe_v4/ctm_curriculum_s42.json
+[02:10:06]     -rw-r--r-- 1 root root  2908  6月  6 00:22 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:10:06]     -rw-r--r-- 1 root root 28118  6月  6 00:11 /root/results/tgpe_v4/ens_gate_s123.json
+[02:10:07]     -rw-r--r-- 1 root root 29286  6月  5 23:25 /root/results/tgpe_v4/ens_gate_s42.json
+[02:10:07]     -rw-r--r-- 1 root root 29622  6月  6 00:24 /root/results/tgpe_v4/ens_gate_s456.json
+[02:10:07]   Latest log tail (/root/logs/tgpe_v4_s2_launch.log):
+[02:10:08]     /root/logs/tgpe_v4_gate_s456.log
+[02:10:08]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:10:08]     ═══════════════════════════════════════════════════════════
+
+[02:10:08] ── Server 1 (36:24520) ──
+[02:10:09]   GPU: 0, 3 MiB, 32768 MiB, 0 % 1, 3 MiB, 32768 MiB, 0 % 
+[02:10:09]   train.py: none running
+[02:10:10]   SMT processes:
+[02:10:10]     33690 87.9    02:06:41 /usr/bin/python3 -u /root/smt_model/train_200k.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:10:10]     25421  0.0    05:57:19 bash -c cd /root/smt_model && \    setsid python3 -u train_200k_safe.py \      --direction zh2en \      --max-sentences 200000 \      --batch-size 10000 \      --workers 2 \      --warm-start model/smt_zh2en \      --output-dir model \      --data-dir data/wmt \    > /dev/null 2>&1 < /dev/null &    echo "PID: \$!"
+[02:10:10]     25422  0.0    05:57:19 python3 -u train_200k_safe.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:10:10]   Results:
+[02:10:10]     -rw-r--r-- 1 root root  2922  6月  6 00:07 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:10:10]     -rw-r--r-- 1 root root 30109  6月  6 00:15 /root/results/tgpe_v4/ens_gate_s456.json
+[02:10:11]   Latest log tail (/root/logs/tgpe_v4_s1_launch.log):
+[02:10:12]     /root/logs/tgpe_v4_gate_s456.log
+[02:10:12]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:10:12]     ═══════════════════════════════════════════════════════════
+[02:10:12] 
+[02:10:12] ── Downloading results ──
+[02:10:12]   S2 → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s2_results/
+[02:10:14]   S1 → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s1_results/
+[02:10:15]   S2 logs → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s2_logs/
+[02:10:17]   S1 logs → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s1_logs/
+[02:10:19]   Local JSON files collected so far: 8
+[02:10:19]   Sleeping 60s... (581s remaining)
+[02:11:19] 
+[02:11:19] ╔══ CYCLE 2 ═══════════════════════════════════════
+[02:11:19] ║ Time: 02:11:19, 1780683600 deadline, now 1780683079
+[02:11:19] ── Server 2 (32:20248) ──
+[02:11:24]   GPU: 0, 0 MiB, 32768 MiB, 0 % 1, 0 MiB, 32768 MiB, 0 % 
+[02:11:24]   train.py: none running
+[02:11:26]   Results:
+[02:11:26]     -rw-r--r-- 1 root root  2903  6月  6 00:08 /root/results/tgpe_v4/ctm_curriculum_s123.json
+[02:11:26]     -rw-r--r-- 1 root root  2618  6月  5 23:23 /root/results/tgpe_v4/ctm_curriculum_s42.json
+[02:11:26]     -rw-r--r-- 1 root root  2908  6月  6 00:22 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:11:26]     -rw-r--r-- 1 root root 28118  6月  6 00:11 /root/results/tgpe_v4/ens_gate_s123.json
+[02:11:26]     -rw-r--r-- 1 root root 29286  6月  5 23:25 /root/results/tgpe_v4/ens_gate_s42.json
+[02:11:26]     -rw-r--r-- 1 root root 29622  6月  6 00:24 /root/results/tgpe_v4/ens_gate_s456.json
+[02:11:26]   Latest log tail (/root/logs/tgpe_v4_s2_launch.log):
+[02:11:27]     /root/logs/tgpe_v4_gate_s456.log
+[02:11:27]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:11:27]     ═══════════════════════════════════════════════════════════
+
+[02:11:27] ── Server 1 (36:24520) ──
+[02:11:28]   GPU: 0, 3 MiB, 32768 MiB, 0 % 1, 3 MiB, 32768 MiB, 0 % 
+[02:11:28]   train.py: none running
+[02:11:29]   SMT processes:
+[02:11:29]     33690 88.1    02:08:00 /usr/bin/python3 -u /root/smt_model/train_200k.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:11:29]     25421  0.0    05:58:38 bash -c cd /root/smt_model && \    setsid python3 -u train_200k_safe.py \      --direction zh2en \      --max-sentences 200000 \      --batch-size 10000 \      --workers 2 \      --warm-start model/smt_zh2en \      --output-dir model \      --data-dir data/wmt \    > /dev/null 2>&1 < /dev/null &    echo "PID: \$!"
+[02:11:29]     25422  0.0    05:58:38 python3 -u train_200k_safe.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:11:30]   Results:
+[02:11:30]     -rw-r--r-- 1 root root  2922  6月  6 00:07 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:11:30]     -rw-r--r-- 1 root root 30109  6月  6 00:15 /root/results/tgpe_v4/ens_gate_s456.json
+[02:11:30]   Latest log tail (/root/logs/tgpe_v4_s1_launch.log):
+[02:11:31]     /root/logs/tgpe_v4_gate_s456.log
+[02:11:31]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:11:31]     ═══════════════════════════════════════════════════════════
+[02:11:31] 
+[02:11:31] ── Downloading results ──
+[02:11:31]   S2 → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s2_results/
+[02:11:33]   S1 → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s1_results/
+[02:11:34]   S2 logs → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s2_logs/
+[02:11:36]   S1 logs → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s1_logs/
+[02:11:38]   Local JSON files collected so far: 8
+[02:11:38]   Sleeping 60s... (502s remaining)
+[02:12:38] 
+[02:12:38] ╔══ CYCLE 3 ═══════════════════════════════════════
+[02:12:38] ║ Time: 02:12:38, 1780683600 deadline, now 1780683158
+[02:12:38] ── Server 2 (32:20248) ──
+[02:12:43]   GPU: 0, 0 MiB, 32768 MiB, 0 % 1, 0 MiB, 32768 MiB, 0 % 
+[02:12:43]   train.py: none running
+[02:12:45]   Results:
+[02:12:45]     -rw-r--r-- 1 root root  2903  6月  6 00:08 /root/results/tgpe_v4/ctm_curriculum_s123.json
+[02:12:45]     -rw-r--r-- 1 root root  2618  6月  5 23:23 /root/results/tgpe_v4/ctm_curriculum_s42.json
+[02:12:45]     -rw-r--r-- 1 root root  2908  6月  6 00:22 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:12:45]     -rw-r--r-- 1 root root 28118  6月  6 00:11 /root/results/tgpe_v4/ens_gate_s123.json
+[02:12:45]     -rw-r--r-- 1 root root 29286  6月  5 23:25 /root/results/tgpe_v4/ens_gate_s42.json
+[02:12:45]     -rw-r--r-- 1 root root 29622  6月  6 00:24 /root/results/tgpe_v4/ens_gate_s456.json
+[02:12:45]   Latest log tail (/root/logs/tgpe_v4_s2_launch.log):
+[02:12:46]     /root/logs/tgpe_v4_gate_s456.log
+[02:12:46]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:12:46]     ═══════════════════════════════════════════════════════════
+
+[02:12:46] ── Server 1 (36:24520) ──
+[02:12:46]   GPU: 0, 3 MiB, 32768 MiB, 0 % 1, 3 MiB, 32768 MiB, 0 % 
+[02:12:47]   train.py: none running
+[02:12:48]   SMT processes:
+[02:12:48]     33690 88.2    02:09:19 /usr/bin/python3 -u /root/smt_model/train_200k.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:12:48]     25421  0.0    05:59:57 bash -c cd /root/smt_model && \    setsid python3 -u train_200k_safe.py \      --direction zh2en \      --max-sentences 200000 \      --batch-size 10000 \      --workers 2 \      --warm-start model/smt_zh2en \      --output-dir model \      --data-dir data/wmt \    > /dev/null 2>&1 < /dev/null &    echo "PID: \$!"
+[02:12:48]     25422  0.0    05:59:57 python3 -u train_200k_safe.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:12:49]   Results:
+[02:12:49]     -rw-r--r-- 1 root root  2922  6月  6 00:07 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:12:49]     -rw-r--r-- 1 root root 30109  6月  6 00:15 /root/results/tgpe_v4/ens_gate_s456.json
+[02:12:49]   Latest log tail (/root/logs/tgpe_v4_s1_launch.log):
+[02:12:50]     /root/logs/tgpe_v4_gate_s456.log
+[02:12:50]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:12:50]     ═══════════════════════════════════════════════════════════
+[02:12:50] 
+[02:12:50] ── Downloading results ──
+[02:12:50]   S2 → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s2_results/
+[02:12:52]   S1 → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s1_results/
+[02:12:53]   S2 logs → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s2_logs/
+[02:12:55]   S1 logs → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s1_logs/
+[02:12:57]   Local JSON files collected so far: 8
+[02:12:57]   Sleeping 60s... (423s remaining)
+[02:13:57] 
+[02:13:57] ╔══ CYCLE 4 ═══════════════════════════════════════
+[02:13:57] ║ Time: 02:13:57, 1780683600 deadline, now 1780683237
+[02:13:57] ── Server 2 (32:20248) ──
+[02:14:02]   GPU: 0, 0 MiB, 32768 MiB, 0 % 1, 0 MiB, 32768 MiB, 0 % 
+[02:14:02]   train.py: none running
+[02:14:04]   Results:
+[02:14:04]     -rw-r--r-- 1 root root  2903  6月  6 00:08 /root/results/tgpe_v4/ctm_curriculum_s123.json
+[02:14:04]     -rw-r--r-- 1 root root  2618  6月  5 23:23 /root/results/tgpe_v4/ctm_curriculum_s42.json
+[02:14:04]     -rw-r--r-- 1 root root  2908  6月  6 00:22 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:14:04]     -rw-r--r-- 1 root root 28118  6月  6 00:11 /root/results/tgpe_v4/ens_gate_s123.json
+[02:14:04]     -rw-r--r-- 1 root root 29286  6月  5 23:25 /root/results/tgpe_v4/ens_gate_s42.json
+[02:14:04]     -rw-r--r-- 1 root root 29622  6月  6 00:24 /root/results/tgpe_v4/ens_gate_s456.json
+[02:14:04]   Latest log tail (/root/logs/tgpe_v4_s2_launch.log):
+[02:14:05]     /root/logs/tgpe_v4_gate_s456.log
+[02:14:05]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:14:05]     ═══════════════════════════════════════════════════════════
+
+[02:14:05] ── Server 1 (36:24520) ──
+[02:14:06]   GPU: 0, 3 MiB, 32768 MiB, 0 % 1, 3 MiB, 32768 MiB, 0 % 
+[02:14:06]   train.py: none running
+[02:14:07]   SMT processes:
+[02:14:07]     33690 88.3    02:10:38 /usr/bin/python3 -u /root/smt_model/train_200k.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:14:07]     25421  0.0    06:01:16 bash -c cd /root/smt_model && \    setsid python3 -u train_200k_safe.py \      --direction zh2en \      --max-sentences 200000 \      --batch-size 10000 \      --workers 2 \      --warm-start model/smt_zh2en \      --output-dir model \      --data-dir data/wmt \    > /dev/null 2>&1 < /dev/null &    echo "PID: \$!"
+[02:14:07]     25422  0.0    06:01:16 python3 -u train_200k_safe.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:14:08]   Results:
+[02:14:08]     -rw-r--r-- 1 root root  2922  6月  6 00:07 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:14:08]     -rw-r--r-- 1 root root 30109  6月  6 00:15 /root/results/tgpe_v4/ens_gate_s456.json
+[02:14:08]   Latest log tail (/root/logs/tgpe_v4_s1_launch.log):
+[02:14:09]     /root/logs/tgpe_v4_gate_s456.log
+[02:14:09]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:14:09]     ═══════════════════════════════════════════════════════════
+[02:14:09] 
+[02:14:09] ── Downloading results ──
+[02:14:09]   S2 → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s2_results/
+[02:14:11]   S1 → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s1_results/
+[02:14:12]   S2 logs → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s2_logs/
+[02:14:14]   S1 logs → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s1_logs/
+[02:14:16]   Local JSON files collected so far: 8
+[02:14:16]   Sleeping 60s... (344s remaining)
+[02:15:16] 
+[02:15:16] ╔══ CYCLE 5 ═══════════════════════════════════════
+[02:15:16] ║ Time: 02:15:16, 1780683600 deadline, now 1780683316
+[02:15:16] ── Server 2 (32:20248) ──
+[02:15:21]   GPU: 0, 0 MiB, 32768 MiB, 0 % 1, 0 MiB, 32768 MiB, 0 % 
+[02:15:21]   train.py: none running
+[02:15:23]   Results:
+[02:15:23]     -rw-r--r-- 1 root root  2903  6月  6 00:08 /root/results/tgpe_v4/ctm_curriculum_s123.json
+[02:15:23]     -rw-r--r-- 1 root root  2618  6月  5 23:23 /root/results/tgpe_v4/ctm_curriculum_s42.json
+[02:15:23]     -rw-r--r-- 1 root root  2908  6月  6 00:22 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:15:23]     -rw-r--r-- 1 root root 28118  6月  6 00:11 /root/results/tgpe_v4/ens_gate_s123.json
+[02:15:23]     -rw-r--r-- 1 root root 29286  6月  5 23:25 /root/results/tgpe_v4/ens_gate_s42.json
+[02:15:23]     -rw-r--r-- 1 root root 29622  6月  6 00:24 /root/results/tgpe_v4/ens_gate_s456.json
+[02:15:23]   Latest log tail (/root/logs/tgpe_v4_s2_launch.log):
+[02:15:24]     /root/logs/tgpe_v4_gate_s456.log
+[02:15:24]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:15:24]     ═══════════════════════════════════════════════════════════
+
+[02:15:24] ── Server 1 (36:24520) ──
+[02:15:25]   GPU: 0, 3 MiB, 32768 MiB, 0 % 1, 3 MiB, 32768 MiB, 0 % 
+[02:15:25]   train.py: none running
+[02:15:26]   SMT processes:
+[02:15:26]     33690 88.4    02:11:57 /usr/bin/python3 -u /root/smt_model/train_200k.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:15:26]     25421  0.0    06:02:35 bash -c cd /root/smt_model && \    setsid python3 -u train_200k_safe.py \      --direction zh2en \      --max-sentences 200000 \      --batch-size 10000 \      --workers 2 \      --warm-start model/smt_zh2en \      --output-dir model \      --data-dir data/wmt \    > /dev/null 2>&1 < /dev/null &    echo "PID: \$!"
+[02:15:26]     25422  0.0    06:02:35 python3 -u train_200k_safe.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:15:27]   Results:
+[02:15:27]     -rw-r--r-- 1 root root  2922  6月  6 00:07 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:15:27]     -rw-r--r-- 1 root root 30109  6月  6 00:15 /root/results/tgpe_v4/ens_gate_s456.json
+[02:15:27]   Latest log tail (/root/logs/tgpe_v4_s1_launch.log):
+[02:15:28]     /root/logs/tgpe_v4_gate_s456.log
+[02:15:28]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:15:28]     ═══════════════════════════════════════════════════════════
+[02:15:28] 
+[02:15:28] ── Downloading results ──
+[02:15:28]   S2 → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s2_results/
+[02:15:30]   S1 → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s1_results/
+[02:15:31]   S2 logs → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s2_logs/
+[02:15:33]   S1 logs → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s1_logs/
+[02:15:35]   Local JSON files collected so far: 8
+[02:15:35]   Sleeping 60s... (265s remaining)
+[02:16:35] 
+[02:16:35] ╔══ CYCLE 6 ═══════════════════════════════════════
+[02:16:35] ║ Time: 02:16:35, 1780683600 deadline, now 1780683395
+[02:16:35] ── Server 2 (32:20248) ──
+[02:16:39]   GPU: 0, 0 MiB, 32768 MiB, 0 % 1, 0 MiB, 32768 MiB, 0 % 
+[02:16:40]   train.py: none running
+[02:16:41]   Results:
+[02:16:41]     -rw-r--r-- 1 root root  2903  6月  6 00:08 /root/results/tgpe_v4/ctm_curriculum_s123.json
+[02:16:41]     -rw-r--r-- 1 root root  2618  6月  5 23:23 /root/results/tgpe_v4/ctm_curriculum_s42.json
+[02:16:41]     -rw-r--r-- 1 root root  2908  6月  6 00:22 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:16:41]     -rw-r--r-- 1 root root 28118  6月  6 00:11 /root/results/tgpe_v4/ens_gate_s123.json
+[02:16:41]     -rw-r--r-- 1 root root 29286  6月  5 23:25 /root/results/tgpe_v4/ens_gate_s42.json
+[02:16:41]     -rw-r--r-- 1 root root 29622  6月  6 00:24 /root/results/tgpe_v4/ens_gate_s456.json
+[02:16:42]   Latest log tail (/root/logs/tgpe_v4_s2_launch.log):
+[02:16:43]     /root/logs/tgpe_v4_gate_s456.log
+[02:16:43]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:16:43]     ═══════════════════════════════════════════════════════════
+
+[02:16:43] ── Server 1 (36:24520) ──
+[02:16:44]   GPU: 0, 3 MiB, 32768 MiB, 0 % 1, 3 MiB, 32768 MiB, 0 % 
+[02:16:44]   train.py: none running
+[02:16:45]   SMT processes:
+[02:16:45]     33690 88.5    02:13:16 /usr/bin/python3 -u /root/smt_model/train_200k.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:16:45]     25421  0.0    06:03:54 bash -c cd /root/smt_model && \    setsid python3 -u train_200k_safe.py \      --direction zh2en \      --max-sentences 200000 \      --batch-size 10000 \      --workers 2 \      --warm-start model/smt_zh2en \      --output-dir model \      --data-dir data/wmt \    > /dev/null 2>&1 < /dev/null &    echo "PID: \$!"
+[02:16:45]     25422  0.0    06:03:54 python3 -u train_200k_safe.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:16:46]   Results:
+[02:16:46]     -rw-r--r-- 1 root root  2922  6月  6 00:07 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:16:46]     -rw-r--r-- 1 root root 30109  6月  6 00:15 /root/results/tgpe_v4/ens_gate_s456.json
+[02:16:46]   Latest log tail (/root/logs/tgpe_v4_s1_launch.log):
+[02:16:47]     /root/logs/tgpe_v4_gate_s456.log
+[02:16:47]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:16:47]     ═══════════════════════════════════════════════════════════
+[02:16:47] 
+[02:16:47] ── Downloading results ──
+[02:16:47]   S2 → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s2_results/
+[02:16:49]   S1 → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s1_results/
+[02:16:50]   S2 logs → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s2_logs/
+[02:16:52]   S1 logs → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s1_logs/
+[02:16:54]   Local JSON files collected so far: 8
+[02:16:54]   Sleeping 60s... (186s remaining)
+[02:17:54] 
+[02:17:54] ╔══ CYCLE 7 ═══════════════════════════════════════
+[02:17:54] ║ Time: 02:17:54, 1780683600 deadline, now 1780683474
+[02:17:54] ── Server 2 (32:20248) ──
+[02:17:59]   GPU: 0, 0 MiB, 32768 MiB, 0 % 1, 0 MiB, 32768 MiB, 0 % 
+[02:17:59]   train.py: none running
+[02:18:00]   Results:
+[02:18:00]     -rw-r--r-- 1 root root  2903  6月  6 00:08 /root/results/tgpe_v4/ctm_curriculum_s123.json
+[02:18:00]     -rw-r--r-- 1 root root  2618  6月  5 23:23 /root/results/tgpe_v4/ctm_curriculum_s42.json
+[02:18:00]     -rw-r--r-- 1 root root  2908  6月  6 00:22 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:18:00]     -rw-r--r-- 1 root root 28118  6月  6 00:11 /root/results/tgpe_v4/ens_gate_s123.json
+[02:18:00]     -rw-r--r-- 1 root root 29286  6月  5 23:25 /root/results/tgpe_v4/ens_gate_s42.json
+[02:18:00]     -rw-r--r-- 1 root root 29622  6月  6 00:24 /root/results/tgpe_v4/ens_gate_s456.json
+[02:18:01]   Latest log tail (/root/logs/tgpe_v4_s2_launch.log):
+[02:18:02]     /root/logs/tgpe_v4_gate_s456.log
+[02:18:02]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:18:02]     ═══════════════════════════════════════════════════════════
+
+[02:18:02] ── Server 1 (36:24520) ──
+[02:18:02]   GPU: 0, 3 MiB, 32768 MiB, 0 % 1, 3 MiB, 32768 MiB, 0 % 
+[02:18:03]   train.py: none running
+[02:18:04]   SMT processes:
+[02:18:04]     33690 88.6    02:14:35 /usr/bin/python3 -u /root/smt_model/train_200k.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:18:04]     25421  0.0    06:05:13 bash -c cd /root/smt_model && \    setsid python3 -u train_200k_safe.py \      --direction zh2en \      --max-sentences 200000 \      --batch-size 10000 \      --workers 2 \      --warm-start model/smt_zh2en \      --output-dir model \      --data-dir data/wmt \    > /dev/null 2>&1 < /dev/null &    echo "PID: \$!"
+[02:18:04]     25422  0.0    06:05:13 python3 -u train_200k_safe.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:18:04]   Results:
+[02:18:04]     -rw-r--r-- 1 root root  2922  6月  6 00:07 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:18:04]     -rw-r--r-- 1 root root 30109  6月  6 00:15 /root/results/tgpe_v4/ens_gate_s456.json
+[02:18:05]   Latest log tail (/root/logs/tgpe_v4_s1_launch.log):
+[02:18:06]     /root/logs/tgpe_v4_gate_s456.log
+[02:18:06]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:18:06]     ═══════════════════════════════════════════════════════════
+[02:18:06] 
+[02:18:06] ── Downloading results ──
+[02:18:06]   S2 → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s2_results/
+[02:18:08]   S1 → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s1_results/
+[02:18:09]   S2 logs → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s2_logs/
+[02:18:12]   S1 logs → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s1_logs/
+[02:18:13]   Local JSON files collected so far: 8
+[02:18:13]   Sleeping 52s... (107s remaining)
+[02:19:05] 
+[02:19:05] ╔══ CYCLE 8 ═══════════════════════════════════════
+[02:19:05] ║ Time: 02:19:05, 1780683600 deadline, now 1780683545
+[02:19:05] ── Server 2 (32:20248) ──
+[02:19:10]   GPU: 0, 0 MiB, 32768 MiB, 0 % 1, 0 MiB, 32768 MiB, 0 % 
+[02:19:11]   train.py: none running
+[02:19:12]   Results:
+[02:19:12]     -rw-r--r-- 1 root root  2903  6月  6 00:08 /root/results/tgpe_v4/ctm_curriculum_s123.json
+[02:19:12]     -rw-r--r-- 1 root root  2618  6月  5 23:23 /root/results/tgpe_v4/ctm_curriculum_s42.json
+[02:19:12]     -rw-r--r-- 1 root root  2908  6月  6 00:22 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:19:12]     -rw-r--r-- 1 root root 28118  6月  6 00:11 /root/results/tgpe_v4/ens_gate_s123.json
+[02:19:12]     -rw-r--r-- 1 root root 29286  6月  5 23:25 /root/results/tgpe_v4/ens_gate_s42.json
+[02:19:12]     -rw-r--r-- 1 root root 29622  6月  6 00:24 /root/results/tgpe_v4/ens_gate_s456.json
+[02:19:13]   Latest log tail (/root/logs/tgpe_v4_s2_launch.log):
+[02:19:13]     /root/logs/tgpe_v4_gate_s456.log
+[02:19:13]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:19:13]     ═══════════════════════════════════════════════════════════
+
+[02:19:13] ── Server 1 (36:24520) ──
+[02:19:14]   GPU: 0, 3 MiB, 32768 MiB, 0 % 1, 3 MiB, 32768 MiB, 0 % 
+[02:19:15]   train.py: none running
+[02:19:15]   SMT processes:
+[02:19:15]     33690 88.7    02:15:47 /usr/bin/python3 -u /root/smt_model/train_200k.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:19:15]     25421  0.0    06:06:25 bash -c cd /root/smt_model && \    setsid python3 -u train_200k_safe.py \      --direction zh2en \      --max-sentences 200000 \      --batch-size 10000 \      --workers 2 \      --warm-start model/smt_zh2en \      --output-dir model \      --data-dir data/wmt \    > /dev/null 2>&1 < /dev/null &    echo "PID: \$!"
+[02:19:15]     25422  0.0    06:06:25 python3 -u train_200k_safe.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:19:16]   Results:
+[02:19:16]     -rw-r--r-- 1 root root  2922  6月  6 00:07 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:19:16]     -rw-r--r-- 1 root root 30109  6月  6 00:15 /root/results/tgpe_v4/ens_gate_s456.json
+[02:19:17]   Latest log tail (/root/logs/tgpe_v4_s1_launch.log):
+[02:19:17]     /root/logs/tgpe_v4_gate_s456.log
+[02:19:17]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:19:17]     ═══════════════════════════════════════════════════════════
+[02:19:17] 
+[02:19:17] ── Downloading results ──
+[02:19:17]   S2 → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s2_results/
+[02:19:19]   S1 → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s1_results/
+[02:19:20]   S2 logs → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s2_logs/
+[02:19:23]   S1 logs → /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/s1_logs/
+[02:19:24]   Local JSON files collected so far: 8
+[02:19:24]   < 55s to deadline, doing final collection...
+[02:19:24] 
+[02:19:24] ══════════ FINAL COLLECTION ══════════
+[02:19:24] Time: Sat Jun  6 02:19:24 AM CST 2026
+[02:19:24] ── Server 2 (32:20248) FINAL ──
+[02:19:29]   GPU: 0, 0 MiB, 32768 MiB, 0 % 1, 0 MiB, 32768 MiB, 0 % 
+[02:19:30]   train.py: none running
+[02:19:31]   Results:
+[02:19:31]     -rw-r--r-- 1 root root  2903  6月  6 00:08 /root/results/tgpe_v4/ctm_curriculum_s123.json
+[02:19:31]     -rw-r--r-- 1 root root  2618  6月  5 23:23 /root/results/tgpe_v4/ctm_curriculum_s42.json
+[02:19:31]     -rw-r--r-- 1 root root  2908  6月  6 00:22 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:19:31]     -rw-r--r-- 1 root root 28118  6月  6 00:11 /root/results/tgpe_v4/ens_gate_s123.json
+[02:19:31]     -rw-r--r-- 1 root root 29286  6月  5 23:25 /root/results/tgpe_v4/ens_gate_s42.json
+[02:19:31]     -rw-r--r-- 1 root root 29622  6月  6 00:24 /root/results/tgpe_v4/ens_gate_s456.json
+[02:19:32]   Latest log tail (/root/logs/tgpe_v4_s2_launch.log):
+[02:19:32]     /root/logs/tgpe_v4_gate_s456.log
+[02:19:32]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:19:32]     ═══════════════════════════════════════════════════════════
+
+[02:19:32] ── Server 1 (36:24520) FINAL ──
+[02:19:33]   GPU: 0, 3 MiB, 32768 MiB, 0 % 1, 3 MiB, 32768 MiB, 0 % 
+[02:19:34]   train.py: none running
+[02:19:34]   SMT processes:
+[02:19:34]     33690 88.8    02:16:05 /usr/bin/python3 -u /root/smt_model/train_200k.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:19:34]     25421  0.0    06:06:43 bash -c cd /root/smt_model && \    setsid python3 -u train_200k_safe.py \      --direction zh2en \      --max-sentences 200000 \      --batch-size 10000 \      --workers 2 \      --warm-start model/smt_zh2en \      --output-dir model \      --data-dir data/wmt \    > /dev/null 2>&1 < /dev/null &    echo "PID: \$!"
+[02:19:34]     25422  0.0    06:06:43 python3 -u train_200k_safe.py --direction zh2en --max-sentences 200000 --batch-size 10000 --workers 2 --warm-start model/smt_zh2en --output-dir model --data-dir data/wmt
+[02:19:35]   Results:
+[02:19:35]     -rw-r--r-- 1 root root  2922  6月  6 00:07 /root/results/tgpe_v4/ctm_curriculum_s456.json
+[02:19:35]     -rw-r--r-- 1 root root 30109  6月  6 00:15 /root/results/tgpe_v4/ens_gate_s456.json
+[02:19:36]   Latest log tail (/root/logs/tgpe_v4_s1_launch.log):
+[02:19:36]     /root/logs/tgpe_v4_gate_s456.log
+[02:19:36]     /root/logs/tgpe_v4_curriculum_s456.log
+[02:19:36]     ═══════════════════════════════════════════════════════════
+[02:19:36] 
+[02:19:36] ── Final download ──
+[02:19:43] ── SMT results ──
+[02:19:44]   S2 SMT: none
+[02:19:45]   S1 SMT: none
+sed: -e expression #1, char 50: unterminated `s' command
+sed: -e expression #1, char 50: unterminated `s' command
+sed: -e expression #1, char 250: unterminated `s' command
+sed: -e expression #1, char 194: unterminated `s' command
+[02:19:52] 
+[02:19:52] ══════════ DONE ══════════
+[02:19:52] Report: /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210/reports/status_report.md
+[02:19:52] Data:   /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210
+[02:19:52] 
+# TGPE v4 实验状态报告
+
+> 自动收集时间: 2026-06-06 02:19:45 CST
+> 本地路径: /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210
+
+## 远程进程状态
+
+### Server 2 (223.109.239.32:20248)
+S2_GPU_PLACEHOLDER
+
+```
+none
+```
+
+### Server 1 (223.109.239.36:24520)
+S1_GPU_PLACEHOLDER
+
+S1_PROCS_PLACEHOLDER
+
+## 下载文件清单
+
+```
+FILELIST_PLACEHOLDER
+```
+
+## 快速分析命令
+
+```bash
+cd /home/xieguiawu/Desktop/ML/Glaubenskrieg/results/remote/auto_20260606_0210
+python3 -c "
+import json, glob
+for f in sorted(glob.glob('s*_results/*.json')):
+    d = json.load(open(f))
+    nm = f.split('/')[-1]
+    ts = d.get('test_metrics',{}).get('test_sharpe','N/A')
+    ic = d.get('mean_ctm_ic', d.get('mean_ensemble_ic', 'N/A'))
+    print(f'{nm}: test_sharpe={ts}, IC={ic}')
+"
+```

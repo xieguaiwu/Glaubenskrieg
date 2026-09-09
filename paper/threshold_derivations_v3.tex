@@ -1,0 +1,982 @@
+% =============================================================================
+% §2 (v3)  Threshold Derivations for the Five-Step IC Validation Framework
+% =============================================================================
+% Version 3 — Daily Cross-Sectional Spearman Time-Series Framework
+%
+% This revision resolves the critical inconsistency identified by Momus:
+% the original derivations used inconsistent effective sample sizes
+% (N=750 for Threshold 1; N≈100K for Thresholds 3/5; N ranging 795–375K
+% for Threshold 2). All thresholds are now consistently derived from
+% the observed daily IC distribution (mean≈0.0289, std≈0.158 on T=795
+% held-out trading days, N≈477 stocks).
+%
+% Changelog v2\rightarrow v3:
+%   - Fix #1 (BLOCKING): Corrected Step~3 Bonferroni threshold --- only
+%     11/11 positive windows passes (not 10/11).  Added Holm--Bonferroni
+%     verification.
+%   - Fix #2 (FLAG): Renamed Kelly--Malamud P/T to ``IC Signal Fraction'';
+%     the P/T bound operates at the return level, not the IC level, so the
+%     citation has been heavily qualified.
+%   - Fix #3 (FLAG): Recency ($\Delta>-0.02$) and decay ($\Delta_{\text{half}}>-0.01$)
+%     thresholds in the migration table are now marked as empirically calibrated
+%     (calibrated from Ridge pipeline~v2), pending formal derivation.
+%   - Fix #4 (FLAG): Added explicit discussion of the conceptual shift from
+%     \emph{per-stock} binomial (``are most stocks predictable?'') to
+%     \emph{daily positive fraction} (``are most days predictable?'').
+% To compile: tectonic threshold_derivations_v3.tex
+% =============================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ── Packages ──
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+% ── Theorem environments ──
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{remark}{Remark}[section]
+
+% ── Shorthand commands ──
+\newcommand{\IC}{\operatorname{IC}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Corr}{\operatorname{Corr}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\SE}{\operatorname{SE}}
+\newcommand{\CV}{\operatorname{CV}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\Ho}{H_{0}}
+\newcommand{\Ha}{H_{1}}
+\newcommand{\SNR}{\operatorname{SNR}}
+\newcommand{\SD}{\operatorname{SD}}
+\newcommand{\iid}{\overset{\text{i.i.d.}}{\sim}}
+
+\begin{document}
+
+\title{\textbf{Mathematical Derivations of Diagnostic Thresholds}\\
+       \large Five-Step IC Validation Framework --- Revision 3}
+\author{}
+\date{}
+\maketitle
+
+\vspace{-8pt}
+\begin{center}
+\small\textbf{Key Revision (v3):} Corrected Bonferroni multiple-testing
+threshold (Step~3 requires $11/11$ positive windows, not $10/11$);
+renamed Kelly--Malamud $P/T$ to ``IC Signal Fraction'';
+added conceptual-shift clarification for the daily positive fraction test;
+marked preliminary thresholds as empirically calibrated.
+See \S\ref{sec:comparison} for a side-by-side comparison with Revision~1.
+\end{center}
+
+% =============================================================================
+\section{The Daily IC Time-Series Framework}
+\label{sec:framework}
+% =============================================================================
+
+The Revision~1 derivations suffered from a fundamental inconsistency:
+Threshold~1 used an effective sample size of $N=750$ (days) derived from
+the Fisher $z$-transformation of a pooled Spearman $\rho$, while
+Thresholds~3 and~5 used $N \approx 10^{5}$ (pooled stock--day pairs) in
+$\sigma_{0}^{2} \approx 1/N$, and Threshold~2 oscillated between $N=1850$
+and $N=375\,000$ depending on the argument. These inconsistent unit
+assumptions led to contradictory standard errors and, consequently,
+thresholds that did not align with the actual computation in
+\texttt{diagnose\_v2.py}.
+
+Revision~2 adopts a single, self-consistent unit of analysis: the
+\emph{daily cross-sectional Spearman IC}.
+
+\begin{definition}[Daily IC time-series]
+\label{def:daily_ic}
+For a set of $N$ stocks and $T$ held-out trading days, let
+$\hat{\rho}_{t}$ be the cross-sectional Spearman rank correlation
+between predicted returns $\{\hat{r}_{i,t}\}_{i=1}^{N}$ and realized
+returns $\{r_{i,t}\}_{i=1}^{N}$ on day $t$:
+\begin{equation}
+    \hat{\rho}_{t} = \Corr_{\text{Spearman}}\!
+                    \bigl(\{\hat{r}_{i,t}\}_{i=1}^{N},\;
+                          \{r_{i,t}\}_{i=1}^{N}\bigr),
+    \qquad t = 1,\dots,T.
+    \label{eq:daily_ic}
+\end{equation}
+The daily IC time-series is $\{\hat{\rho}_{1},\dots,\hat{\rho}_{T}\}$.
+\end{definition}
+
+\textbf{Empirical calibration.} The pipeline~v2 held-out test set
+($T=795$ days, $N=477$ stocks) yields:
+\begin{align}
+    \mu_{\IC} &= \frac{1}{T}\sum_{t=1}^{T}\hat{\rho}_{t}
+               = 0.0289, \label{eq:mu_ic} \\[4pt]
+    \sigma_{\IC} &= \sqrt{\frac{1}{T-1}\sum_{t=1}^{T}
+                          (\hat{\rho}_{t}-\mu_{\IC})^{2}}
+                 = 0.158, \label{eq:sigma_ic} \\[4pt]
+    p_{+} &= \frac{1}{T}\sum_{t=1}^{T} \mathbf{1}\{\hat{\rho}_{t} > 0\}
+           = 0.570. \label{eq:p_plus}
+\end{align}
+Note that $\sigma_{\IC}=0.158$ captures \emph{both} the cross-sectional
+estimation error \emph{and} genuine day-to-day variation in predictive
+quality---this is the key quantity for all subsequent derivations.
+
+\begin{remark}[Relationship between pooled IC and $\mu_{\IC}$]
+\label{rem:pooled_vs_mean}
+The traditional \emph{pooled Spearman} $\IC_{\text{pooled}}$ (a single
+Spearman $\rho$ over all $T \times N$ stock--day pairs) and the
+daily-IC mean $\mu_{\IC}$ are mathematically distinct statistics.
+In the pipeline~v2 results, $\IC_{\text{pooled}}=0.0443$ while
+$\mu_{\IC}=0.0289$, illustrating that the pooled estimator can differ
+substantially from the daily-IC mean in finite samples.
+\medskip
+
+\textbf{Why the daily-IC framework is preferred for diagnostic thresholds:}
+\begin{enumerate}[nosep]
+    \item The daily IC $\hat{\rho}_{t}$ is the quantity that actually
+          enters the walk-forward evaluation (the code averages per-day
+          ICs in Step~2's $t$-test).
+    \item $\SE(\mu_{\IC})=\sigma_{\IC}/\sqrt{T}$ is straightforward
+          to estimate from the daily-IC time series; the analogous
+          standard error for $\IC_{\text{pooled}}$ requires Fisher
+          $z$-transformation with an assumed effective sample size
+          (the source of the Revision~1 inconsistency).
+    \item In the large-$T$ limit under weak dependence,
+          $\sqrt{T}(\mu_{\IC}-\E[\hat{\rho}_{t}]) \xrightarrow{d}
+          \N(0,\sigma_{\IC}^{2})$ by the CLT, providing rigorous
+          inference without distributional assumptions.
+\end{enumerate}
+
+In Revision~2, \textbf{all thresholds use $\mu_{\IC}$ as the primary
+IC statistic}. The pooled $\IC_{\text{pooled}}$ is retained only as
+a descriptive summary; all inference proceeds from the daily-IC
+time-series.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Standard Errors of the Daily-IC Mean}
+% -------------------------------------------------------------------
+
+\begin{definition}[i.i.d.\ standard error]
+If daily ICs are serially uncorrelated,
+\begin{equation}
+    \SE_{\text{iid}}(\mu_{\IC}) = \frac{\sigma_{\IC}}{\sqrt{T}}.
+    \label{eq:se_iid}
+\end{equation}
+\end{definition}
+
+\begin{definition}[Newey--West HAC standard error]
+To accommodate possible autocorrelation in daily ICs (e.g., due to
+persistent market regimes), the Newey--West~\cite{newey1987}
+heteroskedasticity-and-autocorrelation-consistent (HAC) estimator is
+used. Let $\hat{\gamma}_{k}$ be the sample autocovariance at lag $k$:
+\begin{equation}
+    \hat{\gamma}_{k} = \frac{1}{T}\sum_{t=k+1}^{T}
+                       (\hat{\rho}_{t}-\mu_{\IC})
+                       (\hat{\rho}_{t-k}-\mu_{\IC}).
+    \label{eq:acf}
+\end{equation}
+With Bartlett kernel weights $w_{k}=1-k/(L+1)$ and bandwidth $L$:
+\begin{equation}
+    \SE_{\text{NW}}(\mu_{\IC}) =
+    \frac{1}{\sqrt{T}}\,
+    \sqrt{\hat{\gamma}_{0} + 2\sum_{k=1}^{L} w_{k}\,\hat{\gamma}_{k}}.
+    \label{eq:se_nw}
+\end{equation}
+For $T=795$, the automatic bandwidth $L = \lfloor 4(T/100)^{2/9}\rfloor
+= 6$ provides a reasonable default (Newey--West, 1994).
+\end{definition}
+
+\begin{table}[htbp]
+\centering
+\caption{Standard errors of $\mu_{\IC}$ under alternative assumptions.
+         Plug-in values: $\sigma_{\IC}=0.158$, $T=795$.}
+\label{tab:se_comparison}
+\begin{tabular}{lcc}
+\toprule
+Estimator & Formula & Value \\
+\midrule
+i.i.d.\ SE         & $\sigma_{\IC}/\sqrt{T}$         & $0.158/\sqrt{795}=0.00560$ \\
+NW SE ($L=6$)      & Eq.~\eqref{eq:se_nw}             & $0.00490$--$0.00650$ (estimated) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For the remainder of this document, we use $\SE(\mu_{\IC}) = 0.00560$
+(the i.i.d.\ value) as the baseline, noting that the Newey--West
+correction typically changes it by less than $15\%$.
+
+% =============================================================================
+\section{Threshold 1: \texorpdfstring{$|\IC| < 0.02$}{IC < 0.02} as
+Detection Threshold}
+\label{sec:thresh1}
+% =============================================================================
+
+\subsection{Minimum Detectable IC}
+
+The single most important threshold in the framework is whether the
+observed IC exceeds the noise floor. With the daily-IC framework,
+this reduces to a one-sample test of $\Ho: \mu_{\IC}=0$.
+
+\begin{proposition}[Minimum detectable IC at $\alpha=0.05$, 80\% power]
+For a two-sided test,
+\begin{equation}
+    \IC_{\min} = (z_{\alpha/2} + z_{\beta})\,\SE(\mu_{\IC}),
+    \qquad
+    z_{0.025}=1.960,\; z_{0.20}=0.842.
+    \label{eq:ic_min}
+\end{equation}
+Plugging in $\SE(\mu_{\IC})=0.00560$:
+\begin{align}
+    \IC_{\min} &= (1.960 + 0.842) \times 0.00560 \nonumber \\
+               &= 2.802 \times 0.00560 = \mathbf{0.01570}.
+    \label{eq:ic_min_value}
+\end{align}
+\end{proposition}
+
+\begin{remark}[Comparison with Revision~1]
+Revision~1 derived $r_{\min} \approx 0.102$ using Fisher $z$ with
+$N=750$ and $80\%$ power, then argued \emph{in the opposite direction}
+that $|\IC|<0.02$ was conservative because it was ``far below'' the
+detection threshold. The internal contradiction was: Fisher $z$
+predicts $\IC=0.02$ is undetectable ($p \approx 0.58$), yet the
+code's Step~1 correctly flags $\IC=0.044$ as a PASS based on the
+actual $\SE$. The daily-IC framework resolves this: the empirical
+$\SE=0.00560$ (not $0.0366$ from Fisher $z$) gives $\IC_{\min}=0.0157$,
+which aligns naturally with the $0.02$ threshold.
+\end{remark}
+
+\subsection{Power Analysis}
+
+For an observed IC of $r$, the $t$-statistic is
+\begin{equation}
+    t(r) = \frac{|r|}{\SE(\mu_{\IC})}
+         = \frac{|r|}{0.00560}.
+    \label{eq:t_stat_th1}
+\end{equation}
+
+\begin{table}[htbp]
+\centering
+\caption{Power to detect various IC values at $\alpha=0.05$ (two-sided).
+         $\SE=0.00560$, $T=795$.}
+\label{tab:power_v2}
+\begin{tabular}{lcccc}
+\toprule
+IC $r$   & $t = r/\SE$ & $p$-value (two-sided) & Power \\
+\midrule
+0.005  & 0.89  & 0.37 & 0.14 \\
+0.010  & 1.79  & 0.07 & 0.45 \\
+0.016  & 2.80  & 0.005 & 0.80 \\
+0.020  & 3.57  & $3.6\times10^{-4}$ & 0.94 \\
+0.029  & 5.15  & $2.7\times10^{-7}$ & $>$0.999 \\
+0.044  & 7.86  & $4.0\times10^{-15}$ & $>$0.999 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Thus the threshold $|\IC| < 0.02$ identifies the regime where the
+signal is \emph{barely above the detection floor}: at $\IC=0.02$,
+power is $94\%$ (adequate), but at $\IC=0.01$, power drops to $45\%$
+(inadequate). The threshold provides a conservative margin over the
+minimum detectable IC of $0.016$.
+
+\begin{proposition}[Threshold 1: Detection]
+\label{prop:thresh1}
+\begin{equation}
+    \boxed{|\IC| < 0.02 \;\Longrightarrow\; \text{Below detection}}
+\end{equation}
+This is a principled threshold: it is $1.28\times\IC_{\min}$, providing
+a 28\% safety margin while staying aligned with the empirical $\SE$.
+\end{proposition}
+
+% =============================================================================
+\section{Threshold 2: Held-Out IC Gap}
+\label{sec:thresh2}
+% =============================================================================
+
+\subsection{Framework}
+
+Let $\mu_{\IC}^{\text{(train)}}$ and $\mu_{\IC}^{\text{(held)}}$ be the
+mean daily ICs on the training and held-out sets, respectively, and
+\begin{equation}
+    \Delta = \mu_{\IC}^{\text{(train)}} - \mu_{\IC}^{\text{(held)}}.
+    \label{eq:gap_def}
+\end{equation}
+Under $\Ho$ (no overfitting), both estimate the same population quantity,
+so $\E[\Delta]=0$.
+
+With the daily-IC framework, the variance of each mean is
+\begin{equation}
+    \Var\!\bigl(\mu_{\IC}^{(k)}\bigr)
+    = \frac{(\sigma_{\IC}^{(k)})^{2}}{T_{k}},
+    \qquad k \in \{\text{train},\,\text{held}\}.
+    \label{eq:var_mu_ic}
+\end{equation}
+
+\subsection{Bounding the Standard Error of the Gap}
+
+Since training and held-out sets are disjoint in time, their daily IC
+sequences are serially separated by the training/held-out boundary.
+Under the assumption of weak temporal dependence (autocorrelation decays
+within a few lags), the covariance term is negligible:
+\begin{equation}
+    \SE(\Delta) = \sqrt{
+        \frac{(\sigma_{\IC}^{\text{(train)}})^{2}}{T_{\text{train}}}
+      + \frac{(\sigma_{\IC}^{\text{(held)}})^{2}}{T_{\text{held}}}
+      - 2\,\Cov(\mu_{\IC}^{\text{(train)}},\,
+                 \mu_{\IC}^{\text{(held)}})
+    }.
+    \label{eq:se_gap_full}
+\end{equation}
+
+A \emph{conservative} estimate uses the same $\sigma_{\IC}$ for both sets
+and assumes zero covariance:
+\begin{equation}
+    \SE(\Delta) \approx \sigma_{\IC}\,
+    \sqrt{\frac{1}{T_{\text{train}}} + \frac{1}{T_{\text{held}}}}.
+    \label{eq:se_gap_conservative}
+\end{equation}
+
+With the empirical values ($\sigma_{\IC}=0.158$, $T_{\text{train}}=1853$,
+$T_{\text{held}}=795$):
+\begin{align}
+    \SE_{\text{train}} &= \frac{0.158}{\sqrt{1853}} = 0.00367, \nonumber \\
+    \SE_{\text{held}}  &= \frac{0.158}{\sqrt{795}}  = 0.00560, \nonumber \\
+    \SE(\Delta)        &= \sqrt{0.00367^{2} + 0.00560^{2}}
+                        = \sqrt{1.347\!\times\!10^{-5}
+                               + 3.136\!\times\!10^{-5}} \nonumber \\
+                       &= \sqrt{4.483\!\times\!10^{-5}}
+                        = \mathbf{0.00670}.
+    \label{eq:se_gap_value}
+\end{align}
+
+\begin{table}[htbp]
+\centering
+\caption{Gap diagnostics in the daily-IC framework.}
+\label{tab:gap_v2}
+\begin{tabular}{lccc}
+\toprule
+Gap $\Delta$ & $\Delta/\SE(\Delta)$ & One-sided $p$ & Classification \\
+\midrule
+$0.005$ & $0.75$ & $0.23$ & Within noise \\
+$0.010$ & $1.49$ & $0.068$ & Marginally suspicious \\
+$0.020$ & $2.99$ & $0.0014$ & Significant overfitting \\
+$0.050$ & $7.46$ & $<10^{-13}$ & Pathological \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{proposition}[Threshold 2: Gap categories]
+\label{prop:thresh2}
+\begin{align}
+    \boxed{\Delta < 0.005} &\quad\text{(Healthy --- within 1 SE)}, \\
+    \boxed{0.005 \leq \Delta \leq 0.020} &\quad\text{(Suspicious --- 1--3 SE)}, \\
+    \boxed{\Delta > 0.020} &\quad\text{(Pathological --- exceeds 3 SE)}.
+\end{align}
+\end{proposition}
+
+These thresholds are tighter than the Revision~1 values ($0.01$,
+$0.05$) because the daily-IC $\SE$ is substantially smaller than the
+Fisher-$z$ $\SE$ (which assumed $N=750$ effective observations). The
+Revision~1 thresholds corresponded to $0.24$--$1.18\sigma$; the new
+thresholds are properly calibrated to $0.75$--$2.99\sigma$.
+
+\subsection{Per-Window Gap}
+
+For the walk-forward per-window gap used in Step~5, the validation
+window contains $T_{\text{val}} \approx 252$ days:
+\begin{equation}
+    \SE(\Delta^{(w)}) \approx 0.158\,
+    \sqrt{\frac{1}{1008} + \frac{1}{252}}
+    = 0.158 \times 0.0704 = 0.0111.
+\end{equation}
+The threshold $\bar{\Delta}^{(w)} < 0.03$ (used in code) corresponds
+to $0.03/0.0111 = 2.70\,\SE$, a conservative bound.
+
+% =============================================================================
+\section{Threshold 3: Coefficient of Variation of IC Across Windows}
+\label{sec:thresh3}
+% =============================================================================
+
+\subsection{Framework}
+
+For $W$ walk-forward windows, let the window-$w$ IC be the mean of
+daily ICs within that window's validation period:
+\begin{equation}
+    \IC_{w} = \frac{1}{T_{w}}\sum_{t \in \mathcal{T}_{w}} \hat{\rho}_{t},
+    \qquad w = 1,\dots,W.
+    \label{eq:window_ic_def}
+\end{equation}
+The CV is
+\begin{equation}
+    \CV = \frac{s_{\IC}}{|\bar{\IC}|},
+    \qquad
+    \bar{\IC} = \frac{1}{W}\sum_{w=1}^{W}\IC_{w},
+    \qquad
+    s_{\IC}^{2} = \frac{1}{W-1}\sum_{w=1}^{W}(\IC_{w}-\bar{\IC})^{2}.
+\end{equation}
+
+\subsection{Expected CV Under \texorpdfstring{$\Ho: \mu_{\IC}=0$}{H0: mu=0}}
+
+This is where Revision~1 contained a critical algebraic error. Using
+$\sigma_{0}^{2} \approx 1/N$ with $N \approx 10^{5}$ (pooled pairs)
+produced $\sigma_{0}\approx 0.003$, leading to the incorrect conclusion
+that $\E[\CV \mid \Ho] \gg 1$ was \emph{obvious}. In reality, the
+window-IC standard error under $\Ho$ is determined by the daily-IC
+framework, not by the pooled Fisher-$z$ variance.
+
+\begin{proposition}[Expected CV under the null]
+\label{prop:cv_null}
+Under $\Ho$, each window IC is a mean of $T_{w}$ approximately
+independent daily ICs:
+\begin{equation}
+    \IC_{w} \sim \N\!\left(0,\;
+        \frac{\sigma_{\IC}^{2}}{T_{w}}\right).
+    \label{eq:ic_w_null}
+\end{equation}
+For $W$ windows of equal size $T_{w}=T_{\text{val}}$,
+\begin{equation}
+    \bar{\IC} \sim \N\!\left(0,\;
+        \frac{\sigma_{\IC}^{2}}{T_{\text{val}}W}\right),
+    \qquad
+    s_{\IC} \approx \frac{\sigma_{\IC}}{\sqrt{T_{\text{val}}}}.
+\end{equation}
+Since $|\bar{\IC}|$ is $O_{p}(1/\sqrt{W})$ while $s_{\IC}$ is $O_{p}(1)$
+(relative to $\sigma_{\IC}/\sqrt{T_{\text{val}}}$),
+\begin{equation}
+    \E[\CV \mid \Ho] \approx
+    \frac{\sigma_{\IC}/\sqrt{T_{\text{val}}}}
+         {\sigma_{\IC}/\sqrt{T_{\text{val}}W} \cdot \sqrt{2/\pi}}
+    = \sqrt{\frac{\pi W}{2}}
+    \approx 4.16 \quad(\text{for }W=11).
+    \label{eq:cv_null_value}
+\end{equation}
+\end{proposition}
+
+Thus, under the null hypothesis of no predictive signal, we \emph{expect}
+$\CV \approx 4$--$5$, not $\CV \gg 1$ as Revision~1 implied. This means:
+\begin{itemize}[nosep]
+    \item $\CV < 1$ is already \emph{strong evidence} against $\Ho$.
+    \item $\CV = 0.6$ is \emph{conclusive} evidence of non-zero IC.
+    \item The Revision~1 CV thresholds ($<0.3$, $0.3$--$0.5$, $>0.6$)
+          are actually \emph{correct} despite the flawed derivation;
+          the daily-IC framework provides the missing rigorous
+          justification.
+\end{itemize}
+
+\subsection{Boundary Signal Detection at \texorpdfstring{$\CV=0.6$}{CV=0.6}}
+
+\begin{proposition}[CV as inverse SNR]
+\label{prop:cv_snr}
+For a genuine signal with $\mu_{\IC} > 0$ and window-level
+variation $\sigma_{\text{w}}$,
+\begin{equation}
+    \CV = \frac{\sigma_{\text{w}}}{\mu_{\IC}},
+    \qquad
+    \SNR_{\text{window}} = \frac{1}{\CV}.
+    \label{eq:cv_snr_v2}
+\end{equation}
+At $\CV=0.6$, $\SNR=1.667$.
+\end{proposition}
+
+\begin{itemize}
+    \item $\Prob(\IC_{w} > 0) = \Phi(\SNR) = \Phi(1.667) = 0.952$.
+    \item $t$-statistic for $\bar{\IC}$:
+          $t = \bar{\IC} / (s_{\IC}/\sqrt{W}) = \sqrt{W}/\CV
+             = \sqrt{11}/0.6 = 5.53$,
+          $p < 10^{-3}$ (one-sample).
+\end{itemize}
+
+\begin{table}[htbp]
+\centering
+\caption{CV thresholds and implications.}
+\label{tab:cv_v2}
+\begin{tabular}{ccccc}
+\toprule
+CV & $\SNR$ & $\Prob(\IC_{w}>0)$ & $t_{W=11}$ & Classification \\
+\midrule
+$<0.3$  & $>3.33$ & $>0.9996$ & $>11.1$ & Healthy \\
+$0.3{-}0.5$ & $2.0{-}3.33$ & $0.977{-}0.9996$ & $6.6{-}11.1$ & Suspicious \\
+$0.5{-}0.6$ & $1.67{-}2.0$ & $0.952{-}0.977$ & $5.5{-}6.6$ & Marginal pass \\
+$>0.6$  & $<1.67$ & $<0.952$ & $<5.5$ & Failing \\
+$>1.0$  & $<1.0$  & $<0.841$ & $<3.3$ & Noise-dominated \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =============================================================================
+\section{Thresholds 4 \& 6: Daily IC Positive Fraction (Replaces Per-Stock Binomial)}
+\label{sec:thresh4_6}
+% =============================================================================
+
+\subsection{The Problem with Per-Stock Binomial Tests}
+
+Revision~1's per-stock binomial test assumes independent stock-level
+ICs. This assumption is \emph{known to be violated} in financial data:
+factor exposures and sector co-movements induce positive cross-sectional
+correlation, which inflates the variance of $N_{+}$ and makes the
+binomial test \emph{anti-conservative} (rejects $\Ho$ too easily).
+
+The daily-IC framework offers a cleaner, self-consistent alternative.
+
+\begin{remark}[Conceptual shift: stocks vs.\ days]
+\label{rem:conceptual_shift}
+The per-stock binomial test and the daily positive fraction test ask
+different questions.  The per-stock test asks ``are most stocks
+predictable?'' --- it counts how many individual equities yield a
+positive rank IC when averaged across all available windows.  The daily
+test asks ``are most days predictable?'' --- it counts the fraction of
+trading days on which the cross-sectional rank correlation is positive.
+These are complementary perspectives: a model may predict well on most
+days (high $\hat{p}_{+}$) but fail on a minority of persistently
+unpredictable stocks (low per-stock positive fraction).  We adopt the
+daily framework because (a)~it naturally handles the dependence
+structure among stocks, (b)~each daily IC aggregates information from
+all $N$ stocks, yielding a larger effective sample size ($T$~vs.~$S$),
+and (c)~it aligns with the standard error computations used throughout
+this work.
+\end{remark}
+
+\subsection{Daily IC Positive Fraction}
+
+\begin{definition}[Daily IC positive fraction]
+\label{def:p_plus}
+\begin{equation}
+    p_{+} = \frac{1}{T}\sum_{t=1}^{T} \mathbf{1}\{\hat{\rho}_{t} > 0\}.
+\end{equation}
+This is the fraction of trading days on which the cross-sectional
+Spearman IC is positive.
+\end{definition}
+
+Under $\Ho$ (no predictive ability), daily ICs are symmetrically
+distributed around zero, so $p_{+} = 0.5$ in expectation. Under a
+genuine positive signal, $p_{+} > 0.5$.
+
+\subsection{Binomial Test on Daily Indicators}
+
+If daily IC signs are approximately independent,\footnote{Serial
+dependence in daily IC signs is typically much weaker than dependence
+in magnitudes, making the binomial approximation more defensible than
+for per-stock tests. The Newey--West adjustment for sign-autocorrelation
+is discussed below.} then
+\begin{equation}
+    T_{+} = \sum_{t=1}^{T} \mathbf{1}\{\hat{\rho}_{t} > 0\}
+          \sim \text{Binomial}(T,\,p).
+    \label{eq:binomial_daily}
+\end{equation}
+Under $\Ho: p = 0.5$:
+\begin{equation}
+    z = \frac{\hat{p}_{+} - 0.5}{\sqrt{0.25/T}}
+      = \frac{\hat{p}_{+} - 0.5}{\sqrt{0.25/795}}
+      = \frac{\hat{p}_{+} - 0.5}{0.01773}.
+    \label{eq:z_daily}
+\end{equation}
+
+\begin{table}[htbp]
+\centering
+\caption{Statistical significance of daily IC positive fractions
+         ($T=795$).}
+\label{tab:daily_pos}
+\begin{tabular}{cccc}
+\toprule
+$\hat{p}_{+}$ & $T_{+}$ & $z$ & $p$ (one-sided) \\
+\midrule
+0.500 & 398 & 0.00 & 0.500 \\
+0.520 & 413 & 1.13 & 0.130 \\
+0.550 & 437 & 2.82 & 0.0024 \\
+0.570 & 453 & 3.95 & $3.9\times10^{-5}$ \\
+0.600 & 477 & 5.64 & $8.5\times10^{-9}$ \\
+0.650 & 517 & 8.46 & $<10^{-16}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Handling Autocorrelation in IC Signs}
+
+If daily IC signs exhibit serial dependence (e.g., consecutive positive
+days cluster during bull markets), the effective sample size for the
+binomial test is reduced. Using a runs-test-based correction:
+\begin{equation}
+    T_{\text{eff}} = T \times
+    \frac{2\,R_{+}R_{-}}{R_{+}+R_{-}} \times \frac{1}{T},
+\end{equation}
+where $R_{+}$ and $R_{-}$ are the numbers of runs of positive and
+negative signs, respectively. In the worst case of complete clustering
+(all positives together), $T_{\text{eff}} \approx 2$, rendering the
+test uninformative. In practice, financial IC sign sequences are
+well-mixed (runs-test $p > 0.1$ in most pipelines), so $T_{\text{eff}}
+\approx T$.
+
+A more general approach uses Newey--West on the sign indicators
+themselves:
+\begin{equation}
+    \SE_{\text{NW}}(\hat{p}_{+}) =
+    \frac{1}{T}\sqrt{\sum_{t=1}^{T}(Y_{t}-\hat{p}_{+})^{2}
+                     + 2\sum_{k=1}^{L} w_{k}\sum_{t=k+1}^{T}
+                       (Y_{t}-\hat{p}_{+})(Y_{t-k}-\hat{p}_{+})},
+\end{equation}
+where $Y_{t} = \mathbf{1}\{\hat{\rho}_{t} > 0\}$.
+
+\subsection{Proposed Thresholds}
+
+\begin{proposition}[Threshold 4: Daily IC positive fraction]
+\label{prop:thresh4}
+\begin{align}
+    \boxed{\hat{p}_{+} > 0.55} &\quad\text{(Healthy --- $z > 2.82$, $p < 0.0025$)}, \\
+    \boxed{0.50 \leq \hat{p}_{+} \leq 0.55} &\quad\text{(Suspicious --- marginal evidence)}, \\
+    \boxed{\hat{p}_{+} < 0.50} &\quad\text{(Pathological --- worse than chance)}.
+\end{align}
+\end{proposition}
+
+\begin{proposition}[Threshold 6: Binary pass/fail]
+\label{prop:thresh6}
+The code's binary pass criterion becomes:
+\begin{equation}
+    \boxed{\text{pass\_daily\_positive} = (\hat{p}_{+} > 0.55)}.
+\end{equation}
+For the pipeline~v2 Ridge with $\hat{p}_{+}=0.570$, this is a
+comfortable PASS ($z=3.95$, $p = 3.9\times10^{-5}$).
+\end{proposition}
+
+\subsection{Comparison with Per-Stock Binomial}
+
+The daily-IC positive-fraction test is superior on three grounds:
+\begin{enumerate}[nosep]
+    \item \textbf{Consistent unit}: same daily cross-section used across
+          all thresholds.
+    \item \textbf{Reduced dependence}: daily IC signs are less
+          cross-sectionally correlated than per-stock ICs (which share
+          market-wide factor exposures across all windows).
+    \item \textbf{Higher statistical power}: $T=795$ daily observations
+          vs.\ $S=200$--$477$ stocks, with the added benefit that each
+          daily IC aggregates information from all $N$ stocks.
+\end{enumerate}
+
+% =============================================================================
+\section{Threshold 5: \texorpdfstring{$\CV < 0.6$}{CV < 0.6} as Pass}
+\label{sec:thresh5}
+% =============================================================================
+
+\subsection{CV in the Daily-IC Framework}
+
+The code's CV pass criterion is $\CV(\IC) < 0.6$, where $\IC$ is the
+vector of $W$ walk-forward window ICs. As shown in \S\ref{sec:thresh3},
+this corresponds to $\SNR > 1.67$ and $\Prob(\IC_{w}>0) > 0.952$.
+
+\subsection{Illustrative Computation with Pipeline v2 Ridge}
+
+Pipeline~v2 Ridge yields $W=11$ window ICs with $\bar{\IC}=0.0648$,
+$s_{\IC}=0.0382$, and $\CV=0.590$:
+\begin{align}
+    \SNR_{\text{window}} &= 1/0.590 = 1.695, \\
+    \Prob(\IC_{w} > 0)  &= \Phi(1.695) = 0.955, \\
+    t\text{-stat}       &= \sqrt{11}/0.590 = 5.62, \\
+    p\text{-value}      &= 2.2 \times 10^{-4}.
+\end{align}
+
+\subsection{IC Signal Fraction}
+
+We define the \emph{IC Signal Fraction} as the proportion of cross-window
+IC variation attributable to genuine predictive signal rather than
+estimation noise:
+\begin{equation}
+    \text{IC-SF} = \frac{\sigma_{\text{sig}}^{2}}
+                          {\sigma_{\text{total}}^{2}},
+    \qquad
+    \sigma_{\text{sig}}^{2} = s_{\IC}^{2}
+                             - \frac{\sigma_{\IC}^{2}}{T_{\text{val}}},
+    \qquad
+    \sigma_{\text{total}}^{2} = s_{\IC}^{2}.
+\end{equation}
+Here $\sigma_{\text{sig}}^{2}$ is the genuine cross-window signal
+variance (total window IC variance minus the estimation noise floor)
+and $\sigma_{\text{total}}^{2}$ is the observed window-IC variance.
+
+The IC Signal Fraction is an IC-level analog of the
+Kelly--Malamud~\cite{kelly2013} $P/T$ ratio, which bounds the fraction
+of \emph{return}-level variance that is predictable.  Unlike $P/T$, the
+IC-SF operates on rank-correlation (Spearman~$\rho$) space and does not
+require specifying a trading strategy to convert ICs into return-level
+predictions.  It should be interpreted as a diagnostic for signal
+stability, not as a direct estimate of predictable return variance.
+
+Decompose the observed window-IC variance into signal and noise
+components:
+\begin{align}
+    \Var(\IC_{w}) &= \underbrace{\Var(\mu_{\IC}^{(w)})}_{\text{signal}}
+                   + \underbrace{\frac{\sigma_{\IC}^{2}}{T_{\text{val}}}}
+                                  _{\text{estimation noise}}, \\[4pt]
+    \sigma_{\text{sig}}^{2} &= s_{\IC}^{2}
+                             - \frac{\sigma_{\IC}^{2}}{T_{\text{val}}}.
+\end{align}
+
+For pipeline~v2 Ridge ($s_{\IC}=0.0382$, $\sigma_{\IC}=0.158$,
+$T_{\text{val}}=252$):
+\begin{align}
+    \frac{\sigma_{\IC}^{2}}{T_{\text{val}}}
+        &= \frac{0.158^{2}}{252}
+         = \frac{0.02496}{252}
+         = 9.91 \times 10^{-5}, \\[4pt]
+    \sigma_{\text{sig}}^{2} &= 0.0382^{2} - 9.91\times10^{-5}
+                             = 0.001459 - 0.000099
+                             = 0.001360, \\[4pt]
+    \text{IC-SF} &= \frac{0.001360}{0.001459} = 0.932.
+\end{align}
+
+Thus over $93\%$ of window-IC variance is attributable to genuine
+cross-window signal variation, not estimation noise. This aligns with
+the CV-based conclusion that the pipeline produces consistent,
+non-spurious predictions.
+
+% =============================================================================
+\section{Multiple Testing Correction}
+\label{sec:multitest}
+% =============================================================================
+
+The diagnostic framework applies up to 11 pass/fail checks across
+5 steps. Without correction, the family-wise error rate (FWER) at
+$\alpha=0.05$ is inflated.
+
+\subsection{Bonferroni Correction}
+
+\begin{proposition}[Bonferroni-adjusted significance level]
+For $m=11$ tests and a target FWER of $\alpha_{\text{FW}}=0.05$,
+\begin{equation}
+    \boxed{\alpha' = \frac{\alpha_{\text{FW}}}{m}
+                   = \frac{0.05}{11}
+                   = 0.00455}.
+    \label{eq:bonferroni}
+\end{equation}
+All individual-test $p$-values should be compared to $\alpha'$, not
+$0.05$ or $0.01$.
+\end{proposition}
+
+\textbf{Impact on thresholds:}
+\begin{itemize}[nosep]
+    \item \textbf{Step~2 $t$-test}: $p < 0.00455$ (previously $p < 0.01$).
+    \item \textbf{Step~3 binomial}: $p < 0.00455$ (previously $p < 0.01$).
+          With $W=11$, only $11/11$ positive windows survives the correction
+          ($P(X \geq 11) = 1/2048 \approx 0.00049$).  A result of $10/11$
+          windows positive yields $P(X \geq 10) = 12/2048 \approx 0.00586$,
+          which exceeds both the Bonferroni threshold $\alpha' = 0.00455$
+          and the Holm--Bonferroni step-down threshold
+          $\alpha'_{(3)} = 0.05/9 \approx 0.00556$.
+    \item \textbf{Step~4 binomial}: $p < 0.00455$. For $T=795$, this
+          requires $\hat{p}_{+} > 0.548$ (previously $0.55$, essentially
+          unchanged).
+    \item \textbf{Step~4 $t$-test}: $p < 0.00455$ (previously $p < 0.01$).
+\end{itemize}
+
+The daily-IC-based Threshold~4 ($\hat{p}_{+} > 0.55$) is nearly unchanged
+by the correction, while the per-window binomial test (requiring $p<0.01$
+on $W=11$) becomes stricter.
+
+\subsection{Hierarchical Gatekeeping}
+
+A more powerful alternative to Bonferroni uses hierarchical testing:
+\begin{enumerate}[nosep]
+    \item \textbf{Steps 1--2 are gatekeepers}: the model must pass the
+          held-out IC detection test \emph{and} the $t$-test of
+          $\mu_{\IC} > 0$ at $\alpha=0.05$.
+    \item \textbf{Steps 3--5 are applied only if gatekeepers pass}.
+          Within Steps 3--5, apply Bonferroni correction for the
+          remaining $9$ tests ($\alpha' = 0.05/9 = 0.00556$).
+    \item \textbf{Overall verdict}: PASS requires all gatekeepers
+          passed \emph{and} at least $7/9$ secondary tests passed
+          (after correction).
+\end{enumerate}
+
+This hierarchical structure reflects the logical dependence: if the
+model has no detectable signal (Steps 1--2), stability and overfitting
+checks are moot.
+
+% =============================================================================
+\section{Implementation Checklist}
+\label{sec:implementation}
+% =============================================================================
+
+\subsection{Computing the Daily IC Time-Series}
+
+The daily IC array is already computed in \texttt{diagnose\_v2.py}
+(lines~190--209) as \texttt{ho\_daily\_ic}. The existing code already
+computes \texttt{daily\_ic\_mean}, \texttt{daily\_ic\_std}, and
+\texttt{daily\_ic\_positive\_frac} and stores them in the JSON output.
+
+\textbf{Extension needed:} compute daily ICs for each walk-forward
+window's validation period, to enable per-window daily-IC analysis.
+
+\subsection{Computing Newey--West Standard Errors}
+
+\begin{verbatim}
+import numpy as np
+from scipy import stats
+
+def newey_west_se(ts, max_lag=None):
+    """HAC standard error of the mean (Bartlett kernel)."""
+    T = len(ts)
+    if max_lag is None:
+        max_lag = int(4 * (T / 100) ** (2 / 9))
+    mu = np.mean(ts)
+    gamma = np.zeros(max_lag + 1)
+    for k in range(max_lag + 1):
+        gamma[k] = np.mean(
+            (ts[k:] - mu) * (ts[:T-k] - mu)
+        )
+    w = 1 - np.arange(1, max_lag + 1) / (max_lag + 1)
+    long_run_var = gamma[0] + 2 * np.sum(w * gamma[1:])
+    return np.sqrt(long_run_var / T)
+\end{verbatim}
+
+\subsection{Updating the Verdict Thresholds}
+
+The hard-coded thresholds in \texttt{diagnose\_v2.py} should be
+replaced with data-driven equivalents computed from the daily IC
+time-series:
+
+\begin{table}[htbp]
+\centering
+\caption{Threshold migration from Revision~1 to Revision~3.}
+\label{tab:migration}
+\small
+\begin{tabular}{llll}
+\toprule
+Check & Rev.~1 Value & Rev.~2 Value & Derivation \\
+\midrule
+Step~1 pass            & $|\IC| > 0.02$ & $|\IC| > 0.02$ & \S\ref{sec:thresh1}, Eq.~\eqref{eq:ic_min_value} \\
+Step~2 pass            & $p < 0.01$ & $p < 0.00455$ & \S\ref{sec:multitest}, Eq.~\eqref{eq:bonferroni} \\
+Step~3 CV pass         & $\CV < 0.6$ & $\CV < 0.6$ & \S\ref{sec:thresh3}, unchanged but re-derived \\
+Step~3 binomial pass   & $p < 0.01$ & $p < 0.00455$ & Bonferroni correction; requires $11/11$ windows \\
+Step~3 recency pass    & $\Delta > -0.03$ & $\Delta > -0.02$ & \S\ref{sec:thresh2}, $\approx 2\,\SE(\Delta^{(w)})$, prelim.\footnotemark \\
+Step~4 binomial pass   & $p < 0.01$ & $\hat{p}_{+} > 0.55$ & \S\ref{sec:thresh4_6}, replaces per-stock \\
+Step~4 $t$-test        & $p < 0.01$ & $p < 0.00455$ & Bonferroni correction \\
+Step~4 majority        & $\hat{p} > 0.55$ & $\hat{p}_{+} > 0.55$ & \S\ref{sec:thresh4_6}, daily framework \\
+Step~5 gap pass        & $\bar{\Delta}^{(w)} < 0.03$ & $\bar{\Delta}^{(w)} < 0.02$ & \S\ref{sec:thresh2}, $\approx 1.8\,\SE$ \\
+Step~5 decay pass      & $\Delta_{\text{half}} > -0.02$ & $\Delta_{\text{half}} > -0.01$ & Tighter, daily-IC calibrated; prelim.\footnotemark \\
+Step~5 bootstrap pass  & $\text{CI}_{\text{lower}} > 0.02$ & $\text{CI}_{\text{lower}} > 0.016$ & \S\ref{sec:thresh1}, $\IC_{\min}$ \\
+\bottomrule
+\end{tabular}
+\footnotetext{Recency and decay thresholds are empirically calibrated from
+  Ridge pipeline~v2 results and pending formal derivation.  Recency:
+  under $\Ho$, $\SE_{\text{per-window}} \approx 0.158/\sqrt{252} \approx 0.00995$,
+  so a drift of $-0.02$ is $-2.01\,\SE$ (one-sided $p \approx 0.022$).
+  Decay: the halving-time threshold $-0.01$ is conservatively set at
+  roughly $1\,\SE$ of the gap estimator.
+  These values are provided as provisional starting points;
+  cross-validation against multiple model families is needed before
+  operational use.}
+\end{table}
+
+\subsection{Validation Protocol}
+
+After implementing Revision~3 thresholds, verify against the pipeline~v2
+Ridge result ($\IC=0.065$, $\CV=0.59$, $\hat{p}_{+}=0.57$):
+\begin{itemize}[nosep]
+    \item The Ridge pipeline should remain a clear PASS (as expected
+          for a well-established baseline).
+    \item Apply to StockCTM ($\IC=0.056$--$0.062$, borderline) and
+          MambaStock ($\IC \approx 0$, expected FAIL) as sanity checks.
+    \item Compare verdicts between Revision~1 and Revision~3 to ensure
+          no unexpected threshold reversals for documented results.
+\end{itemize}
+
+% =============================================================================
+\section{Summary: Comparison with Revision~1}
+\label{sec:comparison}
+% =============================================================================
+
+\begin{table}[htbp]
+\centering
+\caption{Framework comparison: Revision~1 vs.\ Revision~3.}
+\label{tab:comparison}
+\begin{tabular}{p{3.5cm}p{3.8cm}p{3.8cm}}
+\toprule
+Aspect & Revision~1 & Revision~3 (this document) \\
+\midrule
+\textbf{Unit of analysis} &
+  Pooled Spearman $\rho$ over all stock--day pairs &
+  Daily cross-sectional Spearman $\rho_{t}$ time-series \\
+
+\textbf{$\SE(\IC)$} &
+  Fisher $z$: $1/\sqrt{N-3}$ with inconsistent $N$ (750; 100K; 375K) &
+  $\sigma_{\IC}/\sqrt{T}$ with consistent $\sigma_{\IC}=0.158$, $T=795$ \\
+
+\textbf{Threshold~1 derivation} &
+  Fisher $z$ $\to$ $r_{\min}=0.102$, then \emph{ad hoc} threshold $0.02$ &
+  Power analysis $\to$ $\IC_{\min}=0.0157$, principled threshold $0.02$ \\
+
+\textbf{Threshold~2 gap} &
+  Two opposite SE estimates (0.042 and 0.002) used in same section &
+  Single consistent SE = 0.0067, from daily-IC $\sigma_{\IC}$ \\
+
+\textbf{Threshold~3 CV} &
+  $\sigma_{0}^{2}\approx 10^{-5}$ (pooled pairs) $\to$ $\CV_{\text{null}} \gg 1$ &
+  $\sigma_{0}^{2} = \sigma_{\IC}^{2}/T_{w}$ (daily ICs) $\to$ $\CV_{\text{null}} \approx 4.2$ \\
+
+\textbf{Per-stock binomial} &
+  $S=200$ independent stocks; ignores cross-sectional correlation &
+  Replaced by daily-IC positive fraction $\hat{p}_{+}$ with $T=795$ daily observations \\
+
+\textbf{Multiple testing} &
+  Not addressed &
+  Bonferroni $\alpha'=0.05/11=0.00455$; hierarchical gatekeeping alternative \\
+
+\textbf{Theoretical foundation} &
+  Fisher $z$-transformation (bivariate normality assumption) &
+  Central Limit Theorem for daily-IC means (valid under weak dependence) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =============================================================================
+\section*{References}
+% =============================================================================
+
+\begin{thebibliography}{10}
+
+\bibitem{newey1987}
+W.~K.~Newey and K.~D.~West,
+``A simple, positive semi-definite, heteroskedasticity and autocorrelation
+consistent covariance matrix,''
+\emph{Econometrica}, vol.~55, no.~3, pp.~703--708, 1987.
+
+\bibitem{newey1994}
+W.~K.~Newey and K.~D.~West,
+``Automatic lag selection in covariance matrix estimation,''
+\emph{Review of Economic Studies}, vol.~61, no.~4, pp.~631--653, 1994.
+
+\bibitem{kelly2013}
+B.~Kelly and S.~Malamud,
+``Fundamental predictability limits,''
+Working Paper, University of Chicago, 2013.
+
+\bibitem{efron2012large}
+B.~Efron,
+\emph{Large-Scale Inference: Empirical Bayes Methods for Estimation,
+Testing, and Prediction}.
+Cambridge University Press, 2012.
+
+\bibitem{chordia2001}
+T.~Chordia, R.~Roll, and A.~Subrahmanyam,
+``Market liquidity and trading activity,''
+\emph{Journal of Finance}, vol.~56, no.~2, pp.~501--530, 2001.
+
+\bibitem{moreira2019}
+A.~Moreira and T.~Muir,
+``Volatility-managed portfolios,''
+\emph{Journal of Finance}, vol.~74, no.~4, pp.~1809--1856, 2019.
+
+\bibitem{harvey2016}
+C.~R.~Harvey, Y.~Liu, and H.~Zhu,
+``\dots and the cross-section of expected returns,''
+\emph{Review of Financial Studies}, vol.~29, no.~1, pp.~5--68, 2016.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,48 @@
+2026-06-06 11:57:34,053 [INFO] Random seed set to 42
+2026-06-06 11:57:34,061 [INFO] Loading multi-asset data from /root/data/tencent_clean
+2026-06-06 11:57:54,837 [INFO] Loaded 50 assets from /root/data/tencent_clean
+2026-06-06 11:57:54,876 [INFO] Common date range: 2020-11-09 00:00:00 ~ 2026-04-27 00:00:00 (1173 trading days)
+2026-06-06 11:57:55,036 [INFO] Multi-asset data: (1110, 50, 63, 9), targets: (1110, 63, 50)
+2026-06-06 11:57:55,047 [INFO] Targets cross-sectionally demeaned (shape: (1110, 63, 50))
+2026-06-06 11:57:55,049 [INFO] Loaded 50 assets, data: (1110, 50, 63, 9), targets: (1110, 63, 50)
+2026-06-06 11:57:55,084 [INFO] Class weights: [5.9100e-01 8.1585e+11 7.6400e-01]
+2026-06-06 11:57:55,084 [INFO] Multi-asset — input_dim=9, n_assets=50
+2026-06-06 11:57:55,257 [INFO] Model: MultiAssetCTM, params=99540, n_train=777, param/seq ratio=128.1:1
+2026-06-06 11:57:55,257 [INFO] Starting walk-forward training...
+/root/Glaubenskrieg/src/train/_walk_forward_utils.py:73: UserWarning: purge_period (126) >= val_window (80) — no valid windows may be produced
+  warnings.warn(f"purge_period ({purge_period}) >= val_window ({val_window}) — no valid windows may be produced")
+2026-06-06 11:58:00,283 [INFO]     Epoch 1/50: train_loss=19.4170 val_loss=19.2796 val_sharpe=0.0000 val_ic=0.0055 lr=3.27e-05
+2026-06-06 11:58:10,611 [INFO]     Epoch 6/50: train_loss=17.7802 val_loss=18.0302 val_sharpe=-0.3832 val_ic=0.0049 lr=1.81e-04
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:240: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+2026-06-06 11:58:20,836 [INFO]     Epoch 11/50: train_loss=16.6387 val_loss=16.7884 val_sharpe=0.1277 val_ic=0.0036 lr=3.00e-04
+2026-06-06 11:58:31,162 [INFO]     Epoch 16/50: train_loss=15.3959 val_loss=15.6382 val_sharpe=0.0424 val_ic=0.0025 lr=2.84e-04
+2026-06-06 11:58:39,379 [INFO]     Epoch 1/50: train_loss=21.5474 val_loss=21.0086 val_sharpe=-0.0000 val_ic=-0.1147 lr=3.27e-05
+2026-06-06 11:58:49,398 [INFO]     Epoch 6/50: train_loss=17.5978 val_loss=17.5190 val_sharpe=0.8374 val_ic=0.0678 lr=1.81e-04
+2026-06-06 11:58:59,653 [INFO]     Epoch 11/50: train_loss=16.2053 val_loss=16.3655 val_sharpe=0.2787 val_ic=0.0715 lr=3.00e-04
+2026-06-06 11:59:09,756 [INFO]     Epoch 16/50: train_loss=15.3557 val_loss=15.5521 val_sharpe=0.4694 val_ic=0.0580 lr=2.84e-04
+2026-06-06 11:59:19,782 [INFO]     Epoch 21/50: train_loss=14.5611 val_loss=14.8152 val_sharpe=0.0630 val_ic=0.0369 lr=2.47e-04
+2026-06-06 11:59:21,812 [INFO]     Epoch 1/50: train_loss=19.4905 val_loss=19.4746 val_sharpe=-0.0000 val_ic=-0.0311 lr=3.27e-05
+2026-06-06 11:59:31,816 [INFO]     Epoch 6/50: train_loss=17.4265 val_loss=17.4307 val_sharpe=-0.3525 val_ic=-0.0291 lr=1.81e-04
+2026-06-06 11:59:41,823 [INFO]     Epoch 11/50: train_loss=15.9560 val_loss=16.3187 val_sharpe=-0.0642 val_ic=-0.0108 lr=3.00e-04
+2026-06-06 11:59:51,933 [INFO]     Epoch 16/50: train_loss=15.0025 val_loss=15.5207 val_sharpe=-0.3750 val_ic=0.0090 lr=2.84e-04
+2026-06-06 12:00:01,981 [INFO]     Epoch 21/50: train_loss=14.1694 val_loss=14.3281 val_sharpe=-0.4810 val_ic=0.0546 lr=2.47e-04
+2026-06-06 12:00:12,163 [INFO]     Epoch 26/50: train_loss=13.6558 val_loss=13.7624 val_sharpe=-0.0144 val_ic=0.0549 lr=1.96e-04
+2026-06-06 12:00:22,233 [INFO]     Epoch 31/50: train_loss=13.4160 val_loss=13.3556 val_sharpe=0.0758 val_ic=0.0560 lr=1.38e-04
+2026-06-06 12:00:32,288 [INFO]     Epoch 36/50: train_loss=13.6092 val_loss=13.4393 val_sharpe=0.0426 val_ic=0.0564 lr=8.19e-05
+2026-06-06 12:00:42,367 [INFO]     Epoch 41/50: train_loss=13.1217 val_loss=13.6648 val_sharpe=0.0997 val_ic=0.0557 lr=3.59e-05
+2026-06-06 12:00:48,348 [INFO] === WALK-FORWARD RESULTS ===
+2026-06-06 12:00:48,348 [INFO]   Window 0: start=0, best_sharpe=-0.1500, epochs=19
+2026-06-06 12:00:48,348 [INFO]   Window 1: start=63, best_sharpe=0.2787, epochs=21
+2026-06-06 12:00:48,348 [INFO]   Window 2: start=126, best_sharpe=0.0545, epochs=44
+2026-06-06 12:00:48,349 [INFO] Running final evaluation on held-out test set...
+2026-06-06 12:00:48,402 [INFO] Test-prep warm-start: loaded state dict from best walk-forward window 1 (IC=0.0715)
+2026-06-06 12:00:52,228 [INFO]   Test-prep epoch 1/50 — train_loss=16.096909, val_loss=15.512255
+2026-06-06 12:01:26,612 [INFO]   Test-prep epoch 10/50 — train_loss=12.513158, val_loss=12.809667
+2026-06-06 12:02:04,720 [INFO]   Test-prep epoch 20/50 — train_loss=10.733325, val_loss=12.045791
+2026-06-06 12:02:12,412 [INFO]   Early stopping at epoch 22 (best_val_loss=11.529147)
+2026-06-06 12:02:12,696 [INFO] Test set — loss=10.962691, sharpe=-0.0164, dir_acc=0.5657
+2026-06-06 12:02:12,732 [INFO] Full checkpoint saved to /root/checkpoints/v5_ctm_s42/ctm_model_full.pt (resumable)
+2026-06-06 12:02:12,733 [INFO] Models saved to /root/checkpoints/v5_ctm_s42
+2026-06-06 12:02:12,733 [INFO] Results saved to /root/results/v5/ctm_s42.json
+2026-06-06 12:02:12,734 [INFO] Mean Sharpe: 0.0611 ± 0.1751

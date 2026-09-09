@@ -1,0 +1,18 @@
+═══════════════════════════════════════════════════════════
+  TGPE v4 — Server 1: seeds 456  2026年 06月 05日 星期五 23:57:10 CST
+═══════════════════════════════════════════════════════════
+  [GPU0] Ensemble+TimeGate seed 456  PID=33339
+  [GPU1] CTM+Curriculum seed 456  PID=33340
+  Waiting for seed 456 variants to complete...
+  ✅ Server 1 seed 456 done at 2026年 06月 06日 星期六 00:15:47 CST
+
+═══════════════════════════════════════════════════════════
+  SERVER 1 TGPE v4 DONE  2026年 06月 06日 星期六 00:15:47 CST
+═══════════════════════════════════════════════════════════
+  Outputs:
+    /root/results/tgpe_v4/ens_gate_s456.json
+    /root/results/tgpe_v4/ctm_curriculum_s456.json
+  Logs:
+    /root/logs/tgpe_v4_gate_s456.log
+    /root/logs/tgpe_v4_curriculum_s456.log
+═══════════════════════════════════════════════════════════

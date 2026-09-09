@@ -1,0 +1,135 @@
+{
+  "version": "2.0.0",
+  "description": "Agent routing config for differentiated improvement loop (Directions B-D)",
+
+  "agent_routing": {
+    "description": "Direction B: Differentiated agents for review vs fix",
+    "review": {
+      "architecture_pass": {
+        "agent_type": "oracle",
+        "cost": "high",
+        "read_only": true,
+        "description": "Highest-quality model for architecture-level review. Read-only — never modifies code.",
+        "trigger": "Every iteration, Pass A"
+      },
+      "consistency_pass": {
+        "agent_type": "explore",
+        "count": 3,
+        "parallel": true,
+        "run_in_background": true,
+        "cost": "low",
+        "description": "Grep-based cross-file pattern matching. Cheap, parallel, grep-focused.",
+        "trigger": "Every iteration, Pass B"
+      },
+      "interface_pass": {
+        "agent_type": "explore",
+        "count": 2,
+        "parallel": true,
+        "run_in_background": true,
+        "cost": "low",
+        "description": "Caller-callee signature verification, config field usage audit.",
+        "trigger": "Every iteration, Pass C, or on-demand after signature changes"
+      },
+      "coverage_pass": {
+        "agent_type": "explore",
+        "count": 1,
+        "parallel": true,
+        "run_in_background": true,
+        "cost": "low",
+        "description": "Maps modified modules to test files, checks for gaps.",
+        "trigger": "Every iteration, Pass D. Required before fix phase."
+      }
+    },
+    "fix": {
+      "primary": {
+        "category": "deep",
+        "cost": "medium",
+        "description": "Goal-oriented autonomous execution for fix batches.",
+        "trigger": "Fix phase"
+      },
+      "regression_scan": {
+        "category": "unspecified-low",
+        "cost": "low",
+        "description": "Quick check for fix side effects. Must run after every fix batch.",
+        "trigger": "After fix phase, before next review"
+      }
+    }
+  },
+
+  "review_passes": {
+    "description": "Direction C: Specialized review passes replacing single generic review",
+    "passes": [
+      {
+        "id": "A",
+        "name": "Architecture Pass",
+        "agent": "oracle",
+        "prompt_file": ".sisyphus/prompts/review_architecture.md",
+        "load_before": [".sisyphus/defect_patterns.md"],
+        "description": "High-level design, module boundaries, cross-module concerns, extensibility"
+      },
+      {
+        "id": "B",
+        "name": "Consistency Pass",
+        "agent": "explore",
+        "count": 3,
+        "parallel": true,
+        "prompt_file": ".sisyphus/prompts/review_consistency.md",
+        "load_before": [".sisyphus/defect_patterns.md"],
+        "description": "Cross-file pattern divergence check: sibling modules, repeated patterns, naming conventions"
+      },
+      {
+        "id": "C",
+        "name": "Interface Contract Pass",
+        "agent": "explore",
+        "count": 2,
+        "parallel": true,
+        "prompt_file": ".sisyphus/prompts/review_contracts.md",
+        "description": "Caller-callee signature alignment, config field consumption audit, return type verification"
+      },
+      {
+        "id": "D",
+        "name": "Test Coverage Pass",
+        "agent": "explore",
+        "count": 1,
+        "prompt_file": ".sisyphus/prompts/review_coverage.md",
+        "description": "Modified modules → test file mapping, gap detection, contract drift check"
+      }
+    ],
+    "result_aggregation": "All pass results collected before entering fix phase. Critical/major across any pass → fix. Only minor in single pass → note but don't block."
+  },
+
+  "regression_scan": {
+    "description": "Direction D: Post-fix regression detection before next review cycle",
+    "enabled": true,
+    "checks": [
+      {
+        "id": "DC1",
+        "name": "Test Contract Drift",
+        "description": "Check if modified function signatures broke existing tests. Run full test suite.",
+        "command": "python -m pytest tests/ -v --tb=short"
+      },
+      {
+        "id": "DC2",
+        "name": "Sibling Pattern Sync",
+        "description": "For each modified file, check if sibling files have the same pattern that needs updating.",
+        "method": "explore agent: 'File X was modified to fix pattern Y. Check if files A, B, C have the same pattern.'"
+      },
+      {
+        "id": "DC3",
+        "name": "Side Effect Check",
+        "description": "Verify no broken imports, no dead code left behind, no new unused imports.",
+        "method": "python -c 'import <modified_modules>' check + grep for unused imports"
+      }
+    ],
+    "required": true,
+    "skip_if": "Fix phase produced 0 file changes"
+  },
+
+  "session_continuity": {
+    "description": "Cross-session knowledge persistence to compensate for context clearing",
+    "defect_patterns_file": ".sisyphus/defect_patterns.md",
+    "load_action": "Must be loaded as review prompt preamble at start of every new session",
+    "git_log_query": "git log --oneline --grep='pattern:' -20",
+    "purpose": "New session agent can see: 'In 6 prior iterations, cross-file inconsistency was the most common bug class. Pay special attention to sibling files.'"
+  }
+}
